@@ -7,7 +7,7 @@
                 "english": "Tom"
             },
             "descriptions": {
-                "english": "Deal {[effect1.power]} damage to all enemy units and apply <nobr><b>Dazed {[effect2.status0.power]}</b></nobr>.<br><br>Add a <b>Deadweight</b> to the top of your draw pile."
+                "english": "Deal {[effect0.power]} damage to all enemy units and apply <nobr><b>Dazed {[effect1.status0.power]}</b></nobr>."
             },
             "rarity": "rare",
             "class": "@ClassEquestrian",
