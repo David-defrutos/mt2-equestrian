@@ -80,7 +80,25 @@ namespace mt2_equestrian.Plugin
                         "json/spells/card_TimeToShine.json",
                         "json/spells/card_Tom.json",
                         "json/spells/card_VIPList.json",
-                        "json/spells/card_WinterWrapUp.json"
+                        "json/spells/card_WinterWrapUp.json",
+                        // Reliquias
+                        "json/relics/relic_AChildsDrawing.json",
+                        "json/relics/relic_ACollectionOfRibbons.json",
+                        "json/relics/relic_Bloomberg.json",
+                        "json/relics/relic_BottledCutieMark.json",
+                        "json/relics/relic_ImaginaryFriends.json",
+                        "json/relics/relic_JunkFood.json",
+                        "json/relics/relic_MareInTheMoon.json",
+                        "json/relics/relic_MysteriousGoldenRod.json",
+                        "json/relics/relic_TheSecondSeventhElement.json",
+                        "json/relics/relic_TheSeventhElement.json",
+                        "json/relics/relic_TinyMouseCrutches.json",
+                        "json/relics/relic_TornLapelPin.json",
+
+                        // Potenciadores
+                        "json/enhancers/enhancer_Friendstone.json",
+                        "json/enhancers/enhancer_Gradstone.json",
+                        "json/enhancers/enhancer_Playstone.json"
                     );
                 }
             );

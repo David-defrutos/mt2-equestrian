@@ -1,0 +1,54 @@
+{
+    "$schema": "https://raw.githubusercontent.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/refs/heads/main/schemas/base.json",
+    "relics": [
+        {
+            "id": "TornLapelPin",
+            "type": "collectable",
+            "names": {
+                "english": "Torn Lapel Pin"
+            },
+            "descriptions": {
+                "english": "Merchant card removal (or duplication) services stop increasing in cost."
+            },
+            "relic_effects": [
+                "@LapelPinPurge"
+            ],
+            "icon": "@TornLapelPinIcon",
+            "icon_small": "@TornLapelPinIconSmall",
+            "extensions": [
+                {
+                    "collectable": {
+                        "class": "@ClassEquestrian",
+                        "pools": [
+                            "MegaRelicPool"
+                        ],
+                        "rarity": "common"
+                    }
+                }
+            ],
+            "lore_tooltips": [
+                {
+                    "english": "I sense a kindred spirit in the story behind this torn lapel pin. My service in heaven's army was my greatest pride... and my biggest regret. The Seraph betrayed us all when he broke the covenant and invaded Hell, yet <i>I'm</i> the one who's called a traitor for sticking to my principles and refusing to fight in an unjust war."
+                }
+            ]
+        }
+    ],
+    "relic_effects": [
+        {
+            "id": "LapelPinPurge",
+            "name": "RelicEffectModifyMerchantPurgeCosts",
+            "param_int": 0,
+            "param_bool": true
+        }
+    ],
+    "sprites": [
+        {
+            "id": "TornLapelPinIcon",
+            "path": "textures/RelicAssets/TornLapelPinIcon.png"
+        },
+        {
+            "id": "TornLapelPinIconSmall",
+            "path": "textures/RelicAssets/TornLapelPinIconSmall.png"
+        }
+    ]
+}

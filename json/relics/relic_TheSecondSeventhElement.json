@@ -1,0 +1,51 @@
+{
+    "$schema": "https://raw.githubusercontent.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/refs/heads/main/schemas/base.json",
+    "relics": [
+        {
+            "id": "TheSecondSeventhElement",
+            "type": "collectable",
+            "names": {
+                "english": "TheSecondSeventhElement"
+            },
+            "descriptions": {
+                "english": "Triggered abilities on <b>Social</b> units activate an additional time."
+            },
+            "relic_effects": [
+                "@SecondSeventhTriggers"
+            ],
+            "icon": "@TheSecondSeventhElementIcon",
+            "icon_small": "@TheSecondSeventhElementIconSmall",
+            "extensions": [
+                {
+                    "collectable": {
+                        "class": "@ClassEquestrian",
+                        "pools": [
+                            "MegaRelicPool"
+                        ],
+                        "rarity": "rare"
+                    }
+                }
+            ]
+        }
+    ],
+    "relic_effects": [
+        {
+            "id": "SecondSeventhTriggers",
+            "name": "RelicEffectModifyTriggerCount",
+            "source_team": "monsters",
+            "param_int": 1,
+            "param_bool": true,
+            "param_subtype": "@Sub_Social"
+        }
+    ],
+    "sprites": [
+        {
+            "id": "TheSecondSeventhElementIcon",
+            "path": "textures/RelicAssets/TheSecondSeventhElementIcon.png"
+        },
+        {
+            "id": "TheSecondSeventhElementIconSmall",
+            "path": "textures/RelicAssets/TheSecondSeventhElementIconSmall.png"
+        }
+    ]
+}

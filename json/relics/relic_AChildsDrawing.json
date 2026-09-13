@@ -1,0 +1,56 @@
+{
+    "$schema": "https://raw.githubusercontent.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/refs/heads/main/schemas/base.json",
+    "relics": [
+        {
+            "id": "AChildsDrawing",
+            "type": "collectable",
+            "names": {
+                "english": "A Child's Drawing"
+            },
+            "descriptions": {
+                "english": "Gain +4[ember] and draw three units from your deck the first time you play your champion each battle."
+            },
+            "relic_effects": [
+                "@ChildsDrawingEmber"
+            ],
+            "icon": "@AChildsDrawingIcon",
+            "icon_small": "@AChildsDrawingIconSmall",
+            "extensions": [
+                {
+                    "collectable": {
+                        "class": "@ClassEquestrian",
+                        "pools": [
+                            "MegaRelicPool"
+                        ],
+                        "rarity": "common"
+                    }
+                }
+            ],
+            "lore_tooltips": [
+                {
+                    "english": "They say that family is one's greatest treasure. I gave up on mine when I joined Heaven's army. I intended to do them proud, but it didn't work out that way. Now, I've disgraced them and can never return. I wish I could have done things differently, but they're as blind as the Seraph when it comes to working towards the greater good."
+                }
+            ]
+        }
+    ],
+    "relic_effects": [
+        {
+            "id": "ChildsDrawingEmber",
+            "name": "RelicEffectEnergyAndCardDrawOnUnitSpawned",
+            "source_team": "monsters",
+            "param_int": 4,
+            "param_int_2": 3,
+            "param_subtype": "SubtypesData_Champion_83f21cbe-9d9b-4566-a2c3-ca559ab8ff34"
+        }
+    ],
+    "sprites": [
+        {
+            "id": "AChildsDrawingIcon",
+            "path": "textures/RelicAssets/AChildsDrawingIcon.png"
+        },
+        {
+            "id": "AChildsDrawingIconSmall",
+            "path": "textures/RelicAssets/AChildsDrawingIconSmall.png"
+        }
+    ]
+}

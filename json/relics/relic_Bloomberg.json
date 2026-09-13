@@ -1,0 +1,68 @@
+{
+    "$schema": "https://raw.githubusercontent.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/refs/heads/main/schemas/base.json",
+    "relics": [
+        {
+            "id": "Bloomberg",
+            "type": "collectable",
+            "names": {
+                "english": "Bloomberg"
+            },
+            "descriptions": {
+                "english": "All unit drafts start with a Largestone."
+            },
+            "relic_effects": [
+                "@BloombergDrafts"
+            ],
+            "icon": "@BloombergIcon",
+            "icon_small": "@BloombergIconSmall",
+            "extensions": [
+                {
+                    "collectable": {
+                        "class": "@ClassEquestrian",
+                        "pools": [
+                            "MegaRelicPool"
+                        ],
+                        "rarity": "common"
+                    }
+                }
+            ],
+            "lore_tooltips": [
+                {
+                    "english": "Never underestimate the ponies' ability for cultivation. Being able to create their own weather lets them grow crops just about anywhere. I once basked in the shade of a towering apple tree they called 'Bloomberg,' which stood high above all others in an orchard in the middle of an arid prairie."
+                }
+            ]
+        }
+    ],
+    "relic_effects": [
+        {
+            "id": "BloombergDrafts",
+            "name": "RelicEffectAddStartingUpgradeToCardDrafts",
+            "param_card_type": "monster",
+            "param_upgrade": "@BloombergLargestone"
+        }
+    ],
+    "sprites": [
+        {
+            "id": "BloombergIcon",
+            "path": "textures/RelicAssets/BloombergIcon.png"
+        },
+        {
+            "id": "BloombergIconSmall",
+            "path": "textures/RelicAssets/BloombergIconSmall.png"
+        }
+    ],
+    "upgrades": [
+        {
+            "id": "BloombergLargestone",
+            "titles": {
+                "english": "Largestone"
+            },
+            "descriptions": {
+                "english": "+1[size], +15[attack], +40[health]."
+            },
+            "bonus_size": 1,
+            "bonus_damage": 15,
+            "bonus_hp": 40
+        }
+    ]
+}

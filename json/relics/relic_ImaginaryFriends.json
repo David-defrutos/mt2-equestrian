@@ -1,0 +1,53 @@
+{
+    "$schema": "https://raw.githubusercontent.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/refs/heads/main/schemas/base.json",
+    "relics": [
+        {
+            "id": "ImaginaryFriends",
+            "type": "collectable",
+            "names": {
+                "english": "Imaginary Friends"
+            },
+            "descriptions": {
+                "english": "+1[size] to every floor."
+            },
+            "relic_effects": [
+                "@ImaginaryFriendsCapacity"
+            ],
+            "icon": "@ImaginaryFriendsIcon",
+            "icon_small": "@ImaginaryFriendsIconSmall",
+            "extensions": [
+                {
+                    "collectable": {
+                        "class": "@ClassEquestrian",
+                        "pools": [
+                            "MegaRelicPool"
+                        ],
+                        "rarity": "common"
+                    }
+                }
+            ],
+            "lore_tooltips": [
+                {
+                    "english": "I didn't realize just how dependent some ponies are on others until I heard of one who broke down so badly after being rejected that she created a number of imaginary friends to replace her real ones. Sir Lintsalot was an entitled buffoon. Madam LeFlour was an insufferable snooty snob. Rocky wouldn't care to share the time of day, and Mr. Turnip was a vile creature who delighted in belittling everyone else. Clearly, that pony had issues."
+                }
+            ]
+        }
+    ],
+    "relic_effects": [
+        {
+            "id": "ImaginaryFriendsCapacity",
+            "name": "RelicEffectChangeFloorCapacity",
+            "param_int": 1
+        }
+    ],
+    "sprites": [
+        {
+            "id": "ImaginaryFriendsIcon",
+            "path": "textures/RelicAssets/ImaginaryFriendsIcon.png"
+        },
+        {
+            "id": "ImaginaryFriendsIconSmall",
+            "path": "textures/RelicAssets/ImaginaryFriendsIconSmall.png"
+        }
+    ]
+}

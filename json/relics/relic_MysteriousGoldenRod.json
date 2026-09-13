@@ -1,0 +1,54 @@
+{
+    "$schema": "https://raw.githubusercontent.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/refs/heads/main/schemas/base.json",
+    "relics": [
+        {
+            "id": "MysteriousGoldenRod",
+            "type": "collectable",
+            "names": {
+                "english": "Strange Golden Rod"
+            },
+            "descriptions": {
+                "english": "The first time you play a spell with <b>Consume</b> each turn, add a copy to your discard pile."
+            },
+            "relic_effects": [
+                "@GoldenRodCopy"
+            ],
+            "icon": "@MysteriousGoldenRodIcon",
+            "icon_small": "@MysteriousGoldenRodIconSmall",
+            "extensions": [
+                {
+                    "collectable": {
+                        "class": "@ClassEquestrian",
+                        "pools": [
+                            "MegaRelicPool"
+                        ],
+                        "rarity": "common"
+                    }
+                }
+            ],
+            "lore_tooltips": [
+                {
+                    "english": "This mysterious object has been seen to repeatedly pop up time and time again. Where it came from or what it's purpose is is anyone's guess. Also, it vibrates."
+                }
+            ]
+        }
+    ],
+    "relic_effects": [
+        {
+            "id": "GoldenRodCopy",
+            "name": "RelicEffectCopyCardOnCardPlay",
+            "param_int": 1,
+            "param_card_type": "spell"
+        }
+    ],
+    "sprites": [
+        {
+            "id": "MysteriousGoldenRodIcon",
+            "path": "textures/RelicAssets/MysteriousGoldenRodIcon.png"
+        },
+        {
+            "id": "MysteriousGoldenRodIconSmall",
+            "path": "textures/RelicAssets/MysteriousGoldenRodIconSmall.png"
+        }
+    ]
+}

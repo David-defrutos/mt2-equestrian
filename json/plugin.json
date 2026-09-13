@@ -13,7 +13,7 @@
                 "english": "Social"
             },
             "descriptions": {
-                "english": "<b>Social</b> units get stronger the more allies share their floor."
+                "english": "<b>Social</b> units add +1[size] to the floor they stand on."
             },
             "style": "keyword",
             "allow_secondary_placement": true
@@ -66,6 +66,21 @@
             "cards": [
                 "@NightTerrors"
             ]
+        },
+        {
+            "id": "JunkFoodPool",
+            "cards": [
+                "@SpawnYoLo",
+                "@SpawnFinchy",
+                "@SpawnCrunchieMunchie",
+                "@SpawnTrashPanda",
+                "@SpawnMistyStep",
+                "@SpawnSnackasmacky",
+                "@SpawnSqueakyBooBoo",
+                "@SpawnStaticJoy",
+                "@SpawnMareYouKnow",
+                "@SpawnPreenySnuggle"
+            ]
         }
     ],
     "upgrades": [
@@ -75,11 +90,27 @@
                 "english": "Gradstone"
             },
             "descriptions": {
-                "english": "+10[attack], +10[health] and 0[ember]."
+                "english": "+10[attack], +10[health], 0[ember] and <b>Social</b>."
             },
             "bonus_hp": 10,
             "bonus_damage": 10,
-            "cost_reduction": 99
+            "cost_reduction": 99,
+            "room_modifier_upgrades": [
+                "@SocialCapacity"
+            ]
+        }
+    ],
+    "room_modifiers": [
+        {
+            "id": "SocialCapacity",
+            "name": "RoomStateCapacityModifier",
+            "param_int": 1,
+            "titles": {
+                "english": "Social"
+            },
+            "descriptions": {
+                "english": "+1[size] to this floor while this unit is here."
+            }
         }
     ]
 }

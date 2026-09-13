@@ -1,0 +1,63 @@
+{
+    "$schema": "https://raw.githubusercontent.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/refs/heads/main/schemas/base.json",
+    "relics": [
+        {
+            "id": "Playstone",
+            "type": "enhancer",
+            "names": {
+                "english": "Playstone"
+            },
+            "descriptions": {
+                "english": "-2[ember]."
+            },
+            "relic_effects": [
+                "@PlaystoneEnhancer"
+            ],
+            "icon": "@PlaystoneIcon",
+            "extensions": [
+                {
+                    "enhancer": {
+                        "class": "@ClassEquestrian",
+                        "rarity": "starter",
+                        "pools": []
+                    }
+                }
+            ]
+        }
+    ],
+    "relic_effects": [
+        {
+            "id": "PlaystoneEnhancer",
+            "name": "RelicEffectCardUpgrade",
+            "param_card_type": "monster",
+            "param_upgrade": "@PlaystoneUpgrade"
+        }
+    ],
+    "upgrades": [
+        {
+            "id": "PlaystoneUpgrade",
+            "titles": {
+                "english": "Playstone"
+            },
+            "descriptions": {
+                "english": "-2[ember]."
+            },
+            "cost_reduction": 2,
+            "x_cost_reduction": 2,
+            "use_upgrade_highlight_tags": true,
+            "icon": "@PlaystoneIcon"
+        }
+    ],
+    "sprites": [
+        {
+            "id": "PlaystoneIcon",
+            "path": "textures/ClanAssets/PlaystoneIcon.png"
+        }
+    ],
+    "atlas_icons": [
+        {
+            "id": "PlaystoneIcon",
+            "path": "textures/ClanAssets/PlaystoneIcon.png"
+        }
+    ]
+}

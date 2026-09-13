@@ -1,0 +1,67 @@
+{
+    "$schema": "https://raw.githubusercontent.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/refs/heads/main/schemas/base.json",
+    "relics": [
+        {
+            "id": "Gradstone",
+            "type": "enhancer",
+            "names": {
+                "english": "School of Hard Bucks Graduate"
+            },
+            "descriptions": {
+                "english": "+10[attack], +20[health], 0[ember] and <b>Social</b>."
+            },
+            "relic_effects": [
+                "@GradstoneEnhancer"
+            ],
+            "icon": "@GradstoneIcon",
+            "extensions": [
+                {
+                    "enhancer": {
+                        "class": "@ClassEquestrian",
+                        "rarity": "common",
+                        "pools": []
+                    }
+                }
+            ]
+        }
+    ],
+    "relic_effects": [
+        {
+            "id": "GradstoneEnhancer",
+            "name": "RelicEffectCardUpgrade",
+            "param_card_type": "monster",
+            "param_upgrade": "@GradstoneStoneUpgrade"
+        }
+    ],
+    "upgrades": [
+        {
+            "id": "GradstoneStoneUpgrade",
+            "titles": {
+                "english": "School of Hard Bucks Graduate"
+            },
+            "descriptions": {
+                "english": "+10[attack], +20[health], 0[ember] and <b>Social</b>."
+            },
+            "bonus_damage": 10,
+            "bonus_hp": 20,
+            "cost_reduction": 99,
+            "room_modifier_upgrades": [
+                "@SocialCapacity"
+            ],
+            "use_upgrade_highlight_tags": true,
+            "icon": "@GradstoneIcon"
+        }
+    ],
+    "sprites": [
+        {
+            "id": "GradstoneIcon",
+            "path": "textures/ClanAssets/GradstoneIcon.png"
+        }
+    ],
+    "atlas_icons": [
+        {
+            "id": "GradstoneIcon",
+            "path": "textures/ClanAssets/GradstoneIcon.png"
+        }
+    ]
+}

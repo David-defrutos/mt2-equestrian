@@ -1,0 +1,55 @@
+{
+    "$schema": "https://raw.githubusercontent.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/refs/heads/main/schemas/base.json",
+    "relics": [
+        {
+            "id": "JunkFood",
+            "type": "collectable",
+            "names": {
+                "english": "Junk Food"
+            },
+            "descriptions": {
+                "english": "At the start of your turn, add a random common or uncommon pony to your hand."
+            },
+            "relic_effects": [
+                "@JunkFoodPony"
+            ],
+            "icon": "@JunkFoodIcon",
+            "icon_small": "@JunkFoodIconSmall",
+            "extensions": [
+                {
+                    "collectable": {
+                        "class": "@ClassEquestrian",
+                        "pools": [
+                            "MegaRelicPool"
+                        ],
+                        "rarity": "common"
+                    }
+                }
+            ],
+            "lore_tooltips": [
+                {
+                    "english": "If you'd think that ponies ate well because of a natural vegetarian diet, well, you'd be wrong. Junk food is as much a part of their culture as it is everywhere else. Loaded with fats, salts, and sugars, about the only thing it has going for it is that it sure is popular."
+                }
+            ]
+        }
+    ],
+    "relic_effects": [
+        {
+            "id": "JunkFoodPony",
+            "name": "RelicEffectAddBattleCardToHand",
+            "param_card_pool": "@JunkFoodPool",
+            "param_int": 1,
+            "param_trigger": "pre_combat"
+        }
+    ],
+    "sprites": [
+        {
+            "id": "JunkFoodIcon",
+            "path": "textures/RelicAssets/JunkFoodIcon.png"
+        },
+        {
+            "id": "JunkFoodIconSmall",
+            "path": "textures/RelicAssets/JunkFoodIconSmall.png"
+        }
+    ]
+}

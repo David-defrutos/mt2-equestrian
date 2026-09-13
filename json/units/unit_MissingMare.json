@@ -45,6 +45,9 @@
             ],
             "triggers": [
                 "@MissingMareIncant"
+            ],
+            "room_modifiers": [
+                "@SocialCapacity"
             ]
         }
     ],

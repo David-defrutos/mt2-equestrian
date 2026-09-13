@@ -1,0 +1,60 @@
+{
+    "$schema": "https://raw.githubusercontent.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/refs/heads/main/schemas/base.json",
+    "relics": [
+        {
+            "id": "TinyMouseCrutches",
+            "type": "collectable",
+            "names": {
+                "english": "Tiny Mouse Wheelchair"
+            },
+            "descriptions": {
+                "english": "Gain <b>Armor {[effect0.status0.power]}</b> whenever a friendly unit loses a stack of <b>Regen</b>."
+            },
+            "relic_effects": [
+                "@CrutchesArmor"
+            ],
+            "icon": "@TinyMouseCrutchesIcon",
+            "icon_small": "@TinyMouseCrutchesIconSmall",
+            "extensions": [
+                {
+                    "collectable": {
+                        "class": "@ClassEquestrian",
+                        "pools": [
+                            "MegaRelicPool"
+                        ],
+                        "rarity": "common"
+                    }
+                }
+            ],
+            "lore_tooltips": [
+                {
+                    "english": "Ponies take it upon themselves to manage every aspect of their environment, including the care and well being of the lesser creatures in their lands. They build nests for birds, dig dens for foxes, and even have an extensive healthcare system for wild animals."
+                }
+            ]
+        }
+    ],
+    "relic_effects": [
+        {
+            "id": "CrutchesArmor",
+            "name": "RelicEffectAddStatusEffectOnOtherStatusRemoved",
+            "source_team": "monsters",
+            "param_string": "regen",
+            "param_status_effects": [
+                {
+                    "status": "armor",
+                    "count": 5
+                }
+            ]
+        }
+    ],
+    "sprites": [
+        {
+            "id": "TinyMouseCrutchesIcon",
+            "path": "textures/RelicAssets/TinyMouseCrutchesIcon.png"
+        },
+        {
+            "id": "TinyMouseCrutchesIconSmall",
+            "path": "textures/RelicAssets/TinyMouseCrutchesIconSmall.png"
+        }
+    ]
+}

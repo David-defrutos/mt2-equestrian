@@ -7,7 +7,7 @@
                 "english": "The Elements of Harmony"
             },
             "descriptions": {
-                "english": "Apply <b>Social</b> to all unplayed units in your deck."
+                "english": "Apply <b>Social</b> to all units in your hand."
             },
             "rarity": "rare",
             "class": "@ClassEquestrian",
@@ -67,7 +67,10 @@
         {
             "id": "HarmonyUpgrade",
             "bonus_damage": 5,
-            "bonus_hp": 5
+            "bonus_hp": 5,
+            "room_modifier_upgrades": [
+                "@SocialCapacity"
+            ]
         }
     ]
 }

@@ -1,0 +1,80 @@
+{
+    "$schema": "https://raw.githubusercontent.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/refs/heads/main/schemas/base.json",
+    "relics": [
+        {
+            "id": "MareInTheMoon",
+            "type": "collectable",
+            "names": {
+                "english": "Mare in the Moon"
+            },
+            "descriptions": {
+                "english": "Restore 5 pyre health whenever your champion kills a unit."
+            },
+            "relic_effects": [
+                "@MareInTheMoonTrigger"
+            ],
+            "icon": "@MareInTheMoonIcon",
+            "icon_small": "@MareInTheMoonIconSmall",
+            "extensions": [
+                {
+                    "collectable": {
+                        "class": "@ClassEquestrian",
+                        "pools": [
+                            "MegaRelicPool"
+                        ],
+                        "rarity": "common"
+                    }
+                }
+            ],
+            "lore_tooltips": [
+                {
+                    "english": "On clear nights, a figure can be seen on the surface of the moon. According to pony lore, there was once a princess of the night who became jealous of her sister, who ruled over the day. She fell to corruption, and tried to plunge the whole world into eternal darkness. She failed, and in her defeat, was permanently banished to the moon. I'm not sure if I believe such a wild tale, but it'd be nice if they could just blast the Seraph to the moon too."
+                }
+            ]
+        }
+    ],
+    "relic_effects": [
+        {
+            "id": "MareInTheMoonTrigger",
+            "name": "RelicEffectAddTrigger",
+            "target_mode": "room",
+            "source_team": "monsters",
+            "param_bool": true,
+            "param_subtype": "SubtypesData_Champion_83f21cbe-9d9b-4566-a2c3-ca559ab8ff34",
+            "triggers": [
+                "@MareInTheMoonSlay"
+            ]
+        }
+    ],
+    "sprites": [
+        {
+            "id": "MareInTheMoonIcon",
+            "path": "textures/RelicAssets/MareInTheMoonIcon.png"
+        },
+        {
+            "id": "MareInTheMoonIconSmall",
+            "path": "textures/RelicAssets/MareInTheMoonIconSmall.png"
+        }
+    ],
+    "character_triggers": [
+        {
+            "id": "MareInTheMoonSlay",
+            "trigger": "on_kill",
+            "descriptions": {
+                "english": "Restore 5 pyre health."
+            },
+            "hide_visual_and_ignore_silence": true,
+            "effects": [
+                "@MareInTheMoonHeal"
+            ]
+        }
+    ],
+    "effects": [
+        {
+            "id": "MareInTheMoonHeal",
+            "name": "CardEffectHealTrain",
+            "target_mode": "pyre",
+            "param_int": 5
+        }
+    ]
+}

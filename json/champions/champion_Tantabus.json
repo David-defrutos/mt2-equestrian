@@ -541,6 +541,27 @@
                     "sprite": "@TantabusCardArt"
                 }
             }
+        },
+        {
+            "id": "TantabusCharacterArt",
+            "type": "character_art",
+            "extensions": {
+                "character_art": {
+                    "sprite": "@TantabusCharacterArt",
+                    "transform": {
+                        "position": {
+                            "x": 0,
+                            "y": 0,
+                            "z": 0
+                        },
+                        "scale": {
+                            "x": 0.55,
+                            "y": 0.55,
+                            "z": 1
+                        }
+                    }
+                }
+            }
         }
     ]
 }

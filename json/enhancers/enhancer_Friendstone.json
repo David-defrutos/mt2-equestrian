@@ -1,0 +1,68 @@
+{
+    "$schema": "https://raw.githubusercontent.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/refs/heads/main/schemas/base.json",
+    "relics": [
+        {
+            "id": "Friendstone",
+            "type": "enhancer",
+            "names": {
+                "english": "Friendstone"
+            },
+            "descriptions": {
+                "english": "+5[attack], [health] and <b>Social</b>."
+            },
+            "relic_effects": [
+                "@FriendstoneEnhancer"
+            ],
+            "icon": "@FriendstoneIcon",
+            "extensions": [
+                {
+                    "enhancer": {
+                        "class": "@ClassEquestrian",
+                        "rarity": "common",
+                        "pools": [
+                            "UnitUpgradePoolCommon"
+                        ]
+                    }
+                }
+            ]
+        }
+    ],
+    "relic_effects": [
+        {
+            "id": "FriendstoneEnhancer",
+            "name": "RelicEffectCardUpgrade",
+            "param_card_type": "monster",
+            "param_upgrade": "@FriendstoneUpgrade"
+        }
+    ],
+    "upgrades": [
+        {
+            "id": "FriendstoneUpgrade",
+            "titles": {
+                "english": "Friendstone"
+            },
+            "descriptions": {
+                "english": "+5[attack], +5[health] and <b>Social</b>."
+            },
+            "bonus_damage": 5,
+            "bonus_hp": 5,
+            "room_modifier_upgrades": [
+                "@SocialCapacity"
+            ],
+            "use_upgrade_highlight_tags": true,
+            "icon": "@FriendstoneIcon"
+        }
+    ],
+    "sprites": [
+        {
+            "id": "FriendstoneIcon",
+            "path": "textures/ClanAssets/FriendstoneIcon.png"
+        }
+    ],
+    "atlas_icons": [
+        {
+            "id": "FriendstoneIcon",
+            "path": "textures/ClanAssets/FriendstoneIcon.png"
+        }
+    ]
+}

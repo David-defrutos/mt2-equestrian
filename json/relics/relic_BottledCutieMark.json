@@ -1,0 +1,70 @@
+{
+    "$schema": "https://raw.githubusercontent.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/refs/heads/main/schemas/base.json",
+    "relics": [
+        {
+            "id": "BottledCutieMark",
+            "type": "collectable",
+            "names": {
+                "english": "Bottled Cutie Mark"
+            },
+            "descriptions": {
+                "english": "Pony units gain +5[attack], [health], and <b>Social</b>."
+            },
+            "relic_effects": [
+                "@CutieMarkUnits"
+            ],
+            "icon": "@BottledCutieMarkIcon",
+            "icon_small": "@BottledCutieMarkIconSmall",
+            "extensions": [
+                {
+                    "collectable": {
+                        "class": "@ClassEquestrian",
+                        "pools": [
+                            "MegaRelicPool"
+                        ],
+                        "rarity": "common"
+                    }
+                }
+            ],
+            "lore_tooltips": [
+                {
+                    "english": "For a race with such diverse talents and skills, there exists a group that believes their cutie marks are holding them back and seek to remove them to achieve true equality."
+                }
+            ]
+        }
+    ],
+    "relic_effects": [
+        {
+            "id": "CutieMarkUnits",
+            "name": "RelicEffectAddStartingUpgradeToUnitCards",
+            "param_upgrade": "@CutieMarkUpgrade",
+            "param_subtype": "@Sub_Pony"
+        }
+    ],
+    "sprites": [
+        {
+            "id": "BottledCutieMarkIcon",
+            "path": "textures/RelicAssets/BottledCutieMarkIcon.png"
+        },
+        {
+            "id": "BottledCutieMarkIconSmall",
+            "path": "textures/RelicAssets/BottledCutieMarkIconSmall.png"
+        }
+    ],
+    "upgrades": [
+        {
+            "id": "CutieMarkUpgrade",
+            "titles": {
+                "english": "Bottled Cutie Mark"
+            },
+            "descriptions": {
+                "english": "+5[attack], +5[health] and <b>Social</b>."
+            },
+            "bonus_damage": 5,
+            "bonus_hp": 5,
+            "room_modifier_upgrades": [
+                "@SocialCapacity"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,56 @@
+{
+    "$schema": "https://raw.githubusercontent.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/refs/heads/main/schemas/base.json",
+    "relics": [
+        {
+            "id": "TheSeventhElement",
+            "type": "collectable",
+            "names": {
+                "english": "The Seventh Element"
+            },
+            "descriptions": {
+                "english": "When played, units gain +1[attack] per permanent unit in your deck."
+            },
+            "relic_effects": [
+                "@SeventhElementAttack"
+            ],
+            "icon": "@TheSeventhElementIcon",
+            "icon_small": "@TheSeventhElementIconSmall",
+            "extensions": [
+                {
+                    "collectable": {
+                        "class": "@ClassEquestrian",
+                        "pools": [
+                            "MegaRelicPool"
+                        ],
+                        "rarity": "rare"
+                    }
+                }
+            ],
+            "lore_tooltips": [
+                {
+                    "english": "In Equestrian lore, it's speculated that a lost seventh element of harmony exists which embodies some other virtue like courage, redemption, or honor. This one, however, has to be a joke. It appears to be nothing more than an ordinary rubber chicken."
+                }
+            ]
+        }
+    ],
+    "relic_effects": [
+        {
+            "id": "SeventhElementAttack",
+            "name": "RelicEffectModifyCharacterAttackDamage",
+            "source_team": "monsters",
+            "param_int": 1,
+            "param_bool": true,
+            "param_trigger": "on_spawn"
+        }
+    ],
+    "sprites": [
+        {
+            "id": "TheSeventhElementIcon",
+            "path": "textures/RelicAssets/TheSeventhElementIcon.png"
+        },
+        {
+            "id": "TheSeventhElementIconSmall",
+            "path": "textures/RelicAssets/TheSeventhElementIconSmall.png"
+        }
+    ]
+}

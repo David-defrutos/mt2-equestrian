@@ -1,0 +1,61 @@
+{
+    "$schema": "https://raw.githubusercontent.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/refs/heads/main/schemas/base.json",
+    "relics": [
+        {
+            "id": "ACollectionOfRibbons",
+            "type": "collectable",
+            "names": {
+                "english": "A Collection of Ribbons"
+            },
+            "descriptions": {
+                "english": "Gain 2[ember] and draw 1 card the first time you play a <b>Blight</b> or <b>Scourge</b> card each turn."
+            },
+            "relic_effects": [
+                "@RibbonsEmber",
+                "@RibbonsDraw"
+            ],
+            "icon": "@ACollectionOfRibbonsIcon",
+            "icon_small": "@ACollectionOfRibbonsIconSmall",
+            "extensions": [
+                {
+                    "collectable": {
+                        "class": "@ClassEquestrian",
+                        "pools": [
+                            "MegaRelicPool"
+                        ],
+                        "rarity": "common"
+                    }
+                }
+            ],
+            "lore_tooltips": [
+                {
+                    "english": "These were earned at various rodeo events, from ponies competing in pony games. Whoever gathered them is quite the talented individual, but there is just one thing that's important to note: none of them are blue."
+                }
+            ]
+        }
+    ],
+    "relic_effects": [
+        {
+            "id": "RibbonsEmber",
+            "name": "RelicEffectEnergyOnCardPlay",
+            "param_int": 2,
+            "param_card_type": "blight"
+        },
+        {
+            "id": "RibbonsDraw",
+            "name": "RelicEffectCardDrawOnCardPlay",
+            "param_int": 1,
+            "param_card_type": "blight"
+        }
+    ],
+    "sprites": [
+        {
+            "id": "ACollectionOfRibbonsIcon",
+            "path": "textures/RelicAssets/ACollectionOfRibbonsIcon.png"
+        },
+        {
+            "id": "ACollectionOfRibbonsIconSmall",
+            "path": "textures/RelicAssets/ACollectionOfRibbonsIconSmall.png"
+        }
+    ]
+}

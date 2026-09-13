@@ -46,6 +46,9 @@
             "subtypes": [
                 "@Sub_Pony",
                 "@Sub_Social"
+            ],
+            "room_modifiers": [
+                "@SocialCapacity"
             ]
         }
     ],
