@@ -1,0 +1,13 @@
+{
+  "namespace": "David",
+  "name": "Equestrian_David",
+  "description": "Adds the Equestrian clan to Monster Train 2",
+  "version_number": "0.1.0",
+  "dependencies": [
+    "BepInEx-BepInExPack-5.4.2100",
+    "MT2-Trainworks_Reloaded-0.6.1",
+    "Conductor-Conductor-0.3.0"
+  ],
+  "website_url": "https://github.com/David-defrutos/mt2-equestrian",
+  "FullName": "David-Equestrian_David"
+}

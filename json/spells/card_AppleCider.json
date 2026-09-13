@@ -1,0 +1,49 @@
+{
+    "$schema": "https://raw.githubusercontent.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/refs/heads/main/schemas/base.json",
+    "cards": [
+        {
+            "id": "AppleCider",
+            "names": { "english": "Apple Cider" },
+            "descriptions": {
+                "english": "Heal all friendly units in this room [effect0.power] health and apply [effect1.status0.power] [regen]."
+            },
+            "lore_tooltips": [
+                { "english": "One mug each. There is never one mug each." }
+            ],
+            "rarity": "common",
+            "class": "@ClassEquestrian",
+            "card_art": "@AppleCiderArt",
+            "cost": 1,
+            "targets_room": true,
+            "targetless": true,
+            "pools": [ "MegaPool" ],
+            "effects": [ "@AppleCiderHeal", "@AppleCiderRegen" ]
+        }
+    ],
+    "effects": [
+        {
+            "id": "AppleCiderHeal",
+            "name": "CardEffectHeal",
+            "target_mode": "room",
+            "target_team": "monsters",
+            "param_int": 5
+        },
+        {
+            "id": "AppleCiderRegen",
+            "name": "CardEffectAddStatusEffect",
+            "target_mode": "room",
+            "target_team": "monsters",
+            "param_status_effects": [ { "status": "regen", "count": 2 } ]
+        }
+    ],
+    "sprites": [
+        { "id": "AppleCiderArt", "path": "textures/AppleCiderArt.png" }
+    ],
+    "game_objects": [
+        {
+            "id": "AppleCiderArt",
+            "type": "card_art",
+            "extensions": { "card_art": { "sprite": "@AppleCiderArt" } }
+        }
+    ]
+}

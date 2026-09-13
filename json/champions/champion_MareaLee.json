@@ -1,0 +1,188 @@
+{
+    "$schema": "https://raw.githubusercontent.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/refs/heads/main/schemas/base.json",
+    "cards": [
+        {
+            "id": "SpawnMareaLee",
+            "names": {
+                "english": "Marea Lee"
+            },
+            "card_art": "@MareaLeeCardArt",
+            "cost": 1,
+            "card_type": "monster",
+            "rarity": "champion",
+            "class": "@ClassEquestrian",
+            "targets_room": true,
+            "effects": [
+                "@SpawnMareaLee"
+            ],
+            "lore_tooltips": [
+                {
+                    "english": "She came to Hell for the friends. The pyre was a bonus."
+                }
+            ]
+        }
+    ],
+    "characters": [
+        {
+            "id": "MareaLee",
+            "size": 1,
+            "attack_damage": 0,
+            "health": 5,
+            "names": {
+                "english": "Marea Lee"
+            },
+            "character_art": "@MareaLeeCharacterArt",
+            "subtypes": [
+                "@Sub_Pony",
+                "@Sub_Social"
+            ]
+        }
+    ],
+    "effects": [
+        {
+            "id": "SpawnMareaLee",
+            "name": "CardEffectSpawnMonster",
+            "target_mode": "room",
+            "param_character": "@MareaLee"
+        }
+    ],
+    "upgrades": [
+        {
+            "id": "upg_Teacher1",
+            "titles": {
+                "english": "Teacher I"
+            },
+            "descriptions": {
+                "english": "PLACEHOLDER: senda Teacher, escalon 1. Pendiente de transcribir del mod MT1."
+            },
+            "bonus_damage": 5,
+            "bonus_hp": 10
+        },
+        {
+            "id": "upg_Teacher2",
+            "titles": {
+                "english": "Teacher II"
+            },
+            "descriptions": {
+                "english": "PLACEHOLDER: senda Teacher, escalon 2. Pendiente de transcribir del mod MT1."
+            },
+            "bonus_damage": 10,
+            "bonus_hp": 20
+        },
+        {
+            "id": "upg_Teacher3",
+            "titles": {
+                "english": "Teacher III"
+            },
+            "descriptions": {
+                "english": "PLACEHOLDER: senda Teacher, escalon 3. Pendiente de transcribir del mod MT1."
+            },
+            "bonus_damage": 20,
+            "bonus_hp": 30
+        },
+        {
+            "id": "upg_Party1",
+            "titles": {
+                "english": "Party I"
+            },
+            "descriptions": {
+                "english": "PLACEHOLDER: senda Party, escalon 1. Pendiente de transcribir del mod MT1."
+            },
+            "bonus_damage": 5,
+            "bonus_hp": 10
+        },
+        {
+            "id": "upg_Party2",
+            "titles": {
+                "english": "Party II"
+            },
+            "descriptions": {
+                "english": "PLACEHOLDER: senda Party, escalon 2. Pendiente de transcribir del mod MT1."
+            },
+            "bonus_damage": 10,
+            "bonus_hp": 20
+        },
+        {
+            "id": "upg_Party3",
+            "titles": {
+                "english": "Party III"
+            },
+            "descriptions": {
+                "english": "PLACEHOLDER: senda Party, escalon 3. Pendiente de transcribir del mod MT1."
+            },
+            "bonus_damage": 20,
+            "bonus_hp": 30
+        },
+        {
+            "id": "upg_Herd1",
+            "titles": {
+                "english": "Herd I"
+            },
+            "descriptions": {
+                "english": "PLACEHOLDER: senda Herd, escalon 1. Pendiente de transcribir del mod MT1."
+            },
+            "bonus_damage": 5,
+            "bonus_hp": 10
+        },
+        {
+            "id": "upg_Herd2",
+            "titles": {
+                "english": "Herd II"
+            },
+            "descriptions": {
+                "english": "PLACEHOLDER: senda Herd, escalon 2. Pendiente de transcribir del mod MT1."
+            },
+            "bonus_damage": 10,
+            "bonus_hp": 20
+        },
+        {
+            "id": "upg_Herd3",
+            "titles": {
+                "english": "Herd III"
+            },
+            "descriptions": {
+                "english": "PLACEHOLDER: senda Herd, escalon 3. Pendiente de transcribir del mod MT1."
+            },
+            "bonus_damage": 20,
+            "bonus_hp": 30
+        }
+    ],
+    "sprites": [
+        {
+            "id": "MareaLeeCardArt",
+            "path": "textures/ClanAssets/icon_MareaLee.png"
+        }
+    ],
+    "game_objects": [
+        {
+            "id": "MareaLeeCardArt",
+            "type": "card_art",
+            "extensions": {
+                "card_art": {
+                    "sprite": "@MareaLeeCardArt"
+                }
+            }
+        },
+        {
+            "id": "MareaLeeCharacterArt",
+            "type": "character_art",
+            "extensions": {
+                "character_art": {
+                    "sprite": "@MareaLeeCharacterArt",
+                    "transform": {
+                        "position": {
+                            "x": 0,
+                            "y": 0.8,
+                            "z": 0
+                        },
+                        "scale": {
+                            "x": 0.66,
+                            "y": 0.66,
+                            "z": 1
+                        }
+                    }
+                }
+            }
+        }
+    ]
+}

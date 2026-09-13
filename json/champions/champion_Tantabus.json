@@ -1,0 +1,187 @@
+{
+    "$schema": "https://raw.githubusercontent.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/refs/heads/main/schemas/base.json",
+    "cards": [
+        {
+            "id": "SpawnTantabus",
+            "names": {
+                "english": "Tantabus"
+            },
+            "card_art": "@TantabusCardArt",
+            "cost": 1,
+            "card_type": "monster",
+            "rarity": "champion",
+            "class": "@ClassEquestrian",
+            "targets_room": true,
+            "effects": [
+                "@SpawnTantabus"
+            ],
+            "lore_tooltips": [
+                {
+                    "english": "A nightmare that outlived the dreamer."
+                }
+            ]
+        }
+    ],
+    "characters": [
+        {
+            "id": "Tantabus",
+            "size": 2,
+            "attack_damage": 20,
+            "health": 10,
+            "names": {
+                "english": "Tantabus"
+            },
+            "character_art": "@TantabusCharacterArt",
+            "subtypes": [
+                "@Sub_Pony"
+            ]
+        }
+    ],
+    "effects": [
+        {
+            "id": "SpawnTantabus",
+            "name": "CardEffectSpawnMonster",
+            "target_mode": "room",
+            "param_character": "@Tantabus"
+        }
+    ],
+    "upgrades": [
+        {
+            "id": "upg_Nightmare1",
+            "titles": {
+                "english": "Nightmare I"
+            },
+            "descriptions": {
+                "english": "PLACEHOLDER: senda Nightmare, escalon 1. Pendiente de transcribir del mod MT1."
+            },
+            "bonus_damage": 5,
+            "bonus_hp": 5
+        },
+        {
+            "id": "upg_Nightmare2",
+            "titles": {
+                "english": "Nightmare II"
+            },
+            "descriptions": {
+                "english": "PLACEHOLDER: senda Nightmare, escalon 2. Pendiente de transcribir del mod MT1."
+            },
+            "bonus_damage": 10,
+            "bonus_hp": 10
+        },
+        {
+            "id": "upg_Nightmare3",
+            "titles": {
+                "english": "Nightmare III"
+            },
+            "descriptions": {
+                "english": "PLACEHOLDER: senda Nightmare, escalon 3. Pendiente de transcribir del mod MT1."
+            },
+            "bonus_damage": 20,
+            "bonus_hp": 15
+        },
+        {
+            "id": "upg_Dream1",
+            "titles": {
+                "english": "Dream I"
+            },
+            "descriptions": {
+                "english": "PLACEHOLDER: senda Dream, escalon 1. Pendiente de transcribir del mod MT1."
+            },
+            "bonus_damage": 5,
+            "bonus_hp": 5
+        },
+        {
+            "id": "upg_Dream2",
+            "titles": {
+                "english": "Dream II"
+            },
+            "descriptions": {
+                "english": "PLACEHOLDER: senda Dream, escalon 2. Pendiente de transcribir del mod MT1."
+            },
+            "bonus_damage": 10,
+            "bonus_hp": 10
+        },
+        {
+            "id": "upg_Dream3",
+            "titles": {
+                "english": "Dream III"
+            },
+            "descriptions": {
+                "english": "PLACEHOLDER: senda Dream, escalon 3. Pendiente de transcribir del mod MT1."
+            },
+            "bonus_damage": 20,
+            "bonus_hp": 15
+        },
+        {
+            "id": "upg_Shadow1",
+            "titles": {
+                "english": "Shadow I"
+            },
+            "descriptions": {
+                "english": "PLACEHOLDER: senda Shadow, escalon 1. Pendiente de transcribir del mod MT1."
+            },
+            "bonus_damage": 5,
+            "bonus_hp": 5
+        },
+        {
+            "id": "upg_Shadow2",
+            "titles": {
+                "english": "Shadow II"
+            },
+            "descriptions": {
+                "english": "PLACEHOLDER: senda Shadow, escalon 2. Pendiente de transcribir del mod MT1."
+            },
+            "bonus_damage": 10,
+            "bonus_hp": 10
+        },
+        {
+            "id": "upg_Shadow3",
+            "titles": {
+                "english": "Shadow III"
+            },
+            "descriptions": {
+                "english": "PLACEHOLDER: senda Shadow, escalon 3. Pendiente de transcribir del mod MT1."
+            },
+            "bonus_damage": 20,
+            "bonus_hp": 15
+        }
+    ],
+    "sprites": [
+        {
+            "id": "TantabusCardArt",
+            "path": "textures/ClanAssets/icon_Tantabus.png"
+        }
+    ],
+    "game_objects": [
+        {
+            "id": "TantabusCardArt",
+            "type": "card_art",
+            "extensions": {
+                "card_art": {
+                    "sprite": "@TantabusCardArt"
+                }
+            }
+        },
+        {
+            "id": "TantabusCharacterArt",
+            "type": "character_art",
+            "extensions": {
+                "character_art": {
+                    "sprite": "@TantabusCharacterArt",
+                    "transform": {
+                        "position": {
+                            "x": 0,
+                            "y": 0.8,
+                            "z": 0
+                        },
+                        "scale": {
+                            "x": 0.52,
+                            "y": 0.52,
+                            "z": 1
+                        }
+                    }
+                }
+            }
+        }
+    ]
+}
