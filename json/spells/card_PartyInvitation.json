@@ -1,0 +1,85 @@
+{
+    "$schema": "https://raw.githubusercontent.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/refs/heads/main/schemas/base.json",
+    "cards": [
+        {
+            "id": "PartyInvitation",
+            "names": {
+                "english": "Party Invitation"
+            },
+            "descriptions": {
+                "english": "Draw a unit from your deck and apply +5[attack], [health], and <b>Social</b>."
+            },
+            "rarity": "common",
+            "class": "@ClassEquestrian",
+            "card_art": "@PartyInvitationArt",
+            "cost": 0,
+            "targets_room": true,
+            "targetless": true,
+            "pools": [
+                "MegaPool"
+            ],
+            "effects": [
+                "@PartyInvitationUpgrade",
+                "@PartyInvitationDraw"
+            ],
+            "traits": [
+                "@PartyInvConsume",
+                "@PartyInvTargets"
+            ],
+            "lore_tooltips": [
+                {
+                    "english": "I'm flabbergasted at just how much effort these ponies put into their leisure time. Each party is lovingly crafted and themed to whatever whims take their fancy."
+                }
+            ]
+        }
+    ],
+    "effects": [
+        {
+            "id": "PartyInvitationUpgrade",
+            "name": "CardEffectAddTempCardUpgradeToNextDrawnCard",
+            "target_mode": "self",
+            "param_upgrade": "@PartyInvitationUp"
+        },
+        {
+            "id": "PartyInvitationDraw",
+            "name": "CardEffectDrawType",
+            "target_mode": "draw_pile",
+            "target_card_type": "monster",
+            "param_int": 1
+        }
+    ],
+    "sprites": [
+        {
+            "id": "PartyInvitationArt",
+            "path": "textures/PartyInvitationArt.png"
+        }
+    ],
+    "game_objects": [
+        {
+            "id": "PartyInvitationArt",
+            "type": "card_art",
+            "extensions": {
+                "card_art": {
+                    "sprite": "@PartyInvitationArt"
+                }
+            }
+        }
+    ],
+    "traits": [
+        {
+            "id": "PartyInvConsume",
+            "name": "CardTraitExhaustState"
+        },
+        {
+            "id": "PartyInvTargets",
+            "name": "CardTraitShowCardTargets"
+        }
+    ],
+    "upgrades": [
+        {
+            "id": "PartyInvitationUp",
+            "bonus_damage": 5,
+            "bonus_hp": 5
+        }
+    ]
+}

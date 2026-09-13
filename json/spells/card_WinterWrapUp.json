@@ -1,0 +1,97 @@
+{
+    "$schema": "https://raw.githubusercontent.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/refs/heads/main/schemas/base.json",
+    "cards": [
+        {
+            "id": "WinterWrapUp",
+            "names": {
+                "english": "Winter Wrap-Up"
+            },
+            "descriptions": {
+                "english": "Deal <nobr>{[trait0.power]}[x] damage</nobr> and apply <nobr>{[trait1.statusmultiplier]}[x] <b>Frostbite</b></nobr> to all enemy units."
+            },
+            "rarity": "uncommon",
+            "class": "@ClassEquestrian",
+            "card_art": "@WinterWrapUpArt",
+            "cost": 0,
+            "targets_room": true,
+            "targetless": true,
+            "pools": [
+                "MegaPool"
+            ],
+            "effects": [
+                "@WinterDamage",
+                "@WinterFrostbite"
+            ],
+            "traits": [
+                "@WinterScalingDamage",
+                "@WinterScalingFrost"
+            ],
+            "lore_tooltips": [
+                {
+                    "english": "Ponies change their seasons manually. Going from winter to spring, they make a huge festival of it that they call 'Winter Wrap-Up.' Fields are cleared of snow, ice broken up and removed from lakes, hibernating animals woken from their slumber, and even the weather is changed as the pegasai break apart the snowy clouds and usher in sunny skies. Similar attempts to defrost Hell have failed, though. Defeating the Seraph and rekindling the pyre is our only recourse."
+                }
+            ]
+        }
+    ],
+    "effects": [
+        {
+            "id": "WinterDamage",
+            "name": "CardEffectDamage",
+            "target_mode": "room",
+            "target_team": "heroes",
+            "param_int": 0
+        },
+        {
+            "id": "WinterFrostbite",
+            "name": "CardEffectAddStatusEffect",
+            "target_mode": "room",
+            "target_team": "heroes",
+            "param_status_effects": [
+                {
+                    "status": "poison",
+                    "count": 0
+                }
+            ]
+        }
+    ],
+    "sprites": [
+        {
+            "id": "WinterWrapUpArt",
+            "path": "textures/WinterWrapUpArt.png"
+        }
+    ],
+    "game_objects": [
+        {
+            "id": "WinterWrapUpArt",
+            "type": "card_art",
+            "extensions": {
+                "card_art": {
+                    "sprite": "@WinterWrapUpArt"
+                }
+            }
+        }
+    ],
+    "traits": [
+        {
+            "id": "WinterScalingDamage",
+            "name": "CardTraitScalingAddDamage",
+            "param_tracked_value": "played_cost",
+            "param_entry_duration": "this_battle",
+            "param_int": 1
+        },
+        {
+            "id": "WinterScalingFrost",
+            "name": "CardTraitScalingAddStatusEffect",
+            "param_tracked_value": "played_cost",
+            "param_entry_duration": "this_battle",
+            "param_int": 2,
+            "param_team": "heroes",
+            "param_status_effects": [
+                {
+                    "status": "poison",
+                    "count": 0
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,73 @@
+{
+    "$schema": "https://raw.githubusercontent.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/refs/heads/main/schemas/base.json",
+    "cards": [
+        {
+            "id": "TheElementsOfHarmony",
+            "names": {
+                "english": "The Elements of Harmony"
+            },
+            "descriptions": {
+                "english": "Apply <b>Social</b> to all unplayed units in your deck."
+            },
+            "rarity": "rare",
+            "class": "@ClassEquestrian",
+            "card_art": "@TheElementsOfHarmonyArt",
+            "cost": 1,
+            "targets_room": false,
+            "targetless": true,
+            "pools": [
+                "MegaPool"
+            ],
+            "effects": [
+                "@HarmonyBuff"
+            ],
+            "traits": [
+                "@HarmonyConsume"
+            ],
+            "lore_tooltips": [
+                {
+                    "english": "Equestrian lore speaks of six shining gems that each embody one aspect of friendship. They are the elements of honesty, kindness, laughter, generosity, loyalty, and magic. It's unclear what happened to them, but if a group of ponies who represent these virtues work together, they can accomplish amazing things."
+                }
+            ]
+        }
+    ],
+    "effects": [
+        {
+            "id": "HarmonyBuff",
+            "name": "CardEffectAddTempCardUpgradeToCardsInHand",
+            "target_mode": "hand",
+            "target_card_type": "monster",
+            "param_upgrade": "@HarmonyUpgrade"
+        }
+    ],
+    "sprites": [
+        {
+            "id": "TheElementsOfHarmonyArt",
+            "path": "textures/TheElementsOfHarmonyArt.png"
+        }
+    ],
+    "game_objects": [
+        {
+            "id": "TheElementsOfHarmonyArt",
+            "type": "card_art",
+            "extensions": {
+                "card_art": {
+                    "sprite": "@TheElementsOfHarmonyArt"
+                }
+            }
+        }
+    ],
+    "traits": [
+        {
+            "id": "HarmonyConsume",
+            "name": "CardTraitExhaustState"
+        }
+    ],
+    "upgrades": [
+        {
+            "id": "HarmonyUpgrade",
+            "bonus_damage": 5,
+            "bonus_hp": 5
+        }
+    ]
+}

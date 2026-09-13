@@ -1,0 +1,113 @@
+{
+    "$schema": "https://raw.githubusercontent.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/refs/heads/main/schemas/base.json",
+    "cards": [
+        {
+            "id": "RainbowPower",
+            "names": {
+                "english": "Rainbow Power"
+            },
+            "descriptions": {
+                "english": "Deal {[effect0.power]} damage to all enemy units six times."
+            },
+            "rarity": "rare",
+            "class": "@ClassEquestrian",
+            "card_art": "@RainbowPowerArt",
+            "cost": 3,
+            "targets_room": true,
+            "targetless": true,
+            "pools": [
+                "MegaPool"
+            ],
+            "effects": [
+                "@RainbowDamage1",
+                "@RainbowDamage2",
+                "@RainbowDamage3",
+                "@RainbowDamage4",
+                "@RainbowDamage5",
+                "@RainbowDamage6"
+            ],
+            "traits": [
+                "@RainbowMagic",
+                "@RainbowSelfPurge"
+            ],
+            "unlock_level": 9,
+            "lore_tooltips": [
+                {
+                    "english": "Never underestimate ponies who understand the magic of friendship. It's very difficult for them to unleash, but once they do, even gods will tremble at their power."
+                }
+            ]
+        }
+    ],
+    "effects": [
+        {
+            "id": "RainbowDamage1",
+            "name": "CardEffectDamage",
+            "target_mode": "room",
+            "target_team": "heroes",
+            "param_int": 6
+        },
+        {
+            "id": "RainbowDamage2",
+            "name": "CardEffectDamage",
+            "target_mode": "room",
+            "target_team": "heroes",
+            "param_int": 6
+        },
+        {
+            "id": "RainbowDamage3",
+            "name": "CardEffectDamage",
+            "target_mode": "room",
+            "target_team": "heroes",
+            "param_int": 6
+        },
+        {
+            "id": "RainbowDamage4",
+            "name": "CardEffectDamage",
+            "target_mode": "room",
+            "target_team": "heroes",
+            "param_int": 6
+        },
+        {
+            "id": "RainbowDamage5",
+            "name": "CardEffectDamage",
+            "target_mode": "room",
+            "target_team": "heroes",
+            "param_int": 6
+        },
+        {
+            "id": "RainbowDamage6",
+            "name": "CardEffectDamage",
+            "target_mode": "room",
+            "target_team": "heroes",
+            "param_int": 6
+        }
+    ],
+    "sprites": [
+        {
+            "id": "RainbowPowerArt",
+            "path": "textures/RainbowPowerArt.png"
+        }
+    ],
+    "game_objects": [
+        {
+            "id": "RainbowPowerArt",
+            "type": "card_art",
+            "extensions": {
+                "card_art": {
+                    "sprite": "@RainbowPowerArt"
+                }
+            }
+        }
+    ],
+    "traits": [
+        {
+            "id": "RainbowMagic",
+            "name": "CardTraitStrongerMagicPower",
+            "param_int": 5
+        },
+        {
+            "id": "RainbowSelfPurge",
+            "name": "CardTraitSelfPurge"
+        }
+    ]
+}

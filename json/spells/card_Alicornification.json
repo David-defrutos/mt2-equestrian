@@ -1,0 +1,92 @@
+{
+    "$schema": "https://raw.githubusercontent.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/refs/heads/main/schemas/base.json",
+    "cards": [
+        {
+            "id": "Alicornification",
+            "names": {
+                "english": "Alicornification"
+            },
+            "descriptions": {
+                "english": "Apply <b>Quick</b> and <b>Trample</b> to a target friendly unit, heal to full and double current [attack] and [health]."
+            },
+            "rarity": "rare",
+            "class": "@ClassEquestrian",
+            "card_art": "@AlicornificationArt",
+            "cost": 5,
+            "targets_room": true,
+            "targetless": false,
+            "pools": [
+                "MegaPool"
+            ],
+            "effects": [
+                "@AlicornHeal",
+                "@AlicornBuff"
+            ],
+            "traits": [
+                "@AlicornConsume"
+            ],
+            "unlock_level": 10,
+            "lore_tooltips": [
+                {
+                    "english": "Ponies naturally hail from one of three tribes: the flying pegasai, the magical unicorns, or the industrious earth ponies. Alicorns combine the strengths of all three and are immensely powerful. Only a few have ever existed in all of Equestrian history."
+                }
+            ]
+        }
+    ],
+    "effects": [
+        {
+            "id": "AlicornHeal",
+            "name": "CardEffectHeal",
+            "target_mode": "drop_target_character",
+            "target_team": "monsters",
+            "param_int": 999
+        },
+        {
+            "id": "AlicornBuff",
+            "name": "CardEffectAddTempCardUpgradeToUnits",
+            "target_mode": "last_targeted_characters",
+            "target_team": "monsters",
+            "param_upgrade": "@AlicornUpgrade"
+        }
+    ],
+    "sprites": [
+        {
+            "id": "AlicornificationArt",
+            "path": "textures/AlicornificationArt.png"
+        }
+    ],
+    "game_objects": [
+        {
+            "id": "AlicornificationArt",
+            "type": "card_art",
+            "extensions": {
+                "card_art": {
+                    "sprite": "@AlicornificationArt"
+                }
+            }
+        }
+    ],
+    "traits": [
+        {
+            "id": "AlicornConsume",
+            "name": "CardTraitExhaustState"
+        }
+    ],
+    "upgrades": [
+        {
+            "id": "AlicornUpgrade",
+            "bonus_damage": 25,
+            "bonus_hp": 25,
+            "status_effect_upgrades": [
+                {
+                    "status": "ambush",
+                    "count": 1
+                },
+                {
+                    "status": "trample",
+                    "count": 1
+                }
+            ]
+        }
+    ]
+}

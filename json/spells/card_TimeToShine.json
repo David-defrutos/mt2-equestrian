@@ -1,0 +1,71 @@
+{
+    "$schema": "https://raw.githubusercontent.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/refs/heads/main/schemas/base.json",
+    "cards": [
+        {
+            "id": "TimeToShine",
+            "names": {
+                "english": "Time To Shine"
+            },
+            "descriptions": {
+                "english": "Pull target unit to the front and apply <nobr>+10[attack]</nobr>."
+            },
+            "rarity": "common",
+            "class": "@ClassEquestrian",
+            "card_art": "@TimeToShineArt",
+            "cost": 1,
+            "targets_room": true,
+            "targetless": false,
+            "pools": [
+                "MegaPool"
+            ],
+            "effects": [
+                "@TimeToShineBuff",
+                "@TimeToShinePull"
+            ],
+            "lore_tooltips": [
+                {
+                    "english": "They say that every pony gets their fifteen minutes of fame. Best be careful, though, for fame can destroy those who aren't prepared for it."
+                }
+            ]
+        }
+    ],
+    "effects": [
+        {
+            "id": "TimeToShineBuff",
+            "name": "CardEffectAddTempCardUpgradeToUnits",
+            "target_mode": "drop_target_character",
+            "target_team": "both",
+            "param_upgrade": "@TimeToShineUp"
+        },
+        {
+            "id": "TimeToShinePull",
+            "name": "CardEffectFloorRearrange",
+            "target_mode": "drop_target_character",
+            "target_team": "both",
+            "param_int": 0
+        }
+    ],
+    "sprites": [
+        {
+            "id": "TimeToShineArt",
+            "path": "textures/TimeToShineArt.png"
+        }
+    ],
+    "game_objects": [
+        {
+            "id": "TimeToShineArt",
+            "type": "card_art",
+            "extensions": {
+                "card_art": {
+                    "sprite": "@TimeToShineArt"
+                }
+            }
+        }
+    ],
+    "upgrades": [
+        {
+            "id": "TimeToShineUp",
+            "bonus_damage": 10
+        }
+    ]
+}

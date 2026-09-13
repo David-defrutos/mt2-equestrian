@@ -1,0 +1,80 @@
+{
+    "$schema": "https://raw.githubusercontent.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/refs/heads/main/schemas/base.json",
+    "cards": [
+        {
+            "id": "PartyCannon",
+            "names": {
+                "english": "Party Cannon"
+            },
+            "descriptions": {
+                "english": "Deal {[effect0.power]} damage to the front enemy unit and apply <nobr><b>Dazed {[effect1.status0.power]}</b>."
+            },
+            "rarity": "uncommon",
+            "class": "@ClassEquestrian",
+            "card_art": "@PartyCannonArt",
+            "cost": 3,
+            "targets_room": true,
+            "targetless": true,
+            "pools": [
+                "MegaPool"
+            ],
+            "effects": [
+                "@PartyCannonDamage",
+                "@PartyCannonDazed"
+            ],
+            "traits": [
+                "@PartyCannonMagic"
+            ],
+            "lore_tooltips": [
+                {
+                    "english": "The MK II Party Cannon is guaranteed to make any room festive in five seconds or less, filling it with streamers and confetti in a single blast. It's also effective as a weapon when used at point plank."
+                }
+            ]
+        }
+    ],
+    "effects": [
+        {
+            "id": "PartyCannonDamage",
+            "name": "CardEffectDamage",
+            "target_mode": "front_in_room",
+            "target_team": "heroes",
+            "param_int": 60
+        },
+        {
+            "id": "PartyCannonDazed",
+            "name": "CardEffectAddStatusEffect",
+            "target_mode": "last_targeted_characters",
+            "target_team": "heroes",
+            "param_status_effects": [
+                {
+                    "status": "dazed",
+                    "count": 3
+                }
+            ]
+        }
+    ],
+    "sprites": [
+        {
+            "id": "PartyCannonArt",
+            "path": "textures/PartyCannonArt.png"
+        }
+    ],
+    "game_objects": [
+        {
+            "id": "PartyCannonArt",
+            "type": "card_art",
+            "extensions": {
+                "card_art": {
+                    "sprite": "@PartyCannonArt"
+                }
+            }
+        }
+    ],
+    "traits": [
+        {
+            "id": "PartyCannonMagic",
+            "name": "CardTraitStrongerMagicPower",
+            "param_int": 5
+        }
+    ]
+}

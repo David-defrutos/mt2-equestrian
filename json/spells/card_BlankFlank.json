@@ -1,0 +1,70 @@
+{
+    "$schema": "https://raw.githubusercontent.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/refs/heads/main/schemas/base.json",
+    "cards": [
+        {
+            "id": "BlankFlank",
+            "names": {
+                "english": "Blank Flank"
+            },
+            "descriptions": {
+                "english": "Remove all buffs, debuffs, and <b>Armor</b> from a target unit."
+            },
+            "rarity": "uncommon",
+            "class": "@ClassEquestrian",
+            "card_art": "@BlankFlankArt",
+            "cost": 0,
+            "targets_room": true,
+            "targetless": false,
+            "pools": [
+                "MegaPool"
+            ],
+            "effects": [
+                "@BlankFlankArmor",
+                "@BlankFlankAll"
+            ],
+            "lore_tooltips": [
+                {
+                    "english": "The symbols seen on the hind legs of ponies are called 'cutie marks,' and they appear when a foal matures enough to come of age. Little fillies and colts sometimes taunt the younger children who haven't earned one yet by calling them blank flanks."
+                }
+            ]
+        }
+    ],
+    "effects": [
+        {
+            "id": "BlankFlankArmor",
+            "name": "CardEffectRemoveStatusEffect",
+            "target_mode": "drop_target_character",
+            "target_team": "both",
+            "param_status_effects": [
+                {
+                    "status": "armor",
+                    "count": 9999
+                }
+            ]
+        },
+        {
+            "id": "BlankFlankAll",
+            "name": "CardEffectRemoveAllStatusEffects",
+            "target_mode": "last_targeted_characters",
+            "target_team": "both",
+            "param_int": 1
+        }
+    ],
+    "sprites": [
+        {
+            "id": "BlankFlankArt",
+            "path": "textures/BlankFlankArt.png"
+        }
+    ],
+    "game_objects": [
+        {
+            "id": "BlankFlankArt",
+            "type": "card_art",
+            "extensions": {
+                "card_art": {
+                    "sprite": "@BlankFlankArt"
+                }
+            }
+        }
+    ]
+}

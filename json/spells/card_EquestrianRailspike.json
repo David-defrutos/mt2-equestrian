@@ -1,0 +1,91 @@
+{
+    "$schema": "https://raw.githubusercontent.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/refs/heads/main/schemas/base.json",
+    "cards": [
+        {
+            "id": "EquestrianRailspike",
+            "names": {
+                "english": "Equestrian Rail Spike"
+            },
+            "descriptions": {
+                "english": "Add <nobr>{[trait0.power]}[x][size]</nobr> to a target floor and gain <nobr>{[trait1.power]}[x][ember] next turn."
+            },
+            "rarity": "rare",
+            "class": "@ClassEquestrian",
+            "card_art": "@EquestrianRailspikeArt",
+            "cost": 0,
+            "targets_room": true,
+            "targetless": true,
+            "pools": [
+                "MegaPool"
+            ],
+            "effects": [
+                "@RailspikeCapacity",
+                "@RailspikeEnergy"
+            ],
+            "traits": [
+                "@RailspikeCapacityScaling",
+                "@RailspikeEnergyScaling",
+                "@RailspikeConsume"
+            ],
+            "lore_tooltips": [
+                {
+                    "english": "In order to bring the Boneshaker to Equestrian lands, I had to forge a new path off the established rails. For this, I made extensive use of Heph's automatic spikedrivers and colonies. The ponies have tinkered with them and further improved the process to make it very efficient.<br><br>It's a shame the covenant was broken, because Equestria would have been a valuable addition to the pact. To them, the thought of denizens of heaven and hell working together in harmony is like a utopian dream come true. Even now, some of them still hold onto hope that the covenant can be restored."
+                }
+            ]
+        }
+    ],
+    "effects": [
+        {
+            "id": "RailspikeCapacity",
+            "name": "CardEffectAdjustRoomCapacity",
+            "target_mode": "room",
+            "target_team": "monsters",
+            "param_int": 0
+        },
+        {
+            "id": "RailspikeEnergy",
+            "name": "CardEffectGainEnergyNextTurn",
+            "target_mode": "room",
+            "target_team": "monsters",
+            "param_int": 0
+        }
+    ],
+    "sprites": [
+        {
+            "id": "EquestrianRailspikeArt",
+            "path": "textures/EquestrianRailspikeArt.png"
+        }
+    ],
+    "game_objects": [
+        {
+            "id": "EquestrianRailspikeArt",
+            "type": "card_art",
+            "extensions": {
+                "card_art": {
+                    "sprite": "@EquestrianRailspikeArt"
+                }
+            }
+        }
+    ],
+    "traits": [
+        {
+            "id": "RailspikeCapacityScaling",
+            "name": "CardTraitScalingAdjustCapacity",
+            "param_tracked_value": "played_cost",
+            "param_entry_duration": "this_battle",
+            "param_int": 1,
+            "param_team": "monsters"
+        },
+        {
+            "id": "RailspikeEnergyScaling",
+            "name": "CardTraitScalingAddEnergy",
+            "param_tracked_value": "played_cost",
+            "param_entry_duration": "this_battle",
+            "param_int": 2
+        },
+        {
+            "id": "RailspikeConsume",
+            "name": "CardTraitExhaustState"
+        }
+    ]
+}

@@ -1,0 +1,74 @@
+{
+    "$schema": "https://raw.githubusercontent.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/refs/heads/main/schemas/base.json",
+    "cards": [
+        {
+            "id": "SecondChance",
+            "names": {
+                "english": "Second Chance"
+            },
+            "descriptions": {
+                "english": "Return a defeated unit to your hand and apply +5[attack], [health], and <b>Social</b>."
+            },
+            "rarity": "rare",
+            "class": "@ClassEquestrian",
+            "card_art": "@SecondChanceArt",
+            "cost": 2,
+            "targets_room": true,
+            "targetless": true,
+            "pools": [
+                "MegaPool"
+            ],
+            "effects": [
+                "@SecondChanceReturn"
+            ],
+            "traits": [
+                "@SecondChanceTargets"
+            ],
+            "lore_tooltips": [
+                {
+                    "english": "I'll say one thing for these little ponies. They never give up. Not on themselves, and not on others, either. If only the forces of Heaven were half as forgiving. Then the war may never have happened."
+                }
+            ]
+        }
+    ],
+    "effects": [
+        {
+            "id": "SecondChanceReturn",
+            "name": "CardEffectRecursion",
+            "target_mode": "exhaust",
+            "target_team": "none",
+            "param_int": 1,
+            "param_upgrade": "@SecondChanceUp"
+        }
+    ],
+    "sprites": [
+        {
+            "id": "SecondChanceArt",
+            "path": "textures/SecondChanceArt.png"
+        }
+    ],
+    "game_objects": [
+        {
+            "id": "SecondChanceArt",
+            "type": "card_art",
+            "extensions": {
+                "card_art": {
+                    "sprite": "@SecondChanceArt"
+                }
+            }
+        }
+    ],
+    "traits": [
+        {
+            "id": "SecondChanceTargets",
+            "name": "CardTraitShowCardTargets"
+        }
+    ],
+    "upgrades": [
+        {
+            "id": "SecondChanceUp",
+            "bonus_damage": 5,
+            "bonus_hp": 5
+        }
+    ]
+}

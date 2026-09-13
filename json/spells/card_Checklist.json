@@ -1,0 +1,73 @@
+{
+    "$schema": "https://raw.githubusercontent.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/refs/heads/main/schemas/base.json",
+    "cards": [
+        {
+            "id": "Checklist",
+            "names": {
+                "english": "Checklist"
+            },
+            "descriptions": {
+                "english": "Gain {[trait0.power]}[ember] for each spell card in your consume pile."
+            },
+            "rarity": "uncommon",
+            "class": "@ClassEquestrian",
+            "card_art": "@ChecklistArt",
+            "cost": 0,
+            "targets_room": true,
+            "targetless": true,
+            "pools": [
+                "MegaPool"
+            ],
+            "effects": [
+                "@ChecklistEnergy"
+            ],
+            "traits": [
+                "@ChecklistScaling",
+                "@ChecklistConsume"
+            ],
+            "lore_tooltips": [
+                {
+                    "english": "Step one: Make a list.<br>Step two: Check the list.<br>Step three:???<br>Step four: Profit!"
+                }
+            ]
+        }
+    ],
+    "effects": [
+        {
+            "id": "ChecklistEnergy",
+            "name": "CardEffectAdjustEnergy",
+            "param_int": 0
+        }
+    ],
+    "sprites": [
+        {
+            "id": "ChecklistArt",
+            "path": "textures/ChecklistArt.png"
+        }
+    ],
+    "game_objects": [
+        {
+            "id": "ChecklistArt",
+            "type": "card_art",
+            "extensions": {
+                "card_art": {
+                    "sprite": "@ChecklistArt"
+                }
+            }
+        }
+    ],
+    "traits": [
+        {
+            "id": "ChecklistScaling",
+            "name": "CardTraitScalingAddEnergy",
+            "param_tracked_value": "type_in_exhaust_pile",
+            "param_entry_duration": "this_turn",
+            "param_int": 1,
+            "param_card_type": "spell"
+        },
+        {
+            "id": "ChecklistConsume",
+            "name": "CardTraitExhaustState"
+        }
+    ]
+}

@@ -1,0 +1,88 @@
+{
+    "$schema": "https://raw.githubusercontent.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/refs/heads/main/schemas/base.json",
+    "cards": [
+        {
+            "id": "PastryWarfare",
+            "names": {
+                "english": "Pastry Warfare"
+            },
+            "descriptions": {
+                "english": "Apply <nobr><b>Dazed {[effect0.status0.power]}</b></nobr> to a random enemy unit three times."
+            },
+            "rarity": "common",
+            "class": "@ClassEquestrian",
+            "card_art": "@PastryWarfareArt",
+            "cost": 1,
+            "targets_room": true,
+            "targetless": true,
+            "pools": [
+                "MegaPool"
+            ],
+            "effects": [
+                "@PastryDazed1",
+                "@PastryDazed2",
+                "@PastryDazed3"
+            ],
+            "lore_tooltips": [
+                {
+                    "english": "When pressed into conflict, these ponies' typical means of warfare seem rather... tame. I'm worried about how well they'll hold up when they face the true horrors of battle."
+                }
+            ]
+        }
+    ],
+    "effects": [
+        {
+            "id": "PastryDazed1",
+            "name": "CardEffectAddStatusEffect",
+            "target_mode": "random_in_room",
+            "target_team": "heroes",
+            "param_status_effects": [
+                {
+                    "status": "dazed",
+                    "count": 1
+                }
+            ]
+        },
+        {
+            "id": "PastryDazed2",
+            "name": "CardEffectAddStatusEffect",
+            "target_mode": "random_in_room",
+            "target_team": "heroes",
+            "param_status_effects": [
+                {
+                    "status": "dazed",
+                    "count": 1
+                }
+            ]
+        },
+        {
+            "id": "PastryDazed3",
+            "name": "CardEffectAddStatusEffect",
+            "target_mode": "random_in_room",
+            "target_team": "heroes",
+            "param_status_effects": [
+                {
+                    "status": "dazed",
+                    "count": 1
+                }
+            ]
+        }
+    ],
+    "sprites": [
+        {
+            "id": "PastryWarfareArt",
+            "path": "textures/PastryWarfareArt.png"
+        }
+    ],
+    "game_objects": [
+        {
+            "id": "PastryWarfareArt",
+            "type": "card_art",
+            "extensions": {
+                "card_art": {
+                    "sprite": "@PastryWarfareArt"
+                }
+            }
+        }
+    ]
+}

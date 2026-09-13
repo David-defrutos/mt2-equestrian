@@ -1,0 +1,86 @@
+{
+    "$schema": "https://raw.githubusercontent.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/refs/heads/main/schemas/base.json",
+    "cards": [
+        {
+            "id": "SpaTreatment",
+            "names": {
+                "english": "Spa Treatment"
+            },
+            "descriptions": {
+                "english": "Apply <b>Armor {[effect0.status0.power]}</b> and heal a target unit for {[effect1.power]} three times."
+            },
+            "rarity": "uncommon",
+            "class": "@ClassEquestrian",
+            "card_art": "@SpaTreatmentArt",
+            "cost": 2,
+            "targets_room": true,
+            "targetless": false,
+            "pools": [
+                "MegaPool"
+            ],
+            "effects": [
+                "@SpaArmor",
+                "@SpaHeal1",
+                "@SpaHeal2",
+                "@SpaHeal3"
+            ],
+            "lore_tooltips": [
+                {
+                    "english": "For creatures without hands, their spa treatments are absolutely divine. Avoid the extreme full-tissue massage, though. Just... take my advice and don't question it."
+                }
+            ]
+        }
+    ],
+    "effects": [
+        {
+            "id": "SpaArmor",
+            "name": "CardEffectAddStatusEffect",
+            "target_mode": "drop_target_character",
+            "target_team": "both",
+            "param_status_effects": [
+                {
+                    "status": "armor",
+                    "count": 10
+                }
+            ]
+        },
+        {
+            "id": "SpaHeal1",
+            "name": "CardEffectHeal",
+            "target_mode": "last_targeted_characters",
+            "target_team": "both",
+            "param_int": 3
+        },
+        {
+            "id": "SpaHeal2",
+            "name": "CardEffectHeal",
+            "target_mode": "last_targeted_characters",
+            "target_team": "both",
+            "param_int": 3
+        },
+        {
+            "id": "SpaHeal3",
+            "name": "CardEffectHeal",
+            "target_mode": "last_targeted_characters",
+            "target_team": "both",
+            "param_int": 3
+        }
+    ],
+    "sprites": [
+        {
+            "id": "SpaTreatmentArt",
+            "path": "textures/SpaTreatmentArt.png"
+        }
+    ],
+    "game_objects": [
+        {
+            "id": "SpaTreatmentArt",
+            "type": "card_art",
+            "extensions": {
+                "card_art": {
+                    "sprite": "@SpaTreatmentArt"
+                }
+            }
+        }
+    ]
+}

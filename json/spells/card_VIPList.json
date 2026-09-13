@@ -1,0 +1,78 @@
+{
+    "$schema": "https://raw.githubusercontent.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/refs/heads/main/schemas/base.json",
+    "cards": [
+        {
+            "id": "VIPList",
+            "names": {
+                "english": "VIP List"
+            },
+            "descriptions": {
+                "english": "Apply +10[attack], [health], and <b>Social</b> to all units in your hand."
+            },
+            "rarity": "uncommon",
+            "class": "@ClassEquestrian",
+            "card_art": "@VIPListArt",
+            "cost": 1,
+            "targets_room": false,
+            "targetless": true,
+            "pools": [
+                "MegaPool"
+            ],
+            "effects": [
+                "@VIPListBuff"
+            ],
+            "traits": [
+                "@VIPPermafrost",
+                "@VIPConsume"
+            ],
+            "lore_tooltips": [
+                {
+                    "english": "Once I got to the big cities, I discovered that Equestria is not as idyllic and welcoming as I was lead to believe. In the heart of their society, corruption abounds. The socialites and their cliques turn their snotty noses up at anyone they deem not worthy enough for their posh little pony games."
+                }
+            ]
+        }
+    ],
+    "effects": [
+        {
+            "id": "VIPListBuff",
+            "name": "CardEffectAddTempCardUpgradeToCardsInHand",
+            "target_mode": "hand",
+            "target_card_type": "monster",
+            "param_upgrade": "@VIPListUpgrade"
+        }
+    ],
+    "sprites": [
+        {
+            "id": "VIPListArt",
+            "path": "textures/VIPListArt.png"
+        }
+    ],
+    "game_objects": [
+        {
+            "id": "VIPListArt",
+            "type": "card_art",
+            "extensions": {
+                "card_art": {
+                    "sprite": "@VIPListArt"
+                }
+            }
+        }
+    ],
+    "traits": [
+        {
+            "id": "VIPPermafrost",
+            "name": "CardTraitPermafrost"
+        },
+        {
+            "id": "VIPConsume",
+            "name": "CardTraitExhaustState"
+        }
+    ],
+    "upgrades": [
+        {
+            "id": "VIPListUpgrade",
+            "bonus_damage": 10,
+            "bonus_hp": 10
+        }
+    ]
+}

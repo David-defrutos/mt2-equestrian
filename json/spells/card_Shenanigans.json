@@ -1,0 +1,80 @@
+{
+    "$schema": "https://raw.githubusercontent.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/refs/heads/main/schemas/base.json",
+    "cards": [
+        {
+            "id": "Shenanigans",
+            "names": {
+                "english": "Shenanigans"
+            },
+            "descriptions": {
+                "english": "Deal {[effect0.power]} damage to a target unit and apply <nobr><b>Emberdrain {[effect1.status0.power]}</b></nobr>."
+            },
+            "rarity": "common",
+            "class": "@ClassEquestrian",
+            "card_art": "@ShenanigansArt",
+            "cost": 0,
+            "targets_room": true,
+            "targetless": false,
+            "pools": [
+                "MegaPool"
+            ],
+            "effects": [
+                "@ShenanigansDamage",
+                "@ShenanigansScorch"
+            ],
+            "traits": [
+                "@ShenanigansMagic"
+            ],
+            "lore_tooltips": [
+                {
+                    "english": "Many young fillies and colts devote themselves to a period of experimentation where they try out many new skills and talents in rapid succession to earn that coveted cutie mark. This can be destructive and messy, but adults are usually cautiously supportive."
+                }
+            ]
+        }
+    ],
+    "effects": [
+        {
+            "id": "ShenanigansDamage",
+            "name": "CardEffectDamage",
+            "target_mode": "drop_target_character",
+            "target_team": "both",
+            "param_int": 25
+        },
+        {
+            "id": "ShenanigansScorch",
+            "name": "CardEffectAddStatusEffect",
+            "target_mode": "drop_target_character",
+            "target_team": "both",
+            "param_status_effects": [
+                {
+                    "status": "scorch",
+                    "count": 2
+                }
+            ]
+        }
+    ],
+    "sprites": [
+        {
+            "id": "ShenanigansArt",
+            "path": "textures/ShenanigansArt.png"
+        }
+    ],
+    "game_objects": [
+        {
+            "id": "ShenanigansArt",
+            "type": "card_art",
+            "extensions": {
+                "card_art": {
+                    "sprite": "@ShenanigansArt"
+                }
+            }
+        }
+    ],
+    "traits": [
+        {
+            "id": "ShenanigansMagic",
+            "name": "CardTraitStrongerMagicPower",
+            "param_int": 5
+        }
+    ]
+}

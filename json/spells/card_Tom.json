@@ -1,0 +1,79 @@
+{
+    "$schema": "https://raw.githubusercontent.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/refs/heads/main/schemas/base.json",
+    "cards": [
+        {
+            "id": "Tom",
+            "names": {
+                "english": "Tom"
+            },
+            "descriptions": {
+                "english": "Deal {[effect1.power]} damage to all enemy units and apply <nobr><b>Dazed {[effect2.status0.power]}</b></nobr>.<br><br>Add a <b>Deadweight</b> to the top of your draw pile."
+            },
+            "rarity": "rare",
+            "class": "@ClassEquestrian",
+            "card_art": "@TomArt",
+            "cost": 0,
+            "targets_room": true,
+            "targetless": true,
+            "pools": [
+                "MegaPool"
+            ],
+            "effects": [
+                "@TomDamage",
+                "@TomDazed"
+            ],
+            "traits": [
+                "@TomPiercing"
+            ],
+            "lore_tooltips": [
+                {
+                    "english": "A trickster god once brainwashed a pony into believing that an ordinary boulder was instead a massive diamond. He failed to understand that true friendship ran deeper than superficial greed. All it took was a moment of introspection to break the spell and return harmony to the land."
+                }
+            ]
+        }
+    ],
+    "effects": [
+        {
+            "id": "TomDamage",
+            "name": "CardEffectDamage",
+            "target_mode": "room",
+            "target_team": "heroes",
+            "param_int": 12
+        },
+        {
+            "id": "TomDazed",
+            "name": "CardEffectAddStatusEffect",
+            "target_mode": "room",
+            "target_team": "heroes",
+            "param_status_effects": [
+                {
+                    "status": "dazed",
+                    "count": 1
+                }
+            ]
+        }
+    ],
+    "sprites": [
+        {
+            "id": "TomArt",
+            "path": "textures/TomArt.png"
+        }
+    ],
+    "game_objects": [
+        {
+            "id": "TomArt",
+            "type": "card_art",
+            "extensions": {
+                "card_art": {
+                    "sprite": "@TomArt"
+                }
+            }
+        }
+    ],
+    "traits": [
+        {
+            "id": "TomPiercing",
+            "name": "CardTraitIgnoreArmor"
+        }
+    ]
+}

@@ -1,0 +1,95 @@
+{
+    "$schema": "https://raw.githubusercontent.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/refs/heads/main/schemas/base.json",
+    "cards": [
+        {
+            "id": "DressedToKill",
+            "names": {
+                "english": "Dressed To Kill"
+            },
+            "descriptions": {
+                "english": "Apply <nobr>+1[attack]</nobr> and <nobr>{[trait0.statusmultiplier]}[x] <b>Armor</b></nobr> to all friendly units."
+            },
+            "rarity": "common",
+            "class": "@ClassEquestrian",
+            "card_art": "@DressedToKillArt",
+            "cost": 0,
+            "targets_room": true,
+            "targetless": true,
+            "pools": [
+                "MegaPool"
+            ],
+            "effects": [
+                "@DressedBuff",
+                "@DressedArmor"
+            ],
+            "traits": [
+                "@DressedScaling"
+            ],
+            "lore_tooltips": [
+                {
+                    "english": "For a race that usually wears nothing, they sure put a lot of time and effort into crafting the silliest, er, excuse me, the most exquisite gowns and dresses I've ever seen."
+                }
+            ]
+        }
+    ],
+    "effects": [
+        {
+            "id": "DressedBuff",
+            "name": "CardEffectAddTempCardUpgradeToUnits",
+            "target_mode": "room",
+            "target_team": "monsters",
+            "param_upgrade": "@DressedUpgrade"
+        },
+        {
+            "id": "DressedArmor",
+            "name": "CardEffectAddStatusEffect",
+            "target_mode": "room",
+            "target_team": "monsters",
+            "param_status_effects": [
+                {
+                    "status": "armor",
+                    "count": 0
+                }
+            ]
+        }
+    ],
+    "sprites": [
+        {
+            "id": "DressedToKillArt",
+            "path": "textures/DressedToKillArt.png"
+        }
+    ],
+    "game_objects": [
+        {
+            "id": "DressedToKillArt",
+            "type": "card_art",
+            "extensions": {
+                "card_art": {
+                    "sprite": "@DressedToKillArt"
+                }
+            }
+        }
+    ],
+    "traits": [
+        {
+            "id": "DressedScaling",
+            "name": "CardTraitScalingAddStatusEffect",
+            "param_tracked_value": "played_cost",
+            "param_entry_duration": "this_battle",
+            "param_int": 2,
+            "param_team": "monsters",
+            "param_status_effects": [
+                {
+                    "status": "armor",
+                    "count": 0
+                }
+            ]
+        }
+    ],
+    "upgrades": [
+        {
+            "id": "DressedUpgrade",
+            "bonus_damage": 1
+        }
+    ]
+}

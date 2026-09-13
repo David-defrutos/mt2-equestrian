@@ -1,0 +1,80 @@
+{
+    "$schema": "https://raw.githubusercontent.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/refs/heads/main/schemas/base.json",
+    "cards": [
+        {
+            "id": "ChangelingInfiltrator",
+            "names": {
+                "english": "Changeling Infiltration"
+            },
+            "descriptions": {
+                "english": "Apply <b>Heartless</b> to a target friendly non-<b>Heartless</b> unit and duplicate it."
+            },
+            "rarity": "rare",
+            "class": "@ClassEquestrian",
+            "card_art": "@ChangelingInfiltratorArt",
+            "cost": 3,
+            "targets_room": true,
+            "targetless": false,
+            "pools": [
+                "MegaPool"
+            ],
+            "effects": [
+                "@ChangelingHeartless",
+                "@ChangelingCopy"
+            ],
+            "traits": [
+                "@ChangelingConsume"
+            ],
+            "unlock_level": 6,
+            "lore_tooltips": [
+                {
+                    "english": "The changelings are best known for imitating their victims to steal the love they'd receive for themselves. Cold-hearted and cruel, they're more akin to the residents of Hell than the ponies they prey upon."
+                }
+            ]
+        }
+    ],
+    "effects": [
+        {
+            "id": "ChangelingHeartless",
+            "name": "CardEffectAddStatusEffect",
+            "target_mode": "drop_target_character",
+            "target_team": "monsters",
+            "param_status_effects": [
+                {
+                    "status": "heal immunity",
+                    "count": 1
+                }
+            ]
+        },
+        {
+            "id": "ChangelingCopy",
+            "name": "CardEffectCopyUnits",
+            "target_mode": "last_targeted_characters",
+            "target_team": "monsters",
+            "param_int": 1
+        }
+    ],
+    "sprites": [
+        {
+            "id": "ChangelingInfiltratorArt",
+            "path": "textures/ChangelingInfiltratorArt.png"
+        }
+    ],
+    "game_objects": [
+        {
+            "id": "ChangelingInfiltratorArt",
+            "type": "card_art",
+            "extensions": {
+                "card_art": {
+                    "sprite": "@ChangelingInfiltratorArt"
+                }
+            }
+        }
+    ],
+    "traits": [
+        {
+            "id": "ChangelingConsume",
+            "name": "CardTraitExhaustState"
+        }
+    ]
+}

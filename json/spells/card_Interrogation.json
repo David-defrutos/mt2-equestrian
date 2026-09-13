@@ -1,0 +1,71 @@
+{
+    "$schema": "https://raw.githubusercontent.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/refs/heads/main/schemas/base.json",
+    "cards": [
+        {
+            "id": "Interrogation",
+            "names": {
+                "english": "Interrogation"
+            },
+            "descriptions": {
+                "english": "Deal {[trait0.power]} damage to the front enemy unit for each pony in your deck."
+            },
+            "rarity": "uncommon",
+            "class": "@ClassEquestrian",
+            "card_art": "@InterrogationArt",
+            "cost": 1,
+            "targets_room": true,
+            "targetless": true,
+            "pools": [
+                "MegaPool"
+            ],
+            "effects": [
+                "@InterrogationDamage"
+            ],
+            "traits": [
+                "@InterrogationScaling"
+            ],
+            "unlock_level": 2,
+            "lore_tooltips": [
+                {
+                    "english": "Who are you?' 'What are you?' 'Where did you come from?' 'Why are you here?' 'What is that huge mechanical contraption?' 'Why does it smell like brimstone?' Once the ponies realized I wasn't hostile, they had about a million questions for me. Looking down at creatures that only stood as high as my waist, I had questions for myself too. Are these really the champions that Hell needs at a time like this? Can they possibly succeed where the hellborne have failed?"
+                }
+            ]
+        }
+    ],
+    "effects": [
+        {
+            "id": "InterrogationDamage",
+            "name": "CardEffectDamage",
+            "target_mode": "front_in_room",
+            "target_team": "heroes",
+            "param_int": 0
+        }
+    ],
+    "sprites": [
+        {
+            "id": "InterrogationArt",
+            "path": "textures/InterrogationArt.png"
+        }
+    ],
+    "game_objects": [
+        {
+            "id": "InterrogationArt",
+            "type": "card_art",
+            "extensions": {
+                "card_art": {
+                    "sprite": "@InterrogationArt"
+                }
+            }
+        }
+    ],
+    "traits": [
+        {
+            "id": "InterrogationScaling",
+            "name": "CardTraitScalingAddDamage",
+            "param_tracked_value": "subtype_in_deck",
+            "param_entry_duration": "this_turn",
+            "param_int": 20,
+            "param_subtype": "@Sub_Pony"
+        }
+    ]
+}

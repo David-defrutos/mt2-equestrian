@@ -54,8 +54,33 @@ namespace mt2_equestrian.Plugin
                         "json/units/unit_TavernAce.json",
 
                         // Hechizos
+                        "json/spells/card_Alicornification.json",
                         "json/spells/card_AppleCider.json",
-                        "json/spells/card_NightTerrors.json"
+                        "json/spells/card_BlankFlank.json",
+                        "json/spells/card_BuckOff.json",
+                        "json/spells/card_ChangelingInfiltrator.json",
+                        "json/spells/card_Checklist.json",
+                        "json/spells/card_DressedToKill.json",
+                        "json/spells/card_EquestrianRailspike.json",
+                        "json/spells/card_FanClub.json",
+                        "json/spells/card_FirstAid.json",
+                        "json/spells/card_Interrogation.json",
+                        "json/spells/card_NightTerrors.json",
+                        "json/spells/card_PackedAudience.json",
+                        "json/spells/card_PartyCannon.json",
+                        "json/spells/card_PartyInvitation.json",
+                        "json/spells/card_PastryWarfare.json",
+                        "json/spells/card_RainbowPower.json",
+                        "json/spells/card_Reserves.json",
+                        "json/spells/card_SecondChance.json",
+                        "json/spells/card_Shenanigans.json",
+                        "json/spells/card_SpaTreatment.json",
+                        "json/spells/card_SpontaneousSongAndDance.json",
+                        "json/spells/card_TheElementsOfHarmony.json",
+                        "json/spells/card_TimeToShine.json",
+                        "json/spells/card_Tom.json",
+                        "json/spells/card_VIPList.json",
+                        "json/spells/card_WinterWrapUp.json"
                     );
                 }
             );

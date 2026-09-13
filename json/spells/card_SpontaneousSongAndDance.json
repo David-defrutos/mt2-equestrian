@@ -1,0 +1,97 @@
+{
+    "$schema": "https://raw.githubusercontent.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/refs/heads/main/schemas/base.json",
+    "cards": [
+        {
+            "id": "SpontaneousSongAndDance",
+            "names": {
+                "english": "Spontaneous Song and Dance"
+            },
+            "descriptions": {
+                "english": "Restore <nobr>+{[trait0.power]}[x] health</nobr> and apply <nobr>{[trait1.statusmultiplier]}[x] <b>Rage</b></nobr> to all friendly units."
+            },
+            "rarity": "uncommon",
+            "class": "@ClassEquestrian",
+            "card_art": "@SpontaneousSongAndDanceArt",
+            "cost": 0,
+            "targets_room": true,
+            "targetless": true,
+            "pools": [
+                "MegaPool"
+            ],
+            "effects": [
+                "@SongHeal",
+                "@SongRage"
+            ],
+            "traits": [
+                "@SongScalingHeal",
+                "@SongScalingRage"
+            ],
+            "lore_tooltips": [
+                {
+                    "english": "One thing that's befuddled me about the little ponies is just how prone they are to randomly breaking out into song and dance. There seems to be no rhyme nor reason for it. It certainly makes their society quite lively, though."
+                }
+            ]
+        }
+    ],
+    "effects": [
+        {
+            "id": "SongHeal",
+            "name": "CardEffectHeal",
+            "target_mode": "room",
+            "target_team": "monsters",
+            "param_int": 0
+        },
+        {
+            "id": "SongRage",
+            "name": "CardEffectAddStatusEffect",
+            "target_mode": "room",
+            "target_team": "monsters",
+            "param_status_effects": [
+                {
+                    "status": "buff",
+                    "count": 0
+                }
+            ]
+        }
+    ],
+    "sprites": [
+        {
+            "id": "SpontaneousSongAndDanceArt",
+            "path": "textures/SpontaneousSongAndDanceArt.png"
+        }
+    ],
+    "game_objects": [
+        {
+            "id": "SpontaneousSongAndDanceArt",
+            "type": "card_art",
+            "extensions": {
+                "card_art": {
+                    "sprite": "@SpontaneousSongAndDanceArt"
+                }
+            }
+        }
+    ],
+    "traits": [
+        {
+            "id": "SongScalingHeal",
+            "name": "CardTraitScalingHeal",
+            "param_tracked_value": "played_cost",
+            "param_entry_duration": "this_battle",
+            "param_int": 3
+        },
+        {
+            "id": "SongScalingRage",
+            "name": "CardTraitScalingAddStatusEffect",
+            "param_tracked_value": "played_cost",
+            "param_entry_duration": "this_battle",
+            "param_int": 3,
+            "param_team": "monsters",
+            "param_status_effects": [
+                {
+                    "status": "buff",
+                    "count": 0
+                }
+            ]
+        }
+    ]
+}

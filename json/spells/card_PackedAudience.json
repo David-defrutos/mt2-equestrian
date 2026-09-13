@@ -1,0 +1,82 @@
+{
+    "$schema": "https://raw.githubusercontent.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/refs/heads/main/schemas/base.json",
+    "cards": [
+        {
+            "id": "PackedAudience",
+            "names": {
+                "english": "Packed Audience"
+            },
+            "descriptions": {
+                "english": "Add three background ponies to the target floor. This can exceed a floor's [size]."
+            },
+            "rarity": "common",
+            "class": "@ClassEquestrian",
+            "card_art": "@PackedAudienceArt",
+            "cost": 0,
+            "targets_room": true,
+            "targetless": true,
+            "pools": [
+                "MegaPool"
+            ],
+            "effects": [
+                "@PackedAudiencePony1",
+                "@PackedAudiencePony2",
+                "@PackedAudiencePony3"
+            ],
+            "traits": [
+                "@PackedConsume"
+            ],
+            "lore_tooltips": [
+                {
+                    "english": "It surprises me how close-knit these small pony communities really are. Even a simple school play can draw a packed audience."
+                }
+            ]
+        }
+    ],
+    "effects": [
+        {
+            "id": "PackedAudiencePony1",
+            "name": "CardEffectSpawnMonster",
+            "target_mode": "room",
+            "target_team": "monsters",
+            "param_character": "@BackgroundPony"
+        },
+        {
+            "id": "PackedAudiencePony2",
+            "name": "CardEffectSpawnMonster",
+            "target_mode": "room",
+            "target_team": "monsters",
+            "param_character": "@BackgroundPony"
+        },
+        {
+            "id": "PackedAudiencePony3",
+            "name": "CardEffectSpawnMonster",
+            "target_mode": "room",
+            "target_team": "monsters",
+            "param_character": "@BackgroundPony"
+        }
+    ],
+    "sprites": [
+        {
+            "id": "PackedAudienceArt",
+            "path": "textures/PackedAudienceArt.png"
+        }
+    ],
+    "game_objects": [
+        {
+            "id": "PackedAudienceArt",
+            "type": "card_art",
+            "extensions": {
+                "card_art": {
+                    "sprite": "@PackedAudienceArt"
+                }
+            }
+        }
+    ],
+    "traits": [
+        {
+            "id": "PackedConsume",
+            "name": "CardTraitExhaustState"
+        }
+    ]
+}

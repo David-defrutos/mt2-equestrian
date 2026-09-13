@@ -1,0 +1,76 @@
+{
+    "$schema": "https://raw.githubusercontent.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/refs/heads/main/schemas/base.json",
+    "cards": [
+        {
+            "id": "FanClub",
+            "names": {
+                "english": "Fan Club"
+            },
+            "descriptions": {
+                "english": "Increase [size] by {[effect1.power]} and add a random common pony to your hand."
+            },
+            "rarity": "uncommon",
+            "class": "@ClassEquestrian",
+            "card_art": "@FanClubArt",
+            "cost": 1,
+            "targets_room": true,
+            "targetless": true,
+            "pools": [
+                "MegaPool"
+            ],
+            "effects": [
+                "@FanClubAddFilly",
+                "@FanClubCapacity"
+            ],
+            "traits": [
+                "@FanClubConsume"
+            ],
+            "unlock_level": 3,
+            "lore_tooltips": [
+                {
+                    "english": "Ponies have many idols and icons, and the degree to which they worship them can reach a scary fever pitch that brings back bad memories of serving in Heaven's army. Even more surprising, the way the little ponies look up to their elder brethren can reach levels of idolization just as fanatic, even when they aren't related. Perhaps it has to do with their tendencies to herd together, but no matter how you look at it, there's a lot of love that goes around between them."
+                }
+            ]
+        }
+    ],
+    "effects": [
+        {
+            "id": "FanClubAddFilly",
+            "name": "CardEffectAddBattleCard",
+            "target_mode": "room",
+            "param_card_pool": "@FilliesPool",
+            "param_int": 3,
+            "param_int_2": 1
+        },
+        {
+            "id": "FanClubCapacity",
+            "name": "CardEffectAdjustRoomCapacity",
+            "target_mode": "room",
+            "target_team": "monsters",
+            "param_int": 2
+        }
+    ],
+    "sprites": [
+        {
+            "id": "FanClubArt",
+            "path": "textures/FanClubArt.png"
+        }
+    ],
+    "game_objects": [
+        {
+            "id": "FanClubArt",
+            "type": "card_art",
+            "extensions": {
+                "card_art": {
+                    "sprite": "@FanClubArt"
+                }
+            }
+        }
+    ],
+    "traits": [
+        {
+            "id": "FanClubConsume",
+            "name": "CardTraitExhaustState"
+        }
+    ]
+}

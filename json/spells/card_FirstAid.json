@@ -1,0 +1,84 @@
+{
+    "$schema": "https://raw.githubusercontent.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/refs/heads/main/schemas/base.json",
+    "cards": [
+        {
+            "id": "FirstAid",
+            "names": {
+                "english": "First Aid"
+            },
+            "descriptions": {
+                "english": "Apply <nobr><b>Armor {[effect0.status0.power]}</b></nobr> and <nobr><b>Regen {[effect1.status0.power]}</b></nobr> to a target unit."
+            },
+            "rarity": "uncommon",
+            "class": "@ClassEquestrian",
+            "card_art": "@FirstAidArt",
+            "cost": 0,
+            "targets_room": true,
+            "targetless": false,
+            "pools": [
+                "MegaPool"
+            ],
+            "effects": [
+                "@FirstAidArmor",
+                "@FirstAidRegen"
+            ],
+            "traits": [
+                "@FirstAidConsume"
+            ],
+            "lore_tooltips": [
+                {
+                    "english": "Pony healthcare generally consists of wrapping as many bandages as possible around the effected areas. This can be restrictive, but it is effective. Preventing further injury is a great way to give a body the time it needs to heal."
+                }
+            ]
+        }
+    ],
+    "effects": [
+        {
+            "id": "FirstAidArmor",
+            "name": "CardEffectAddStatusEffect",
+            "target_mode": "drop_target_character",
+            "target_team": "both",
+            "param_status_effects": [
+                {
+                    "status": "armor",
+                    "count": 5
+                }
+            ]
+        },
+        {
+            "id": "FirstAidRegen",
+            "name": "CardEffectAddStatusEffect",
+            "target_mode": "last_targeted_characters",
+            "target_team": "both",
+            "param_status_effects": [
+                {
+                    "status": "regen",
+                    "count": 3
+                }
+            ]
+        }
+    ],
+    "sprites": [
+        {
+            "id": "FirstAidArt",
+            "path": "textures/FirstAidArt.png"
+        }
+    ],
+    "game_objects": [
+        {
+            "id": "FirstAidArt",
+            "type": "card_art",
+            "extensions": {
+                "card_art": {
+                    "sprite": "@FirstAidArt"
+                }
+            }
+        }
+    ],
+    "traits": [
+        {
+            "id": "FirstAidConsume",
+            "name": "CardTraitExhaustState"
+        }
+    ]
+}

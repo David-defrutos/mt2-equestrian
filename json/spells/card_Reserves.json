@@ -1,0 +1,79 @@
+{
+    "$schema": "https://raw.githubusercontent.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/refs/heads/main/schemas/base.json",
+    "cards": [
+        {
+            "id": "Reserves",
+            "names": {
+                "english": "Reserves"
+            },
+            "descriptions": {
+                "english": "Apply +10[attack], [health] and <b>Frozen</b> to all units in your hand."
+            },
+            "rarity": "common",
+            "class": "@ClassEquestrian",
+            "card_art": "@ReservesArt",
+            "cost": 2,
+            "targets_room": false,
+            "targetless": true,
+            "pools": [
+                "MegaPool"
+            ],
+            "effects": [
+                "@ReservesBuff"
+            ],
+            "traits": [
+                "@ReservesPermafrost",
+                "@ReservesConsume"
+            ],
+            "unlock_level": 1,
+            "lore_tooltips": [
+                {
+                    "english": "Whenever there's any sort of real trouble, it's curious how the royal guards only seem to arrive after the conflict has already been resolved. Curious indeed."
+                }
+            ]
+        }
+    ],
+    "effects": [
+        {
+            "id": "ReservesBuff",
+            "name": "CardEffectAddTempCardUpgradeToCardsInHand",
+            "target_mode": "hand",
+            "target_card_type": "monster",
+            "param_upgrade": "@ReservesUpgrade"
+        }
+    ],
+    "sprites": [
+        {
+            "id": "ReservesArt",
+            "path": "textures/ReservesArt.png"
+        }
+    ],
+    "game_objects": [
+        {
+            "id": "ReservesArt",
+            "type": "card_art",
+            "extensions": {
+                "card_art": {
+                    "sprite": "@ReservesArt"
+                }
+            }
+        }
+    ],
+    "traits": [
+        {
+            "id": "ReservesPermafrost",
+            "name": "CardTraitPermafrost"
+        },
+        {
+            "id": "ReservesConsume",
+            "name": "CardTraitExhaustState"
+        }
+    ],
+    "upgrades": [
+        {
+            "id": "ReservesUpgrade",
+            "bonus_damage": 10,
+            "bonus_hp": 10
+        }
+    ]
+}

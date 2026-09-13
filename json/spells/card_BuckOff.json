@@ -1,0 +1,57 @@
+{
+    "$schema": "https://raw.githubusercontent.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/refs/heads/main/schemas/base.json",
+    "cards": [
+        {
+            "id": "BuckOff",
+            "names": {
+                "english": "Buck Off"
+            },
+            "descriptions": {
+                "english": "Kill the first non-boss enemy unit."
+            },
+            "rarity": "uncommon",
+            "class": "@ClassEquestrian",
+            "card_art": "@BuckOffArt",
+            "cost": 1,
+            "targets_room": true,
+            "targetless": true,
+            "pools": [
+                "MegaPool"
+            ],
+            "effects": [
+                "@BuckOffKill"
+            ],
+            "unlock_level": 7,
+            "lore_tooltips": [
+                {
+                    "english": "They may look small, but these ponies sure pack a punch. If enough of them gang up on a target all at once, they'll kick 'em clean off the train."
+                }
+            ]
+        }
+    ],
+    "effects": [
+        {
+            "id": "BuckOffKill",
+            "name": "CardEffectKill",
+            "target_mode": "front_in_room",
+            "target_team": "heroes"
+        }
+    ],
+    "sprites": [
+        {
+            "id": "BuckOffArt",
+            "path": "textures/BuckOffArt.png"
+        }
+    ],
+    "game_objects": [
+        {
+            "id": "BuckOffArt",
+            "type": "card_art",
+            "extensions": {
+                "card_art": {
+                    "sprite": "@BuckOffArt"
+                }
+            }
+        }
+    ]
+}
