@@ -497,6 +497,27 @@
                     "sprite": "@MareaLeeCardArt"
                 }
             }
+        },
+        {
+            "id": "MareaLeeCharacterArt",
+            "type": "character_art",
+            "extensions": {
+                "character_art": {
+                    "sprite": "@MareaLeeCharacterArt",
+                    "transform": {
+                        "position": {
+                            "x": 0,
+                            "y": 0.8,
+                            "z": 0
+                        },
+                        "scale": {
+                            "x": 0.6667,
+                            "y": 0.6667,
+                            "z": 1
+                        }
+                    }
+                }
+            }
         }
     ]
 }
