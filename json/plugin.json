@@ -60,6 +60,12 @@
                 "@SpawnSqueakyBooBoo",
                 "@SpawnStaticJoy"
             ]
+        },
+        {
+            "id": "NightTerrorsPool",
+            "cards": [
+                "@NightTerrors"
+            ]
         }
     ],
     "upgrades": [

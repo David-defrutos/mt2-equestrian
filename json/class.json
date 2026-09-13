@@ -76,22 +76,22 @@
                 {
                     "id": "TantabusChampion",
                     "card_data": "@SpawnTantabus",
-                    "starter_card": "@AppleCider",
+                    "starter_card": "@NightTerrors",
                     "upgrade_tree": [
+                        [
+                            "@upg_Psychosis1",
+                            "@upg_Psychosis2",
+                            "@upg_Psychosis3"
+                        ],
                         [
                             "@upg_Nightmare1",
                             "@upg_Nightmare2",
                             "@upg_Nightmare3"
                         ],
                         [
-                            "@upg_Dream1",
-                            "@upg_Dream2",
-                            "@upg_Dream3"
-                        ],
-                        [
-                            "@upg_Shadow1",
-                            "@upg_Shadow2",
-                            "@upg_Shadow3"
+                            "@upg_Lucid1",
+                            "@upg_Lucid2",
+                            "@upg_Lucid3"
                         ]
                     ],
                     "icon": "@icon_Tantabus",

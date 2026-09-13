@@ -45,7 +45,8 @@ namespace mt2_equestrian.Plugin
                         "json/units/unit_StaticJoy.json",
 
                         // Hechizos
-                        "json/spells/card_AppleCider.json"
+                        "json/spells/card_AppleCider.json",
+                        "json/spells/card_NightTerrors.json"
                     );
                 }
             );

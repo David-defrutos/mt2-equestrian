@@ -12,15 +12,16 @@
             "rarity": "champion",
             "class": "@ClassEquestrian",
             "targets_room": true,
+            "targetless": false,
+            "unlock_level": 5,
             "effects": [
                 "@SpawnTantabus"
             ],
             "lore_tooltips": [
                 {
-                    "english": "A nightmare that outlived the dreamer."
+                    "english": "With Hell frozen over, there's no outlet for the souls of sinners who would otherwise be drawn to the pyre of Hell. Now, they linger, festering as wandering wraiths. Thanks to the short-sighted efforts of the Seraph, who knows what kind of darkness is growing in the wild edges of these lands? The destruction of Hell is untenable, and it's only a matter of time before something truly horrific arises in its absence."
                 }
-            ],
-            "targetless": false
+            ]
         }
     ],
     "characters": [
@@ -45,19 +46,378 @@
             "name": "CardEffectSpawnMonster",
             "target_mode": "room",
             "param_character": "@Tantabus"
+        },
+        {
+            "id": "TantabusFreezeNightTerrors",
+            "name": "CardEffectFreezeCard",
+            "target_mode": "hand",
+            "target_card_type": "spell",
+            "param_card_filter": "@NightTerrorsFilter"
+        },
+        {
+            "id": "TantabusPsychosisHand1",
+            "name": "CardEffectAddTempCardUpgradeToCardsInHand",
+            "target_mode": "hand",
+            "target_card_type": "spell",
+            "param_upgrade": "@PsychosisHandUpgrade1"
+        },
+        {
+            "id": "TantabusPsychosisHand2",
+            "name": "CardEffectAddTempCardUpgradeToCardsInHand",
+            "target_mode": "hand",
+            "target_card_type": "spell",
+            "param_upgrade": "@PsychosisHandUpgrade2"
+        },
+        {
+            "id": "TantabusPsychosisHand3",
+            "name": "CardEffectAddTempCardUpgradeToCardsInHand",
+            "target_mode": "hand",
+            "target_card_type": "spell",
+            "param_upgrade": "@PsychosisHandUpgrade3"
+        },
+        {
+            "id": "TantabusKillPony",
+            "name": "CardEffectKill",
+            "target_mode": "room",
+            "target_team": "monsters",
+            "target_subtype": "@Sub_Pony"
+        },
+        {
+            "id": "TantabusClearSap",
+            "name": "CardEffectRemoveStatusEffect",
+            "target_mode": "room",
+            "target_team": "monsters",
+            "param_status_effects": [
+                {
+                    "status": "debuff",
+                    "count": 999
+                }
+            ]
+        }
+    ],
+    "character_triggers": [
+        {
+            "id": "TantabusPsychosis1Incant",
+            "trigger": "card_spell_played",
+            "descriptions": {
+                "english": "+1 Magic power to spells in hand."
+            },
+            "effects": [
+                "@TantabusPsychosisHand1"
+            ]
+        },
+        {
+            "id": "TantabusPsychosis1EndTurn",
+            "trigger": "end_turn_pre_hand_discard",
+            "descriptions": {
+                "english": "<b>Freeze</b> all Night Terrors."
+            },
+            "effects": [
+                "@TantabusFreezeNightTerrors"
+            ]
+        },
+        {
+            "id": "TantabusPsychosis2Incant",
+            "trigger": "card_spell_played",
+            "descriptions": {
+                "english": "+2 Magic power to spells in hand."
+            },
+            "effects": [
+                "@TantabusPsychosisHand2"
+            ]
+        },
+        {
+            "id": "TantabusPsychosis2EndTurn",
+            "trigger": "end_turn_pre_hand_discard",
+            "descriptions": {
+                "english": "<b>Freeze</b> all Night Terrors."
+            },
+            "effects": [
+                "@TantabusFreezeNightTerrors"
+            ]
+        },
+        {
+            "id": "TantabusPsychosis3Incant",
+            "trigger": "card_spell_played",
+            "descriptions": {
+                "english": "+3 Magic power to spells in hand."
+            },
+            "effects": [
+                "@TantabusPsychosisHand3"
+            ]
+        },
+        {
+            "id": "TantabusPsychosis3EndTurn",
+            "trigger": "end_turn_pre_hand_discard",
+            "descriptions": {
+                "english": "<b>Freeze</b> all Night Terrors."
+            },
+            "effects": [
+                "@TantabusFreezeNightTerrors"
+            ]
+        },
+        {
+            "id": "TantabusNightmare1Resolve",
+            "trigger": "post_combat",
+            "descriptions": {
+                "english": "Kill all Pony units."
+            },
+            "effects": [
+                "@TantabusKillPony"
+            ]
+        },
+        {
+            "id": "TantabusNightmare2Resolve",
+            "trigger": "post_combat",
+            "descriptions": {
+                "english": "Kill all Pony units."
+            },
+            "effects": [
+                "@TantabusKillPony"
+            ]
+        },
+        {
+            "id": "TantabusNightmare3Resolve",
+            "trigger": "post_combat",
+            "descriptions": {
+                "english": "Kill all Pony units."
+            },
+            "effects": [
+                "@TantabusKillPony"
+            ]
+        },
+        {
+            "id": "TantabusLucid1Turn",
+            "trigger": "on_turn_begin",
+            "descriptions": {
+                "english": "Remove all <b>Sap</b> from friendly units."
+            },
+            "effects": [
+                "@TantabusClearSap"
+            ]
+        },
+        {
+            "id": "TantabusLucid2Turn",
+            "trigger": "on_turn_begin",
+            "descriptions": {
+                "english": "Remove all <b>Sap</b> from friendly units."
+            },
+            "effects": [
+                "@TantabusClearSap"
+            ]
+        },
+        {
+            "id": "TantabusLucid3Turn",
+            "trigger": "on_turn_begin",
+            "descriptions": {
+                "english": "Remove all <b>Sap</b> from friendly units."
+            },
+            "effects": [
+                "@TantabusClearSap"
+            ]
+        }
+    ],
+    "card_triggers": [
+        {
+            "id": "TantabusNightmare1OnKill",
+            "trigger": "on_kill",
+            "descriptions": {
+                "english": "Gain +3[attack] permanently."
+            },
+            "trigger_effects": [
+                {
+                    "persistence": "single_run",
+                    "param_int": 3,
+                    "trigger_effect": "CardTriggerEffectBuffCharacterDamage"
+                }
+            ]
+        },
+        {
+            "id": "TantabusNightmare2OnKill",
+            "trigger": "on_kill",
+            "descriptions": {
+                "english": "Gain +4[attack] permanently."
+            },
+            "trigger_effects": [
+                {
+                    "persistence": "single_run",
+                    "param_int": 4,
+                    "trigger_effect": "CardTriggerEffectBuffCharacterDamage"
+                }
+            ]
+        },
+        {
+            "id": "TantabusNightmare3OnKill",
+            "trigger": "on_kill",
+            "descriptions": {
+                "english": "Gain +5[attack] permanently."
+            },
+            "trigger_effects": [
+                {
+                    "persistence": "single_run",
+                    "param_int": 5,
+                    "trigger_effect": "CardTriggerEffectBuffCharacterDamage"
+                }
+            ]
+        }
+    ],
+    "room_modifiers": [
+        {
+            "id": "LucidEnergy1",
+            "name": "RoomStateEnergyModifier",
+            "param_int": 1,
+            "descriptions": {
+                "english": "+1[ember]"
+            },
+            "titles": {
+                "english": "Lucid"
+            }
+        },
+        {
+            "id": "LucidEnergy2",
+            "name": "RoomStateEnergyModifier",
+            "param_int": 2,
+            "descriptions": {
+                "english": "+2[ember]"
+            },
+            "titles": {
+                "english": "Lucid II"
+            }
+        },
+        {
+            "id": "LucidEnergy3",
+            "name": "RoomStateEnergyModifier",
+            "param_int": 3,
+            "descriptions": {
+                "english": "+3[ember]"
+            },
+            "titles": {
+                "english": "Lucid III"
+            }
+        }
+    ],
+    "upgrade_masks": [
+        {
+            "id": "PsychosisSpellFilter",
+            "card_type": "spell",
+            "required_effects": [
+                "CardEffectDamage",
+                "CardEffectHeal",
+                "CardEffectHealAndDamageRelative"
+            ],
+            "required_effects_operator": "or"
+        },
+        {
+            "id": "NightTerrorsFilter",
+            "allowed_pools": [
+                "@NightTerrorsPool"
+            ]
         }
     ],
     "upgrades": [
         {
-            "id": "upg_Nightmare1",
+            "id": "PsychosisHandUpgrade1",
+            "bonus_damage": 1,
+            "bonus_heal": 1,
+            "filters": [
+                "@PsychosisSpellFilter"
+            ]
+        },
+        {
+            "id": "upg_Psychosis1",
             "titles": {
-                "english": "Nightmare I"
+                "english": "Psychosis"
             },
             "descriptions": {
-                "english": "PLACEHOLDER: senda Nightmare, escalon 1. Pendiente de transcribir del mod MT1."
+                "english": "<b>Incant</b>: +1 Magic power to spells in hand.<br><b>End of Turn: <b>Freeze</b> all Night Terrors."
             },
-            "bonus_damage": 5,
-            "bonus_hp": 5
+            "use_upgrade_highlight_tags": true,
+            "bonus_damage": 10,
+            "status_effect_upgrades": [
+                {
+                    "status": "armor",
+                    "count": 10
+                }
+            ],
+            "trigger_upgrades": [
+                "@TantabusPsychosis1Incant",
+                "@TantabusPsychosis1EndTurn"
+            ]
+        },
+        {
+            "id": "PsychosisHandUpgrade2",
+            "bonus_damage": 2,
+            "bonus_heal": 2,
+            "filters": [
+                "@PsychosisSpellFilter"
+            ]
+        },
+        {
+            "id": "upg_Psychosis2",
+            "titles": {
+                "english": "Psychosis II"
+            },
+            "descriptions": {
+                "english": "<b>Incant</b>: +2 Magic power to spells in hand.<br><b>End of Turn: <b>Freeze</b> all Night Terrors."
+            },
+            "use_upgrade_highlight_tags": true,
+            "bonus_damage": 40,
+            "status_effect_upgrades": [
+                {
+                    "status": "armor",
+                    "count": 20
+                }
+            ],
+            "trigger_upgrades": [
+                "@TantabusPsychosis2Incant",
+                "@TantabusPsychosis2EndTurn"
+            ]
+        },
+        {
+            "id": "PsychosisHandUpgrade3",
+            "bonus_damage": 3,
+            "bonus_heal": 3,
+            "filters": [
+                "@PsychosisSpellFilter"
+            ]
+        },
+        {
+            "id": "upg_Psychosis3",
+            "titles": {
+                "english": "Psychosis III"
+            },
+            "descriptions": {
+                "english": "<b>Incant</b>: +3 Magic power to spells in hand.<br><b>End of Turn: <b>Freeze</b> all Night Terrors."
+            },
+            "use_upgrade_highlight_tags": true,
+            "bonus_damage": 100,
+            "status_effect_upgrades": [
+                {
+                    "status": "armor",
+                    "count": 40
+                }
+            ],
+            "trigger_upgrades": [
+                "@TantabusPsychosis3Incant",
+                "@TantabusPsychosis3EndTurn"
+            ]
+        },
+        {
+            "id": "upg_Nightmare1",
+            "titles": {
+                "english": "Nightmare"
+            },
+            "descriptions": {
+                "english": "<b>Resolve</b>: Kill all Pony units.<br><b>Slay</b>: Gain +3[attack] permanently."
+            },
+            "use_upgrade_highlight_tags": true,
+            "bonus_hp": 5,
+            "trigger_upgrades": [
+                "@TantabusNightmare1Resolve"
+            ],
+            "card_trigger_upgrades": [
+                "@TantabusNightmare1OnKill"
+            ]
         },
         {
             "id": "upg_Nightmare2",
@@ -65,10 +425,25 @@
                 "english": "Nightmare II"
             },
             "descriptions": {
-                "english": "PLACEHOLDER: senda Nightmare, escalon 2. Pendiente de transcribir del mod MT1."
+                "english": "<b>Resolve</b>: Kill all Pony units.<br><b>Slay</b>: Gain +4[attack] permanently."
             },
-            "bonus_damage": 10,
-            "bonus_hp": 10
+            "use_upgrade_highlight_tags": true,
+            "bonus_hp": 10,
+            "trigger_upgrades": [
+                "@TantabusNightmare2Resolve"
+            ],
+            "card_trigger_upgrades": [
+                "@TantabusNightmare2OnKill"
+            ],
+            "status_effect_upgrades": [
+                {
+                    "status": "multistrike",
+                    "count": 1
+                }
+            ],
+            "remove_upgrades": [
+                "@upg_Nightmare1"
+            ]
         },
         {
             "id": "upg_Nightmare3",
@@ -76,76 +451,79 @@
                 "english": "Nightmare III"
             },
             "descriptions": {
-                "english": "PLACEHOLDER: senda Nightmare, escalon 3. Pendiente de transcribir del mod MT1."
+                "english": "<b>Resolve</b>: Kill all Pony units.<br><b>Slay</b>: Gain +5[attack] permanently."
             },
+            "use_upgrade_highlight_tags": true,
+            "bonus_hp": 15,
+            "trigger_upgrades": [
+                "@TantabusNightmare3Resolve"
+            ],
+            "card_trigger_upgrades": [
+                "@TantabusNightmare3OnKill"
+            ],
+            "status_effect_upgrades": [
+                {
+                    "status": "multistrike",
+                    "count": 2
+                }
+            ],
+            "remove_upgrades": [
+                "@upg_Nightmare2"
+            ]
+        },
+        {
+            "id": "upg_Lucid1",
+            "titles": {
+                "english": "Lucid"
+            },
+            "descriptions": {
+                "english": "<b>Action</b>: Remove all <b>Sap</b> from friendly units."
+            },
+            "use_upgrade_highlight_tags": true,
+            "bonus_hp": 15,
+            "bonus_damage": 0,
+            "room_modifier_upgrades": [
+                "@LucidEnergy1"
+            ],
+            "trigger_upgrades": [
+                "@TantabusLucid1Turn"
+            ]
+        },
+        {
+            "id": "upg_Lucid2",
+            "titles": {
+                "english": "Lucid II"
+            },
+            "descriptions": {
+                "english": "<b>Action</b>: Remove all <b>Sap</b> from friendly units."
+            },
+            "use_upgrade_highlight_tags": true,
+            "bonus_hp": 40,
             "bonus_damage": 20,
-            "bonus_hp": 15
+            "room_modifier_upgrades": [
+                "@LucidEnergy2"
+            ],
+            "trigger_upgrades": [
+                "@TantabusLucid2Turn"
+            ]
         },
         {
-            "id": "upg_Dream1",
+            "id": "upg_Lucid3",
             "titles": {
-                "english": "Dream I"
+                "english": "Lucid III"
             },
             "descriptions": {
-                "english": "PLACEHOLDER: senda Dream, escalon 1. Pendiente de transcribir del mod MT1."
+                "english": "<b>Action</b>: Remove all <b>Sap</b> from friendly units."
             },
-            "bonus_damage": 5,
-            "bonus_hp": 5
-        },
-        {
-            "id": "upg_Dream2",
-            "titles": {
-                "english": "Dream II"
-            },
-            "descriptions": {
-                "english": "PLACEHOLDER: senda Dream, escalon 2. Pendiente de transcribir del mod MT1."
-            },
-            "bonus_damage": 10,
-            "bonus_hp": 10
-        },
-        {
-            "id": "upg_Dream3",
-            "titles": {
-                "english": "Dream III"
-            },
-            "descriptions": {
-                "english": "PLACEHOLDER: senda Dream, escalon 3. Pendiente de transcribir del mod MT1."
-            },
-            "bonus_damage": 20,
-            "bonus_hp": 15
-        },
-        {
-            "id": "upg_Shadow1",
-            "titles": {
-                "english": "Shadow I"
-            },
-            "descriptions": {
-                "english": "PLACEHOLDER: senda Shadow, escalon 1. Pendiente de transcribir del mod MT1."
-            },
-            "bonus_damage": 5,
-            "bonus_hp": 5
-        },
-        {
-            "id": "upg_Shadow2",
-            "titles": {
-                "english": "Shadow II"
-            },
-            "descriptions": {
-                "english": "PLACEHOLDER: senda Shadow, escalon 2. Pendiente de transcribir del mod MT1."
-            },
-            "bonus_damage": 10,
-            "bonus_hp": 10
-        },
-        {
-            "id": "upg_Shadow3",
-            "titles": {
-                "english": "Shadow III"
-            },
-            "descriptions": {
-                "english": "PLACEHOLDER: senda Shadow, escalon 3. Pendiente de transcribir del mod MT1."
-            },
-            "bonus_damage": 20,
-            "bonus_hp": 15
+            "use_upgrade_highlight_tags": true,
+            "bonus_hp": 90,
+            "bonus_damage": 60,
+            "room_modifier_upgrades": [
+                "@LucidEnergy3"
+            ],
+            "trigger_upgrades": [
+                "@TantabusLucid3Turn"
+            ]
         }
     ],
     "sprites": [
@@ -161,27 +539,6 @@
             "extensions": {
                 "card_art": {
                     "sprite": "@TantabusCardArt"
-                }
-            }
-        },
-        {
-            "id": "TantabusCharacterArt",
-            "type": "character_art",
-            "extensions": {
-                "character_art": {
-                    "sprite": "@TantabusCharacterArt",
-                    "transform": {
-                        "position": {
-                            "x": 0,
-                            "y": 0.8,
-                            "z": 0
-                        },
-                        "scale": {
-                            "x": 0.52,
-                            "y": 0.52,
-                            "z": 1
-                        }
-                    }
                 }
             }
         }

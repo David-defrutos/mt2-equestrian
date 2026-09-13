@@ -1,0 +1,75 @@
+{
+    "$schema": "https://raw.githubusercontent.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/refs/heads/main/schemas/base.json",
+    "cards": [
+        {
+            "id": "NightTerrors",
+            "names": {
+                "english": "Night Terrors"
+            },
+            "descriptions": {
+                "english": "Deal <nobr>{[effect0.power]} damage</nobr> to a target unit twice and gain <nobr>1[ember] on <b>Slay</b></nobr>."
+            },
+            "lore_tooltips": [
+                {
+                    "english": "My nights in Equestria have been troubled and it goes far beyond the anxieties and horrors of war. It's as if a malevolent spirit is digging deep into my psyche to find my worst fears and inflict them upon me."
+                }
+            ],
+            "rarity": "starter",
+            "class": "@ClassEquestrian",
+            "card_art": "@NightTerrorsArt",
+            "cost": 2,
+            "targets_room": true,
+            "targetless": false,
+            "pools": [
+                "MegaPool"
+            ],
+            "effects": [
+                "@NightTerrorsDamage",
+                "@NightTerrorsDamage"
+            ],
+            "triggers": [
+                "@NightTerrorsOnKill"
+            ]
+        }
+    ],
+    "card_triggers": [
+        {
+            "id": "NightTerrorsOnKill",
+            "trigger": "on_kill",
+            "effects": [
+                "@NightTerrorsEnergy"
+            ]
+        }
+    ],
+    "effects": [
+        {
+            "id": "NightTerrorsDamage",
+            "name": "CardEffectDamage",
+            "target_mode": "drop_target_character",
+            "target_team": "both",
+            "param_int": 2
+        },
+        {
+            "id": "NightTerrorsEnergy",
+            "name": "CardEffectGainEnergy",
+            "param_int": 1
+        }
+    ],
+    "sprites": [
+        {
+            "id": "NightTerrorsArt",
+            "path": "textures/NightTerrorsArt.png"
+        }
+    ],
+    "game_objects": [
+        {
+            "id": "NightTerrorsArt",
+            "type": "card_art",
+            "extensions": {
+                "card_art": {
+                    "sprite": "@NightTerrorsArt"
+                }
+            }
+        }
+    ]
+}
