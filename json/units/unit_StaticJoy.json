@@ -17,7 +17,7 @@
                 "@SpawnStaticJoy"
             ],
             "pools": [
-                "MegaPool"
+                "UnitsAllBanner"
             ],
             "lore_tooltips": [
                 {

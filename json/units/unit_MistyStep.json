@@ -17,7 +17,7 @@
                 "@SpawnMistyStep"
             ],
             "pools": [
-                "MegaPool"
+                "UnitsAllBanner"
             ],
             "lore_tooltips": [
                 {

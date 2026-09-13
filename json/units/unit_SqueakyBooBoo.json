@@ -17,7 +17,7 @@
                 "@SpawnSqueakyBooBoo"
             ],
             "pools": [
-                "MegaPool"
+                "UnitsAllBanner"
             ],
             "traits": [
                 "@SqueakyBooBooPermafrost"
