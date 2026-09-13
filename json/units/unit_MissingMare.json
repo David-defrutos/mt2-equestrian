@@ -1,0 +1,125 @@
+{
+    "$schema": "https://raw.githubusercontent.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/refs/heads/main/schemas/base.json",
+    "cards": [
+        {
+            "id": "SpawnMissingMare",
+            "names": {
+                "english": "Missing Mare"
+            },
+            "card_art": "@MissingMareCardArt",
+            "cost": 1,
+            "card_type": "monster",
+            "rarity": "starter",
+            "class": "@ClassEquestrian",
+            "targets_room": true,
+            "targetless": false,
+            "effects": [
+                "@SpawnMissingMare"
+            ],
+            "lore_tooltips": [
+                {
+                    "english": "This lost soul bears a striking resemblance to Mare A Lee, but... No! It can't be! She's not dead! The ponies just got here, right? The only way this makes sense is if this soul's an echo from an alternatine timeline, but...<br><br>Malicka warned me of the loop, but I didn't listen. Oh gods! What have I done!? <i>I've damned them all to Hell!</i>"
+                }
+            ]
+        }
+    ],
+    "characters": [
+        {
+            "id": "MissingMare",
+            "size": 1,
+            "attack_damage": 25,
+            "health": 3,
+            "names": {
+                "english": "Missing Mare"
+            },
+            "character_art": "@MissingMareCharacterArt",
+            "subtypes": [
+                "@Sub_Pony",
+                "@Sub_Social"
+            ],
+            "status_effects": [
+                {
+                    "status": "stealth",
+                    "count": 3
+                }
+            ],
+            "triggers": [
+                "@MissingMareIncant"
+            ]
+        }
+    ],
+    "effects": [
+        {
+            "id": "SpawnMissingMare",
+            "name": "CardEffectSpawnMonster",
+            "target_mode": "room",
+            "param_character": "@MissingMare"
+        },
+        {
+            "id": "MissingMareStealth",
+            "name": "CardEffectAddStatusEffect",
+            "target_mode": "random_in_room",
+            "target_team": "monsters",
+            "param_status_effects": [
+                {
+                    "status": "stealth",
+                    "count": 1
+                }
+            ]
+        }
+    ],
+    "sprites": [
+        {
+            "id": "MissingMareCardArt",
+            "path": "textures/MissingMareCardArt.png"
+        },
+        {
+            "id": "MissingMareCharacterArt",
+            "path": "textures/MissingMareCharacterArt.png"
+        }
+    ],
+    "game_objects": [
+        {
+            "id": "MissingMareCardArt",
+            "type": "card_art",
+            "extensions": {
+                "card_art": {
+                    "sprite": "@MissingMareCardArt"
+                }
+            }
+        },
+        {
+            "id": "MissingMareCharacterArt",
+            "type": "character_art",
+            "extensions": {
+                "character_art": {
+                    "sprite": "@MissingMareCharacterArt",
+                    "transform": {
+                        "position": {
+                            "x": 0,
+                            "y": 0.8,
+                            "z": 0
+                        },
+                        "scale": {
+                            "x": 1.2048,
+                            "y": 1.2048,
+                            "z": 1
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "character_triggers": [
+        {
+            "id": "MissingMareIncant",
+            "trigger": "card_spell_played",
+            "descriptions": {
+                "english": "Apply <nobr><b>Stealth {[effect0.status0.power]}</b></nobr> to a random friendly unit."
+            },
+            "effects": [
+                "@MissingMareStealth"
+            ]
+        }
+    ]
+}

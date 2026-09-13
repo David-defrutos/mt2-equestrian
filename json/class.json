@@ -52,7 +52,7 @@
                 {
                     "id": "MareaLeeChampion",
                     "card_data": "@SpawnMareaLee",
-                    "starter_card": "@SpawnTrashPanda",
+                    "starter_card": "@SpawnBackgroundPony",
                     "upgrade_tree": [
                         [
                             "@upg_Mentor1",
@@ -129,6 +129,12 @@
             "names": {
                 "english": "Social"
             }
+        },
+        {
+            "id": "Sub_Dragon",
+            "names": {
+                "english": "Dragon"
+            }
         }
     ],
     "map_nodes": [
@@ -168,7 +174,12 @@
                 "@SpawnMistyStep",
                 "@SpawnSnackasmacky",
                 "@SpawnSqueakyBooBoo",
-                "@SpawnStaticJoy"
+                "@SpawnStaticJoy",
+                "@SpawnMareYouKnow",
+                "@SpawnPreenySnuggle",
+                "@SpawnTavernAce",
+                "@SpawnLordOfEmber",
+                "@SpawnGuardianOfTheGates"
             ]
         }
     ],

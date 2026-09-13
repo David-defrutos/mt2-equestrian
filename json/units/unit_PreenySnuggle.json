@@ -1,0 +1,124 @@
+{
+    "$schema": "https://raw.githubusercontent.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/refs/heads/main/schemas/base.json",
+    "cards": [
+        {
+            "id": "SpawnPreenySnuggle",
+            "names": {
+                "english": "Preeny Snuggles"
+            },
+            "card_art": "@PreenySnuggleCardArt",
+            "cost": 0,
+            "card_type": "monster",
+            "rarity": "uncommon",
+            "class": "@ClassEquestrian",
+            "targets_room": true,
+            "targetless": false,
+            "effects": [
+                "@SpawnPreenySnuggle"
+            ],
+            "pools": [
+                "UnitsAllBanner"
+            ],
+            "traits": [
+                "@PreenyScalingAttack",
+                "@PreenyScalingHealth",
+                "@PreenyLevelMonster"
+            ],
+            "cost_type": "x",
+            "unlock_level": 5,
+            "lore_tooltips": [
+                {
+                    "english": "Preeny is the most energetic and flirty pony I've met, but she's also the most fragile. Everything she does is defined by a gnawing hunger for attention and affirmation, but if she ever receives serious criticism, she'll crumple into a sobbing heap like her whole world has fallen apart."
+                }
+            ]
+        }
+    ],
+    "characters": [
+        {
+            "id": "PreenySnuggle",
+            "size": 1,
+            "attack_damage": 8,
+            "health": 8,
+            "names": {
+                "english": "Preeny Snuggles"
+            },
+            "character_art": "@PreenySnuggleCharacterArt",
+            "subtypes": [
+                "@Sub_Pony",
+                "@Sub_Social"
+            ]
+        }
+    ],
+    "effects": [
+        {
+            "id": "SpawnPreenySnuggle",
+            "name": "CardEffectSpawnMonster",
+            "target_mode": "room",
+            "param_character": "@PreenySnuggle"
+        }
+    ],
+    "sprites": [
+        {
+            "id": "PreenySnuggleCardArt",
+            "path": "textures/PreenySnuggleCardArt.png"
+        },
+        {
+            "id": "PreenySnuggleCharacterArt",
+            "path": "textures/PreenySnuggleCharacterArt.png"
+        }
+    ],
+    "game_objects": [
+        {
+            "id": "PreenySnuggleCardArt",
+            "type": "card_art",
+            "extensions": {
+                "card_art": {
+                    "sprite": "@PreenySnuggleCardArt"
+                }
+            }
+        },
+        {
+            "id": "PreenySnuggleCharacterArt",
+            "type": "character_art",
+            "extensions": {
+                "character_art": {
+                    "sprite": "@PreenySnuggleCharacterArt",
+                    "transform": {
+                        "position": {
+                            "x": 0,
+                            "y": 0.8,
+                            "z": 0
+                        },
+                        "scale": {
+                            "x": 1.2048,
+                            "y": 1.2048,
+                            "z": 1
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "traits": [
+        {
+            "id": "PreenyScalingAttack",
+            "name": "CardTraitScalingUpgradeUnitAttack",
+            "param_tracked_value": "played_cost",
+            "param_entry_duration": "this_turn",
+            "param_int": 8,
+            "param_team": "monsters"
+        },
+        {
+            "id": "PreenyScalingHealth",
+            "name": "CardTraitScalingUpgradeUnitHealth",
+            "param_tracked_value": "played_cost",
+            "param_entry_duration": "this_turn",
+            "param_int": 8,
+            "param_team": "monsters"
+        },
+        {
+            "id": "PreenyLevelMonster",
+            "name": "CardTraitLevelMonsterState"
+        }
+    ]
+}

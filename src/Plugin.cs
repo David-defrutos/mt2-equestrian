@@ -43,6 +43,15 @@ namespace mt2_equestrian.Plugin
                         "json/units/unit_Snackasmacky.json",
                         "json/units/unit_SqueakyBooBoo.json",
                         "json/units/unit_StaticJoy.json",
+                        "json/units/unit_BackgroundPony.json",
+                        "json/units/unit_GuardianOfTheGates.json",
+                        "json/units/unit_HeartsDesire.json",
+                        "json/units/unit_LordOfEmber.json",
+                        "json/units/unit_MareYouKnow.json",
+                        "json/units/unit_MissingMare.json",
+                        "json/units/unit_PoisonJoke.json",
+                        "json/units/unit_PreenySnuggle.json",
+                        "json/units/unit_TavernAce.json",
 
                         // Hechizos
                         "json/spells/card_AppleCider.json",

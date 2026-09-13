@@ -1,0 +1,134 @@
+{
+    "$schema": "https://raw.githubusercontent.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/refs/heads/main/schemas/base.json",
+    "cards": [
+        {
+            "id": "SpawnMareYouKnow",
+            "names": {
+                "english": "Mare You Know"
+            },
+            "card_art": "@MareYouKnowCardArt",
+            "cost": 1,
+            "card_type": "monster",
+            "rarity": "uncommon",
+            "class": "@ClassEquestrian",
+            "targets_room": true,
+            "targetless": false,
+            "effects": [
+                "@SpawnMareYouKnow"
+            ],
+            "pools": [
+                "UnitsAllBanner"
+            ],
+            "unlock_level": 5,
+            "lore_tooltips": [
+                {
+                    "english": "Full of facts and useless trivia, she's always the one to maresplain things in the most condescending way possible. I'm surprised her friends can put up with her, but her ingenuity is a great asset if you can get past her personality. That's the Mare You Know, I guess."
+                }
+            ]
+        }
+    ],
+    "characters": [
+        {
+            "id": "MareYouKnow",
+            "size": 1,
+            "attack_damage": 3,
+            "health": 8,
+            "names": {
+                "english": "Mare You Know"
+            },
+            "character_art": "@MareYouKnowCharacterArt",
+            "subtypes": [
+                "@Sub_Pony"
+            ],
+            "status_effects": [
+                {
+                    "status": "armor",
+                    "count": 5
+                }
+            ],
+            "triggers": [
+                "@MareYouKnowResolve"
+            ]
+        }
+    ],
+    "effects": [
+        {
+            "id": "SpawnMareYouKnow",
+            "name": "CardEffectSpawnMonster",
+            "target_mode": "room",
+            "param_character": "@MareYouKnow"
+        },
+        {
+            "id": "MareYouKnowCheapen",
+            "name": "CardEffectAddTempCardUpgradeToNextDrawnCard",
+            "param_upgrade": "@MareYouKnowDiscount"
+        },
+        {
+            "id": "MareYouKnowDraw",
+            "name": "CardEffectDraw",
+            "param_int": 1
+        }
+    ],
+    "sprites": [
+        {
+            "id": "MareYouKnowCardArt",
+            "path": "textures/MareYouKnowCardArt.png"
+        },
+        {
+            "id": "MareYouKnowCharacterArt",
+            "path": "textures/MareYouKnowCharacterArt.png"
+        }
+    ],
+    "game_objects": [
+        {
+            "id": "MareYouKnowCardArt",
+            "type": "card_art",
+            "extensions": {
+                "card_art": {
+                    "sprite": "@MareYouKnowCardArt"
+                }
+            }
+        },
+        {
+            "id": "MareYouKnowCharacterArt",
+            "type": "character_art",
+            "extensions": {
+                "character_art": {
+                    "sprite": "@MareYouKnowCharacterArt",
+                    "transform": {
+                        "position": {
+                            "x": 0,
+                            "y": 0.8,
+                            "z": 0
+                        },
+                        "scale": {
+                            "x": 1.2048,
+                            "y": 1.2048,
+                            "z": 1
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "character_triggers": [
+        {
+            "id": "MareYouKnowResolve",
+            "trigger": "post_combat",
+            "descriptions": {
+                "english": "Draw a card and apply -1[ember] or +1<sprite name=\"Xcost\">."
+            },
+            "effects": [
+                "@MareYouKnowCheapen",
+                "@MareYouKnowDraw"
+            ]
+        }
+    ],
+    "upgrades": [
+        {
+            "id": "MareYouKnowDiscount",
+            "cost_reduction": 1,
+            "x_cost_reduction": 1
+        }
+    ]
+}

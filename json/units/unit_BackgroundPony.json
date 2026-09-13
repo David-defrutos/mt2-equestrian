@@ -1,0 +1,116 @@
+{
+    "$schema": "https://raw.githubusercontent.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/refs/heads/main/schemas/base.json",
+    "cards": [
+        {
+            "id": "SpawnBackgroundPony",
+            "names": {
+                "english": "Background Pony"
+            },
+            "card_art": "@BackgroundPonyCardArt",
+            "cost": 0,
+            "card_type": "monster",
+            "rarity": "starter",
+            "class": "@ClassEquestrian",
+            "targets_room": true,
+            "targetless": false,
+            "effects": [
+                "@SpawnBackgroundPony"
+            ],
+            "descriptions": {
+                "english": "<b>Summon:</b> Move to the back."
+            },
+            "lore_tooltips": [
+                {
+                    "english": "For each pony I got to know, there were ten more lurking in the background. They've all been such lively and unique individuals that I wish I'd had the time to meet more of them."
+                }
+            ]
+        }
+    ],
+    "characters": [
+        {
+            "id": "BackgroundPony",
+            "size": 1,
+            "attack_damage": 0,
+            "health": 15,
+            "names": {
+                "english": "Background Pony"
+            },
+            "character_art": "@BackgroundPonyCharacterArt",
+            "subtypes": [
+                "@Sub_Pony"
+            ],
+            "triggers": [
+                "@BackgroundPonyMoveBack"
+            ]
+        }
+    ],
+    "effects": [
+        {
+            "id": "SpawnBackgroundPony",
+            "name": "CardEffectSpawnMonster",
+            "target_mode": "room",
+            "param_character": "@BackgroundPony"
+        },
+        {
+            "id": "BackgroundPonyRearrange",
+            "name": "CardEffectFloorRearrange",
+            "target_mode": "self",
+            "target_team": "monsters",
+            "param_int": 1
+        }
+    ],
+    "sprites": [
+        {
+            "id": "BackgroundPonyCardArt",
+            "path": "textures/BackgroundPonyCardArt.png"
+        },
+        {
+            "id": "BackgroundPonyCharacterArt",
+            "path": "textures/BackgroundPonyCharacterArt.png"
+        }
+    ],
+    "game_objects": [
+        {
+            "id": "BackgroundPonyCardArt",
+            "type": "card_art",
+            "extensions": {
+                "card_art": {
+                    "sprite": "@BackgroundPonyCardArt"
+                }
+            }
+        },
+        {
+            "id": "BackgroundPonyCharacterArt",
+            "type": "character_art",
+            "extensions": {
+                "character_art": {
+                    "sprite": "@BackgroundPonyCharacterArt",
+                    "transform": {
+                        "position": {
+                            "x": 0,
+                            "y": 0.8,
+                            "z": 0
+                        },
+                        "scale": {
+                            "x": 1.2048,
+                            "y": 1.2048,
+                            "z": 1
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "character_triggers": [
+        {
+            "id": "BackgroundPonyMoveBack",
+            "trigger": "on_spawn",
+            "descriptions": {
+                "english": "Move to the back."
+            },
+            "effects": [
+                "@BackgroundPonyRearrange"
+            ]
+        }
+    ]
+}

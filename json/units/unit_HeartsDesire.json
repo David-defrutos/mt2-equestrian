@@ -1,0 +1,149 @@
+{
+    "$schema": "https://raw.githubusercontent.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/refs/heads/main/schemas/base.json",
+    "cards": [
+        {
+            "id": "SpawnHeartsDesire",
+            "names": {
+                "english": "Heart's Desire"
+            },
+            "card_art": "@HeartsDesireCardArt",
+            "cost": 0,
+            "card_type": "monster",
+            "rarity": "rare",
+            "class": "@ClassEquestrian",
+            "targets_room": true,
+            "targetless": false,
+            "effects": [
+                "@SpawnHeartsDesire"
+            ],
+            "pools": [
+                "MegaPool"
+            ],
+            "unlock_level": 8,
+            "lore_tooltips": [
+                {
+                    "english": "This rare, magical herb interacts with a pony's natural magic to unlock hidden potential, but it must be handled carefully as the heart is often fickle. Too much of a good thing can lead to dire consequences."
+                }
+            ]
+        }
+    ],
+    "characters": [
+        {
+            "id": "HeartsDesire",
+            "size": 1,
+            "attack_damage": 0,
+            "health": 1,
+            "names": {
+                "english": "Heart's Desire"
+            },
+            "character_art": "@HeartsDesireCharacterArt",
+            "subtypes": [
+                "@Sub_Herb"
+            ],
+            "status_effects": [
+                {
+                    "status": "immobile",
+                    "count": 1
+                }
+            ],
+            "triggers": [
+                "@HeartsDesireEaten"
+            ],
+            "room_modifiers": [
+                "@HeartsDesireSpellCost",
+                "@HeartsDesireUnitCost"
+            ]
+        }
+    ],
+    "effects": [
+        {
+            "id": "SpawnHeartsDesire",
+            "name": "CardEffectSpawnMonster",
+            "target_mode": "room",
+            "param_character": "@HeartsDesire"
+        },
+        {
+            "id": "HeartsDesireEmberdrain",
+            "name": "CardEffectAddStatusEffect",
+            "target_mode": "last_feeder_character",
+            "param_status_effects": [
+                {
+                    "status": "scorch",
+                    "count": 3
+                }
+            ]
+        }
+    ],
+    "sprites": [
+        {
+            "id": "HeartsDesireCardArt",
+            "path": "textures/HeartsDesireCardArt.png"
+        },
+        {
+            "id": "HeartsDesireCharacterArt",
+            "path": "textures/HeartsDesireCharacterArt.png"
+        }
+    ],
+    "game_objects": [
+        {
+            "id": "HeartsDesireCardArt",
+            "type": "card_art",
+            "extensions": {
+                "card_art": {
+                    "sprite": "@HeartsDesireCardArt"
+                }
+            }
+        },
+        {
+            "id": "HeartsDesireCharacterArt",
+            "type": "character_art",
+            "extensions": {
+                "character_art": {
+                    "sprite": "@HeartsDesireCharacterArt",
+                    "transform": {
+                        "position": {
+                            "x": 0,
+                            "y": 0.8,
+                            "z": 0
+                        },
+                        "scale": {
+                            "x": 1.2048,
+                            "y": 1.2048,
+                            "z": 1
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "character_triggers": [
+        {
+            "id": "HeartsDesireEaten",
+            "trigger": "on_eaten",
+            "descriptions": {
+                "english": "<nobr><b>Emberdrain {[effect0.status0.power]}</b>.</nobr>"
+            },
+            "effects": [
+                "@HeartsDesireEmberdrain"
+            ]
+        }
+    ],
+    "room_modifiers": [
+        {
+            "id": "HeartsDesireSpellCost",
+            "name": "RoomStateSpellCostModifier",
+            "param_int": -2,
+            "descriptions": {
+                "english": "<br>-2[ember] for all cards played on this floor."
+            }
+        },
+        {
+            "id": "HeartsDesireUnitCost",
+            "name": "RoomStateUnitCostModifier",
+            "param_int": -2,
+            "descriptions": {
+                "english": "<br>-2[ember] for all cards played on this floor."
+            }
+        }
+    ]
+}

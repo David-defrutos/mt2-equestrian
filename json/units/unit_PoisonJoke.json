@@ -1,0 +1,164 @@
+{
+    "$schema": "https://raw.githubusercontent.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/refs/heads/main/schemas/base.json",
+    "cards": [
+        {
+            "id": "SpawnPoisonJoke",
+            "names": {
+                "english": "Poison Joke"
+            },
+            "card_art": "@PoisonJokeCardArt",
+            "cost": 0,
+            "card_type": "monster",
+            "rarity": "uncommon",
+            "class": "@ClassEquestrian",
+            "targets_room": true,
+            "targetless": false,
+            "effects": [
+                "@SpawnPoisonJoke"
+            ],
+            "pools": [
+                "MegaPool"
+            ],
+            "unlock_level": 8,
+            "lore_tooltips": [
+                {
+                    "english": "This toxic plant can inflict pun-themed ailments upon only the briefest contact. To bring such a thing to battle in hopes of getting any kind of benefit from it reeks of desperation."
+                }
+            ]
+        }
+    ],
+    "characters": [
+        {
+            "id": "PoisonJoke",
+            "size": 1,
+            "attack_damage": 0,
+            "health": 1,
+            "names": {
+                "english": "Poison Joke"
+            },
+            "character_art": "@PoisonJokeCharacterArt",
+            "subtypes": [
+                "@Sub_Herb"
+            ],
+            "status_effects": [
+                {
+                    "status": "immobile",
+                    "count": 1
+                }
+            ],
+            "triggers": [
+                "@PoisonJokeSummon",
+                "@PoisonJokeEaten"
+            ]
+        }
+    ],
+    "effects": [
+        {
+            "id": "SpawnPoisonJoke",
+            "name": "CardEffectSpawnMonster",
+            "target_mode": "room",
+            "param_character": "@PoisonJoke"
+        },
+        {
+            "id": "PoisonJokeBuff",
+            "name": "CardEffectAddTempCardUpgradeToUnits",
+            "target_mode": "room",
+            "target_team": "monsters",
+            "param_upgrade": "@PoisonJokeAttackUpgrade"
+        },
+        {
+            "id": "PoisonJokeSap",
+            "name": "CardEffectAddStatusEffect",
+            "target_mode": "room",
+            "target_team": "monsters",
+            "param_status_effects": [
+                {
+                    "status": "debuff",
+                    "count": 10
+                }
+            ]
+        },
+        {
+            "id": "PoisonJokeDazed",
+            "name": "CardEffectAddStatusEffect",
+            "target_mode": "last_feeder_character",
+            "param_status_effects": [
+                {
+                    "status": "dazed",
+                    "count": 2
+                }
+            ]
+        }
+    ],
+    "sprites": [
+        {
+            "id": "PoisonJokeCardArt",
+            "path": "textures/PoisonJokeCardArt.png"
+        },
+        {
+            "id": "PoisonJokeCharacterArt",
+            "path": "textures/PoisonJokeCharacterArt.png"
+        }
+    ],
+    "game_objects": [
+        {
+            "id": "PoisonJokeCardArt",
+            "type": "card_art",
+            "extensions": {
+                "card_art": {
+                    "sprite": "@PoisonJokeCardArt"
+                }
+            }
+        },
+        {
+            "id": "PoisonJokeCharacterArt",
+            "type": "character_art",
+            "extensions": {
+                "character_art": {
+                    "sprite": "@PoisonJokeCharacterArt",
+                    "transform": {
+                        "position": {
+                            "x": 0,
+                            "y": 0.8,
+                            "z": 0
+                        },
+                        "scale": {
+                            "x": 1.2048,
+                            "y": 1.2048,
+                            "z": 1
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "character_triggers": [
+        {
+            "id": "PoisonJokeSummon",
+            "trigger": "on_spawn",
+            "descriptions": {
+                "english": "Friendly units gain +{[effect0.upgrade.bonusdamage]}[attack] and <b>Sap {[effect1.status0.power]}</b>."
+            },
+            "effects": [
+                "@PoisonJokeBuff",
+                "@PoisonJokeSap"
+            ]
+        },
+        {
+            "id": "PoisonJokeEaten",
+            "trigger": "on_eaten",
+            "descriptions": {
+                "english": "<nobr><b>Dazed {[effect0.status0.power]}</b></nobr>."
+            },
+            "effects": [
+                "@PoisonJokeDazed"
+            ]
+        }
+    ],
+    "upgrades": [
+        {
+            "id": "PoisonJokeAttackUpgrade",
+            "bonus_damage": 20
+        }
+    ]
+}

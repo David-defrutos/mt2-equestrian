@@ -1,0 +1,114 @@
+{
+    "$schema": "https://raw.githubusercontent.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/refs/heads/main/schemas/base.json",
+    "cards": [
+        {
+            "id": "SpawnTavernAce",
+            "names": {
+                "english": "Tavern Ace"
+            },
+            "card_art": "@TavernAceCardArt",
+            "cost": 1,
+            "card_type": "monster",
+            "rarity": "rare",
+            "class": "@ClassEquestrian",
+            "targets_room": true,
+            "targetless": false,
+            "effects": [
+                "@SpawnTavernAce"
+            ],
+            "pools": [
+                "UnitsAllBanner"
+            ],
+            "unlock_level": 1,
+            "triggers": [
+                "@TavernAceUnplayed"
+            ],
+            "lore_tooltips": [
+                {
+                    "english": "Hold my cider. No. Wait. I'll hold it.' I know she wasn't trying to give advice, but honestly? That sounds like a great philosophy for life in general."
+                }
+            ]
+        }
+    ],
+    "characters": [
+        {
+            "id": "TavernAce",
+            "size": 1,
+            "attack_damage": 0,
+            "health": 5,
+            "names": {
+                "english": "Tavern Ace"
+            },
+            "character_art": "@TavernAceCharacterArt",
+            "subtypes": [
+                "@Sub_Pony"
+            ]
+        }
+    ],
+    "effects": [
+        {
+            "id": "SpawnTavernAce",
+            "name": "CardEffectSpawnMonster",
+            "target_mode": "room",
+            "param_character": "@TavernAce"
+        }
+    ],
+    "sprites": [
+        {
+            "id": "TavernAceCardArt",
+            "path": "textures/TavernAceCardArt.png"
+        },
+        {
+            "id": "TavernAceCharacterArt",
+            "path": "textures/TavernAceCharacterArt.png"
+        }
+    ],
+    "game_objects": [
+        {
+            "id": "TavernAceCardArt",
+            "type": "card_art",
+            "extensions": {
+                "card_art": {
+                    "sprite": "@TavernAceCardArt"
+                }
+            }
+        },
+        {
+            "id": "TavernAceCharacterArt",
+            "type": "character_art",
+            "extensions": {
+                "character_art": {
+                    "sprite": "@TavernAceCharacterArt",
+                    "transform": {
+                        "position": {
+                            "x": 0,
+                            "y": 0.8,
+                            "z": 0
+                        },
+                        "scale": {
+                            "x": 1.2048,
+                            "y": 1.2048,
+                            "z": 1
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "card_triggers": [
+        {
+            "id": "TavernAceUnplayed",
+            "trigger": "on_unplayed_positive",
+            "descriptions": {
+                "english": "Gain +12[attack] permanently."
+            },
+            "trigger_effects": [
+                {
+                    "persistence": "single_run",
+                    "param_int": 12,
+                    "trigger_effect": "CardTriggerEffectBuffCharacterDamage"
+                }
+            ]
+        }
+    ]
+}

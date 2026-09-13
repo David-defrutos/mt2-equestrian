@@ -1,0 +1,100 @@
+{
+    "$schema": "https://raw.githubusercontent.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/refs/heads/main/schemas/base.json",
+    "cards": [
+        {
+            "id": "SpawnGuardianOfTheGates",
+            "names": {
+                "english": "Guardian of the Gates"
+            },
+            "card_art": "@GuardianOfTheGatesCardArt",
+            "cost": 6,
+            "card_type": "monster",
+            "rarity": "rare",
+            "class": "@ClassEquestrian",
+            "targets_room": true,
+            "targetless": false,
+            "effects": [
+                "@SpawnGuardianOfTheGates"
+            ],
+            "pools": [
+                "UnitsAllBanner"
+            ],
+            "lore_tooltips": [
+                {
+                    "english": "In my desperation to save the last remaining shard of the pyre, I secreted the Boneshaker to a lost circle of Hell known as Tartarus. It wasn't abandoned like I'd expected, as the ponies have been using it to imprison their most dangerous villains and magical beasts. It's there that I met the Guardian, a massive three-headed bulldog who stands watch over the gateway to their world. It was with his help that I made my way to Equestria proper, so that I could make my plea for aid directly. What a good boy."
+                }
+            ]
+        }
+    ],
+    "characters": [
+        {
+            "id": "GuardianOfTheGates",
+            "size": 5,
+            "attack_damage": 50,
+            "health": 150,
+            "names": {
+                "english": "Guardian of the Gates"
+            },
+            "character_art": "@GuardianOfTheGatesCharacterArt",
+            "subtypes": [
+                "@Sub_Pet"
+            ],
+            "status_effects": [
+                {
+                    "status": "multistrike",
+                    "count": 2
+                }
+            ]
+        }
+    ],
+    "effects": [
+        {
+            "id": "SpawnGuardianOfTheGates",
+            "name": "CardEffectSpawnMonster",
+            "target_mode": "room",
+            "param_character": "@GuardianOfTheGates"
+        }
+    ],
+    "sprites": [
+        {
+            "id": "GuardianOfTheGatesCardArt",
+            "path": "textures/GuardianOfTheGatesCardArt.png"
+        },
+        {
+            "id": "GuardianOfTheGatesCharacterArt",
+            "path": "textures/GuardianOfTheGatesCharacterArt.png"
+        }
+    ],
+    "game_objects": [
+        {
+            "id": "GuardianOfTheGatesCardArt",
+            "type": "card_art",
+            "extensions": {
+                "card_art": {
+                    "sprite": "@GuardianOfTheGatesCardArt"
+                }
+            }
+        },
+        {
+            "id": "GuardianOfTheGatesCharacterArt",
+            "type": "character_art",
+            "extensions": {
+                "character_art": {
+                    "sprite": "@GuardianOfTheGatesCharacterArt",
+                    "transform": {
+                        "position": {
+                            "x": 0,
+                            "y": 0.8,
+                            "z": 0
+                        },
+                        "scale": {
+                            "x": 0.5587,
+                            "y": 0.5587,
+                            "z": 1
+                        }
+                    }
+                }
+            }
+        }
+    ]
+}

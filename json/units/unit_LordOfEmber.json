@@ -1,0 +1,121 @@
+{
+    "$schema": "https://raw.githubusercontent.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/refs/heads/main/schemas/base.json",
+    "cards": [
+        {
+            "id": "SpawnLordOfEmber",
+            "names": {
+                "english": "Jestember"
+            },
+            "card_art": "@LordOfEmberCardArt",
+            "cost": 4,
+            "card_type": "monster",
+            "rarity": "rare",
+            "class": "@ClassEquestrian",
+            "targets_room": true,
+            "targetless": false,
+            "effects": [
+                "@SpawnLordOfEmber"
+            ],
+            "pools": [
+                "UnitsAllBanner"
+            ],
+            "unlock_level": 4,
+            "lore_tooltips": [
+                {
+                    "english": "By all that is still holy and just in this world, what the ever-loving heck is that thing!? Seriously, just look at it! How is that thing even alive? Whatever it is, it certainly loves the big, shiny, glowing shard of the pyre. The ponies say to leave it be and I'm inclined to agree with them. Let sleeping abominations of nature lie. Always good advice."
+                }
+            ]
+        }
+    ],
+    "characters": [
+        {
+            "id": "LordOfEmber",
+            "size": 3,
+            "attack_damage": 50,
+            "health": 35,
+            "names": {
+                "english": "Jestember"
+            },
+            "character_art": "@LordOfEmberCharacterArt",
+            "subtypes": [
+                "@Sub_Dragon"
+            ],
+            "status_effects": [
+                {
+                    "status": "sweep",
+                    "count": 1
+                }
+            ],
+            "triggers": [
+                "@LordOfEmberOnKill"
+            ]
+        }
+    ],
+    "effects": [
+        {
+            "id": "SpawnLordOfEmber",
+            "name": "CardEffectSpawnMonster",
+            "target_mode": "room",
+            "param_character": "@LordOfEmber"
+        },
+        {
+            "id": "LordOfEmberEnergy",
+            "name": "CardEffectGainEnergy",
+            "param_int": 1
+        }
+    ],
+    "sprites": [
+        {
+            "id": "LordOfEmberCardArt",
+            "path": "textures/LordOfEmberCardArt.png"
+        },
+        {
+            "id": "LordOfEmberCharacterArt",
+            "path": "textures/LordOfEmberCharacterArt.png"
+        }
+    ],
+    "game_objects": [
+        {
+            "id": "LordOfEmberCardArt",
+            "type": "card_art",
+            "extensions": {
+                "card_art": {
+                    "sprite": "@LordOfEmberCardArt"
+                }
+            }
+        },
+        {
+            "id": "LordOfEmberCharacterArt",
+            "type": "character_art",
+            "extensions": {
+                "character_art": {
+                    "sprite": "@LordOfEmberCharacterArt",
+                    "transform": {
+                        "position": {
+                            "x": 0,
+                            "y": 0.8,
+                            "z": 0
+                        },
+                        "scale": {
+                            "x": 1.2048,
+                            "y": 1.2048,
+                            "z": 1
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "character_triggers": [
+        {
+            "id": "LordOfEmberOnKill",
+            "trigger": "on_kill",
+            "descriptions": {
+                "english": "Gain +1[ember]."
+            },
+            "effects": [
+                "@LordOfEmberEnergy"
+            ]
+        }
+    ]
+}
