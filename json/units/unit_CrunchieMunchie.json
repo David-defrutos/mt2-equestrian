@@ -1,0 +1,124 @@
+{
+    "$schema": "https://raw.githubusercontent.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/refs/heads/main/schemas/base.json",
+    "cards": [
+        {
+            "id": "SpawnCrunchieMunchie",
+            "names": {
+                "english": "Crunchie Munchie"
+            },
+            "card_art": "@CrunchieMunchieCardArt",
+            "cost": 1,
+            "card_type": "monster",
+            "rarity": "common",
+            "class": "@ClassEquestrian",
+            "targets_room": true,
+            "targetless": false,
+            "effects": [
+                "@SpawnCrunchieMunchie"
+            ],
+            "pools": [
+                "MegaPool"
+            ],
+            "lore_tooltips": [
+                {
+                    "english": "A self-styled journalist and horrid gossip, Crunchie's got the makings of a paparazzi written all over her. She does share some instincts with her elder sister, Snackasmacky, though, for she offered me a carrot in the middle of her interview with no warning or explanation. When I asked about, she said she was hungry and assumed I was too. That's a child's logic for you."
+                }
+            ]
+        }
+    ],
+    "characters": [
+        {
+            "id": "CrunchieMunchie",
+            "size": 1,
+            "attack_damage": 1,
+            "health": 1,
+            "names": {
+                "english": "Crunchie Munchie"
+            },
+            "character_art": "@CrunchieMunchieCharacterArt",
+            "subtypes": [
+                "@Sub_Pony"
+            ],
+            "status_effects": [
+                {
+                    "status": "armor",
+                    "count": 5
+                }
+            ],
+            "triggers": [
+                "@CrunchieMunchieCarrotTrigger"
+            ]
+        }
+    ],
+    "effects": [
+        {
+            "id": "SpawnCrunchieMunchie",
+            "name": "CardEffectSpawnMonster",
+            "target_mode": "room",
+            "param_character": "@CrunchieMunchie"
+        },
+        {
+            "id": "CrunchieMunchieSpawnCarrot",
+            "name": "CardEffectSpawnMonster",
+            "target_mode": "room",
+            "target_team": "none",
+            "param_int": 1,
+            "param_bool": true,
+            "param_character": "@Carrot"
+        }
+    ],
+    "sprites": [
+        {
+            "id": "CrunchieMunchieCardArt",
+            "path": "textures/CrunchieMunchieCardArt.png"
+        },
+        {
+            "id": "CrunchieMunchieCharacterArt",
+            "path": "textures/CrunchieMunchieCharacterArt.png"
+        }
+    ],
+    "game_objects": [
+        {
+            "id": "CrunchieMunchieCardArt",
+            "type": "card_art",
+            "extensions": {
+                "card_art": {
+                    "sprite": "@CrunchieMunchieCardArt"
+                }
+            }
+        },
+        {
+            "id": "CrunchieMunchieCharacterArt",
+            "type": "character_art",
+            "extensions": {
+                "character_art": {
+                    "sprite": "@CrunchieMunchieCharacterArt",
+                    "transform": {
+                        "position": {
+                            "x": 0,
+                            "y": 0.8,
+                            "z": 0
+                        },
+                        "scale": {
+                            "x": 1.2048,
+                            "y": 1.2048,
+                            "z": 1
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "character_triggers": [
+        {
+            "id": "CrunchieMunchieCarrotTrigger",
+            "trigger": "post_combat",
+            "descriptions": {
+                "english": "Summon a carrot."
+            },
+            "effects": [
+                "@CrunchieMunchieSpawnCarrot"
+            ]
+        }
+    ]
+}

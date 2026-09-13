@@ -1,0 +1,147 @@
+{
+    "$schema": "https://raw.githubusercontent.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/refs/heads/main/schemas/base.json",
+    "cards": [
+        {
+            "id": "SpawnYoLo",
+            "names": {
+                "english": "Yo Lo"
+            },
+            "card_art": "@YoLoCardArt",
+            "cost": 0,
+            "card_type": "monster",
+            "rarity": "common",
+            "class": "@ClassEquestrian",
+            "targets_room": true,
+            "targetless": false,
+            "effects": [
+                "@SpawnYoLo"
+            ],
+            "pools": [
+                "MegaPool"
+            ],
+            "traits": [
+                "@YoLoMultistrikeScaling"
+            ],
+            "lore_tooltips": [
+                {
+                    "english": "All things considered, sneaking onto the Boneshaker with her friends wasn't even Yo Lo's worst idea. No. That would be the time she electrified a toilet so that ponies could charge their cell phones while they peed."
+                }
+            ],
+            "cost_type": "x"
+        }
+    ],
+    "characters": [
+        {
+            "id": "YoLo",
+            "size": 1,
+            "attack_damage": 1,
+            "health": 1,
+            "names": {
+                "english": "Yo Lo"
+            },
+            "character_art": "@YoLoCharacterArt",
+            "subtypes": [
+                "@Sub_Pony"
+            ],
+            "status_effects": [
+                {
+                    "status": "armor",
+                    "count": 5
+                }
+            ],
+            "triggers": [
+                "@YoLoSpawnTrigger"
+            ]
+        }
+    ],
+    "effects": [
+        {
+            "id": "SpawnYoLo",
+            "name": "CardEffectSpawnMonster",
+            "target_mode": "room",
+            "param_character": "@YoLo"
+        },
+        {
+            "id": "YoLoMultistrikeBase",
+            "name": "CardEffectAddStatusEffect",
+            "target_mode": "self",
+            "target_team": "monsters",
+            "param_status_effects": [
+                {
+                    "status": "multistrike",
+                    "count": 0
+                }
+            ]
+        }
+    ],
+    "sprites": [
+        {
+            "id": "YoLoCardArt",
+            "path": "textures/YoLoCardArt.png"
+        },
+        {
+            "id": "YoLoCharacterArt",
+            "path": "textures/YoLoCharacterArt.png"
+        }
+    ],
+    "game_objects": [
+        {
+            "id": "YoLoCardArt",
+            "type": "card_art",
+            "extensions": {
+                "card_art": {
+                    "sprite": "@YoLoCardArt"
+                }
+            }
+        },
+        {
+            "id": "YoLoCharacterArt",
+            "type": "character_art",
+            "extensions": {
+                "character_art": {
+                    "sprite": "@YoLoCharacterArt",
+                    "transform": {
+                        "position": {
+                            "x": 0,
+                            "y": 0.8,
+                            "z": 0
+                        },
+                        "scale": {
+                            "x": 1.2048,
+                            "y": 1.2048,
+                            "z": 1
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "character_triggers": [
+        {
+            "id": "YoLoSpawnTrigger",
+            "trigger": "on_unscaled_spawn",
+            "descriptions": {
+                "english": "<b>Multistrike [x]</b>."
+            },
+            "effects": [
+                "@YoLoMultistrikeBase"
+            ]
+        }
+    ],
+    "traits": [
+        {
+            "id": "YoLoMultistrikeScaling",
+            "name": "CardTraitScalingAddStatusEffect",
+            "param_tracked_value": "played_cost",
+            "param_entry_duration": "this_battle",
+            "param_int": 1,
+            "param_team": "monsters",
+            "param_status_effects": [
+                {
+                    "status": "multistrike",
+                    "count": 0
+                }
+            ]
+        }
+    ]
+}

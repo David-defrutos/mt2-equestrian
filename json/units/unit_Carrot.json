@@ -1,0 +1,121 @@
+{
+    "$schema": "https://raw.githubusercontent.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/refs/heads/main/schemas/base.json",
+    "cards": [
+        {
+            "id": "SpawnCarrot",
+            "names": {
+                "english": "Carrot"
+            },
+            "card_art": "@CarrotCardArt",
+            "cost": 0,
+            "card_type": "monster",
+            "rarity": "common",
+            "class": "@ClassEquestrian",
+            "targets_room": true,
+            "targetless": false,
+            "effects": [
+                "@SpawnCarrot"
+            ],
+            "lore_tooltips": [
+                {
+                    "english": "One thing that makes Equestria stand out from other mortal worlds is the cuisine. The ponies are herbivorous, preferring a diet similar to horses like apples, carrots, and oats. Be careful, though, because if you don't pay attention to the menu you might accidentally order something inedible like hay."
+                }
+            ],
+            "cost_type": "unplayable",
+            "hide_in_logbook": true
+        }
+    ],
+    "characters": [
+        {
+            "id": "Carrot",
+            "size": 1,
+            "attack_damage": 0,
+            "health": 5,
+            "names": {
+                "english": "Carrot"
+            },
+            "character_art": "@CarrotCharacterArt",
+            "subtypes": [
+                "@Sub_Herb"
+            ],
+            "triggers": [
+                "@CarrotEatenTrigger"
+            ]
+        }
+    ],
+    "effects": [
+        {
+            "id": "SpawnCarrot",
+            "name": "CardEffectSpawnMonster",
+            "target_mode": "room",
+            "param_character": "@Carrot"
+        },
+        {
+            "id": "CarrotBuffHealth",
+            "name": "CardEffectBuffMaxHealth",
+            "target_mode": "last_feeder_character",
+            "param_int": 5
+        },
+        {
+            "id": "CarrotHeal",
+            "name": "CardEffectHeal",
+            "target_mode": "last_feeder_character",
+            "param_int": 5
+        }
+    ],
+    "sprites": [
+        {
+            "id": "CarrotCardArt",
+            "path": "textures/CarrotCardArt.png"
+        },
+        {
+            "id": "CarrotCharacterArt",
+            "path": "textures/CarrotCharacterArt.png"
+        }
+    ],
+    "game_objects": [
+        {
+            "id": "CarrotCardArt",
+            "type": "card_art",
+            "extensions": {
+                "card_art": {
+                    "sprite": "@CarrotCardArt"
+                }
+            }
+        },
+        {
+            "id": "CarrotCharacterArt",
+            "type": "character_art",
+            "extensions": {
+                "character_art": {
+                    "sprite": "@CarrotCharacterArt",
+                    "transform": {
+                        "position": {
+                            "x": 0,
+                            "y": 0.8,
+                            "z": 0
+                        },
+                        "scale": {
+                            "x": 1.2048,
+                            "y": 1.2048,
+                            "z": 1
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "character_triggers": [
+        {
+            "id": "CarrotEatenTrigger",
+            "trigger": "on_eaten",
+            "descriptions": {
+                "english": "Gain {[effect0.power]}[health] and restore {[effect1.power]} health."
+            },
+            "effects": [
+                "@CarrotBuffHealth",
+                "@CarrotHeal"
+            ]
+        }
+    ]
+}

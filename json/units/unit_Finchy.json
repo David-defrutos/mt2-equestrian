@@ -1,0 +1,120 @@
+{
+    "$schema": "https://raw.githubusercontent.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/refs/heads/main/schemas/base.json",
+    "cards": [
+        {
+            "id": "SpawnFinchy",
+            "names": {
+                "english": "Finchy"
+            },
+            "card_art": "@FinchyCardArt",
+            "cost": 0,
+            "card_type": "monster",
+            "rarity": "common",
+            "class": "@ClassEquestrian",
+            "targets_room": true,
+            "targetless": false,
+            "effects": [
+                "@SpawnFinchy"
+            ],
+            "pools": [
+                "MegaPool"
+            ],
+            "lore_tooltips": [
+                {
+                    "english": "Her pursuit of knowledge would be more tolerable if she didn't immediately use everything she learned to cause trouble. Finchy has a knack for dismantling things and little aptitude for putting them back together. It's just a few nuts and bolts here and there, but small pieces of the Boneshaker have gone missing since her arrival."
+                }
+            ]
+        }
+    ],
+    "characters": [
+        {
+            "id": "Finchy",
+            "size": 1,
+            "attack_damage": 1,
+            "health": 1,
+            "names": {
+                "english": "Finchy"
+            },
+            "character_art": "@FinchyCharacterArt",
+            "subtypes": [
+                "@Sub_Pony"
+            ],
+            "status_effects": [
+                {
+                    "status": "armor",
+                    "count": 5
+                }
+            ],
+            "triggers": [
+                "@FinchyGoldTrigger"
+            ]
+        }
+    ],
+    "effects": [
+        {
+            "id": "SpawnFinchy",
+            "name": "CardEffectSpawnMonster",
+            "target_mode": "room",
+            "param_character": "@Finchy"
+        },
+        {
+            "id": "FinchyGold",
+            "name": "CardEffectRewardGold",
+            "param_int": 5
+        }
+    ],
+    "sprites": [
+        {
+            "id": "FinchyCardArt",
+            "path": "textures/FinchyCardArt.png"
+        },
+        {
+            "id": "FinchyCharacterArt",
+            "path": "textures/FinchyCharacterArt.png"
+        }
+    ],
+    "game_objects": [
+        {
+            "id": "FinchyCardArt",
+            "type": "card_art",
+            "extensions": {
+                "card_art": {
+                    "sprite": "@FinchyCardArt"
+                }
+            }
+        },
+        {
+            "id": "FinchyCharacterArt",
+            "type": "character_art",
+            "extensions": {
+                "character_art": {
+                    "sprite": "@FinchyCharacterArt",
+                    "transform": {
+                        "position": {
+                            "x": 0,
+                            "y": 0.8,
+                            "z": 0
+                        },
+                        "scale": {
+                            "x": 1.2048,
+                            "y": 1.2048,
+                            "z": 1
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "character_triggers": [
+        {
+            "id": "FinchyGoldTrigger",
+            "trigger": "on_attacking",
+            "descriptions": {
+                "english": "Gain {[effect0.power]}[coin]."
+            },
+            "effects": [
+                "@FinchyGold"
+            ]
+        }
+    ]
+}

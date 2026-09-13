@@ -1,17 +1,79 @@
 {
     "$schema": "https://raw.githubusercontent.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/refs/heads/main/schemas/base.json",
     "traits": [
-        { "id": "Consume", "name": "CardTraitExhaustState" }
+        {
+            "id": "Consume",
+            "name": "CardTraitExhaustState"
+        }
     ],
     "additional_tooltips": [
         {
             "id": "SocialTooltip",
-            "titles": { "english": "Social" },
+            "titles": {
+                "english": "Social"
+            },
             "descriptions": {
                 "english": "<b>Social</b> units get stronger the more allies share their floor."
             },
             "style": "keyword",
             "allow_secondary_placement": true
+        }
+    ],
+    "card_pools": [
+        {
+            "id": "TrashPandaPool",
+            "cards": [
+                "@SpawnTrashPanda"
+            ]
+        },
+        {
+            "id": "YoLoPool",
+            "cards": [
+                "@SpawnYoLo"
+            ]
+        },
+        {
+            "id": "FinchyPool",
+            "cards": [
+                "@SpawnFinchy"
+            ]
+        },
+        {
+            "id": "CrunchieMunchiePool",
+            "cards": [
+                "@SpawnCrunchieMunchie"
+            ]
+        },
+        {
+            "id": "FilliesPool",
+            "cards": [
+                "@SpawnYoLo",
+                "@SpawnFinchy",
+                "@SpawnCrunchieMunchie"
+            ]
+        },
+        {
+            "id": "MareaLeeMentorIIIPool",
+            "cards": [
+                "@SpawnMistyStep",
+                "@SpawnSnackasmacky",
+                "@SpawnSqueakyBooBoo",
+                "@SpawnStaticJoy"
+            ]
+        }
+    ],
+    "upgrades": [
+        {
+            "id": "GradstoneUpgrade",
+            "titles": {
+                "english": "Gradstone"
+            },
+            "descriptions": {
+                "english": "+10[attack], +10[health] and 0[ember]."
+            },
+            "bonus_hp": 10,
+            "bonus_damage": 10,
+            "cost_reduction": 99
         }
     ]
 }

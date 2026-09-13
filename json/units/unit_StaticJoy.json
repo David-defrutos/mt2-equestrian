@@ -1,0 +1,131 @@
+{
+    "$schema": "https://raw.githubusercontent.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/refs/heads/main/schemas/base.json",
+    "cards": [
+        {
+            "id": "SpawnStaticJoy",
+            "names": {
+                "english": "Static Joy"
+            },
+            "card_art": "@StaticJoyCardArt",
+            "cost": 2,
+            "card_type": "monster",
+            "rarity": "uncommon",
+            "class": "@ClassEquestrian",
+            "targets_room": true,
+            "targetless": false,
+            "effects": [
+                "@SpawnStaticJoy"
+            ],
+            "pools": [
+                "MegaPool"
+            ],
+            "lore_tooltips": [
+                {
+                    "english": "I never expected a cute little pony to make my life a living nightmare, but here I am. Static Joy's got a devious streak that just won't quit and a seemingly endless supply of practical jokes. Where does one get jalapeno-flavored ear wax and why does such a thing even exist? Even so, her pranks are mostly harmless and I'd prefer her company over the over-righteous, pompous, self-important, ego-bloated winged any day."
+                }
+            ]
+        }
+    ],
+    "characters": [
+        {
+            "id": "StaticJoy",
+            "size": 1,
+            "attack_damage": 5,
+            "health": 5,
+            "names": {
+                "english": "Static Joy"
+            },
+            "character_art": "@StaticJoyCharacterArt",
+            "subtypes": [
+                "@Sub_Pony"
+            ],
+            "status_effects": [
+                {
+                    "status": "armor",
+                    "count": 10
+                },
+                {
+                    "status": "trample",
+                    "count": 1
+                }
+            ],
+            "triggers": [
+                "@StaticJoyArmorTrigger"
+            ]
+        }
+    ],
+    "effects": [
+        {
+            "id": "SpawnStaticJoy",
+            "name": "CardEffectSpawnMonster",
+            "target_mode": "room",
+            "param_character": "@StaticJoy"
+        },
+        {
+            "id": "StaticJoyArmor",
+            "name": "CardEffectAddStatusEffect",
+            "target_mode": "room",
+            "target_team": "monsters",
+            "param_status_effects": [
+                {
+                    "status": "armor",
+                    "count": 2
+                }
+            ]
+        }
+    ],
+    "sprites": [
+        {
+            "id": "StaticJoyCardArt",
+            "path": "textures/StaticJoyCardArt.png"
+        },
+        {
+            "id": "StaticJoyCharacterArt",
+            "path": "textures/StaticJoyCharacterArt.png"
+        }
+    ],
+    "game_objects": [
+        {
+            "id": "StaticJoyCardArt",
+            "type": "card_art",
+            "extensions": {
+                "card_art": {
+                    "sprite": "@StaticJoyCardArt"
+                }
+            }
+        },
+        {
+            "id": "StaticJoyCharacterArt",
+            "type": "character_art",
+            "extensions": {
+                "character_art": {
+                    "sprite": "@StaticJoyCharacterArt",
+                    "transform": {
+                        "position": {
+                            "x": 0,
+                            "y": 0.8,
+                            "z": 0
+                        },
+                        "scale": {
+                            "x": 1.2048,
+                            "y": 1.2048,
+                            "z": 1
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "character_triggers": [
+        {
+            "id": "StaticJoyArmorTrigger",
+            "trigger": "on_attacking",
+            "descriptions": {
+                "english": "Apply <nobr><b>Armor {[effect0.status0.power]}</b></nobr> to all friendly units."
+            },
+            "effects": [
+                "@StaticJoyArmor"
+            ]
+        }
+    ]
+}

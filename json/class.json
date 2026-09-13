@@ -3,11 +3,15 @@
     "classes": [
         {
             "id": "ClassEquestrian",
-            "titles": { "english": "Equestrian" },
+            "titles": {
+                "english": "Equestrian"
+            },
             "descriptions": {
                 "english": "Little, colorful and far too many. Pile the herd onto a single floor and let the crowd do the work."
             },
-            "subclass_descriptions": { "english": "Equestrian" },
+            "subclass_descriptions": {
+                "english": "Equestrian"
+            },
             "icons": {
                 "small": "@ClanLogo_48",
                 "medium": "@ClanLogo_92_Outline",
@@ -16,11 +20,33 @@
             },
             "card_draft_icon": "@ClanCardDraftIcon",
             "card_style": "@EquestrianClanCardStyle",
-            "ui_color":      { "r": 0.86, "g": 0.55, "b": 0.80 },
-            "ui_color_dark": { "r": 0.42, "g": 0.24, "b": 0.40 },
+            "ui_color": {
+                "r": 0.86,
+                "g": 0.55,
+                "b": 0.8
+            },
+            "ui_color_dark": {
+                "r": 0.42,
+                "g": 0.24,
+                "b": 0.4
+            },
             "ui_gradient": [
-                { "time": 0.0, "color": { "r": 1.0, "g": 0.85, "b": 0.95 } },
-                { "time": 1.0, "color": { "r": 0.86, "g": 0.55, "b": 0.80 } }
+                {
+                    "time": 0.0,
+                    "color": {
+                        "r": 1.0,
+                        "g": 0.85,
+                        "b": 0.95
+                    }
+                },
+                {
+                    "time": 1.0,
+                    "color": {
+                        "r": 0.86,
+                        "g": 0.55,
+                        "b": 0.8
+                    }
+                }
             ],
             "champions": [
                 {
@@ -28,9 +54,21 @@
                     "card_data": "@SpawnMareaLee",
                     "starter_card": "@SpawnTrashPanda",
                     "upgrade_tree": [
-                        [ "@upg_Teacher1", "@upg_Teacher2", "@upg_Teacher3" ],
-                        [ "@upg_Party1",   "@upg_Party2",   "@upg_Party3"   ],
-                        [ "@upg_Herd1",    "@upg_Herd2",    "@upg_Herd3"    ]
+                        [
+                            "@upg_Mentor1",
+                            "@upg_Mentor2",
+                            "@upg_Mentor3"
+                        ],
+                        [
+                            "@upg_Coach1",
+                            "@upg_Coach2",
+                            "@upg_Coach3"
+                        ],
+                        [
+                            "@upg_Tutor1",
+                            "@upg_Tutor2",
+                            "@upg_Tutor3"
+                        ]
                     ],
                     "icon": "@icon_MareaLee",
                     "portrait": "@icon_MareaLee"
@@ -40,9 +78,21 @@
                     "card_data": "@SpawnTantabus",
                     "starter_card": "@AppleCider",
                     "upgrade_tree": [
-                        [ "@upg_Nightmare1", "@upg_Nightmare2", "@upg_Nightmare3" ],
-                        [ "@upg_Dream1",     "@upg_Dream2",     "@upg_Dream3"     ],
-                        [ "@upg_Shadow1",    "@upg_Shadow2",    "@upg_Shadow3"    ]
+                        [
+                            "@upg_Nightmare1",
+                            "@upg_Nightmare2",
+                            "@upg_Nightmare3"
+                        ],
+                        [
+                            "@upg_Dream1",
+                            "@upg_Dream2",
+                            "@upg_Dream3"
+                        ],
+                        [
+                            "@upg_Shadow1",
+                            "@upg_Shadow2",
+                            "@upg_Shadow3"
+                        ]
                     ],
                     "icon": "@icon_Tantabus",
                     "portrait": "@icon_Tantabus"
@@ -56,10 +106,30 @@
         }
     ],
     "subtypes": [
-        { "id": "Sub_Pony",   "names": { "english": "Pony" } },
-        { "id": "Sub_Herb",   "names": { "english": "Herb" } },
-        { "id": "Sub_Pet",    "names": { "english": "Pet" } },
-        { "id": "Sub_Social", "names": { "english": "Social" } }
+        {
+            "id": "Sub_Pony",
+            "names": {
+                "english": "Pony"
+            }
+        },
+        {
+            "id": "Sub_Herb",
+            "names": {
+                "english": "Herb"
+            }
+        },
+        {
+            "id": "Sub_Pet",
+            "names": {
+                "english": "Pet"
+            }
+        },
+        {
+            "id": "Sub_Social",
+            "names": {
+                "english": "Social"
+            }
+        }
     ],
     "map_nodes": [
         {
@@ -68,26 +138,47 @@
             "map_icon": "@ClanLogo_48",
             "minimap_icon": "@ClanLogo_48",
             "prefab": "@EquestrianMapIcon",
-            "titles": { "english": "Equestrian Banner" },
-            "descriptions": { "english": "Gain an Equestrian Unit" },
-            "pools": [ "RandomChosenMainClassUnit", "RandomChosenSubClassUnit" ],
+            "titles": {
+                "english": "Equestrian Banner"
+            },
+            "descriptions": {
+                "english": "Gain an Equestrian Unit"
+            },
+            "pools": [
+                "RandomChosenMainClassUnit",
+                "RandomChosenSubClassUnit"
+            ],
             "is_banner_node": true,
             "extensions": [
-                { "reward": { "class": "@ClassEquestrian", "rewards": [ "@EquestrianBannerReward" ] } }
+                {
+                    "reward": {
+                        "class": "@ClassEquestrian",
+                        "rewards": [
+                            "@EquestrianBannerReward"
+                        ]
+                    }
+                }
             ]
         }
     ],
     "card_pools": [
         {
             "id": "EquestrianBannerCardPool",
-            "cards": [ "@SpawnTrashPanda" ]
+            "cards": [
+                "@SpawnMistyStep",
+                "@SpawnSnackasmacky",
+                "@SpawnSqueakyBooBoo",
+                "@SpawnStaticJoy"
+            ]
         }
     ],
     "rewards": [
         {
             "id": "EquestrianBannerReward",
             "type": "draft",
-            "costs": [ 100 ],
+            "costs": [
+                100
+            ],
             "extensions": [
                 {
                     "draft": {
@@ -123,8 +214,16 @@
                 "character_art": {
                     "sprite": "@MareaLeeCharacterArt",
                     "transform": {
-                        "position": { "x": 1.7, "y": 0.9, "z": 0 },
-                        "scale": { "x": 1.8, "y": 1.8, "z": 1 }
+                        "position": {
+                            "x": 1.7,
+                            "y": 0.9,
+                            "z": 0
+                        },
+                        "scale": {
+                            "x": 1.8,
+                            "y": 1.8,
+                            "z": 1
+                        }
                     }
                 }
             }
@@ -136,8 +235,16 @@
                 "character_art": {
                     "sprite": "@TantabusCharacterArt",
                     "transform": {
-                        "position": { "x": 2.1, "y": 0.8, "z": 0 },
-                        "scale": { "x": 1.2, "y": 1.2, "z": 1 }
+                        "position": {
+                            "x": 2.1,
+                            "y": 0.8,
+                            "z": 0
+                        },
+                        "scale": {
+                            "x": 1.2,
+                            "y": 1.2,
+                            "z": 1
+                        }
                     }
                 }
             }
@@ -153,23 +260,77 @@
         }
     ],
     "sprites": [
-        { "id": "ClanLogo_48",            "path": "textures/ClanAssets/ClanLogo_48.png" },
-        { "id": "ClanLogo_92",            "path": "textures/ClanAssets/ClanLogo_92.png" },
-        { "id": "ClanLogo_92_Outline",    "path": "textures/ClanAssets/ClanLogo_92_Outline.png" },
-        { "id": "ClanLogo_128",           "path": "textures/ClanAssets/ClanLogo_128.png" },
-        { "id": "ClanLogo_Silhouette",    "path": "textures/ClanAssets/ClanLogo_Silhouette.png" },
-        { "id": "ClanCardDraftIcon",      "path": "textures/ClanAssets/ClanCardDraftIcon.png" },
-        { "id": "ClanBorderUnit",         "path": "textures/ClanAssets/ClanBorderUnit.png" },
-        { "id": "ClanBorderSpell",        "path": "textures/ClanAssets/ClanBorderSpell.png" },
-        { "id": "ClanBorderRoom",         "path": "textures/ClanAssets/ClanBorderRoom.png" },
-        { "id": "ClanBorderEquipment",    "path": "textures/ClanAssets/ClanBorderEquipment.png" },
-        { "id": "Equestrian_Enabled",         "path": "textures/ClanAssets/Equestrian_Enabled.png" },
-        { "id": "Equestrian_Disabled",        "path": "textures/ClanAssets/Equestrian_Disabled.png" },
-        { "id": "Equestrian_Frozen",          "path": "textures/ClanAssets/Equestrian_Frozen.png" },
-        { "id": "Equestrian_VisitedDisabled", "path": "textures/ClanAssets/Equestrian_VisitedDisabled.png" },
-        { "id": "icon_MareaLee",          "path": "textures/ClanAssets/icon_MareaLee.png" },
-        { "id": "icon_Tantabus",          "path": "textures/ClanAssets/icon_Tantabus.png" },
-        { "id": "MareaLeeCharacterArt",   "path": "textures/ClanAssets/MareaLeeCharacterArt.png" },
-        { "id": "TantabusCharacterArt",   "path": "textures/ClanAssets/TantabusCharacterArt.png" }
+        {
+            "id": "ClanLogo_48",
+            "path": "textures/ClanAssets/ClanLogo_48.png"
+        },
+        {
+            "id": "ClanLogo_92",
+            "path": "textures/ClanAssets/ClanLogo_92.png"
+        },
+        {
+            "id": "ClanLogo_92_Outline",
+            "path": "textures/ClanAssets/ClanLogo_92_Outline.png"
+        },
+        {
+            "id": "ClanLogo_128",
+            "path": "textures/ClanAssets/ClanLogo_128.png"
+        },
+        {
+            "id": "ClanLogo_Silhouette",
+            "path": "textures/ClanAssets/ClanLogo_Silhouette.png"
+        },
+        {
+            "id": "ClanCardDraftIcon",
+            "path": "textures/ClanAssets/ClanCardDraftIcon.png"
+        },
+        {
+            "id": "ClanBorderUnit",
+            "path": "textures/ClanAssets/ClanBorderUnit.png"
+        },
+        {
+            "id": "ClanBorderSpell",
+            "path": "textures/ClanAssets/ClanBorderSpell.png"
+        },
+        {
+            "id": "ClanBorderRoom",
+            "path": "textures/ClanAssets/ClanBorderRoom.png"
+        },
+        {
+            "id": "ClanBorderEquipment",
+            "path": "textures/ClanAssets/ClanBorderEquipment.png"
+        },
+        {
+            "id": "Equestrian_Enabled",
+            "path": "textures/ClanAssets/Equestrian_Enabled.png"
+        },
+        {
+            "id": "Equestrian_Disabled",
+            "path": "textures/ClanAssets/Equestrian_Disabled.png"
+        },
+        {
+            "id": "Equestrian_Frozen",
+            "path": "textures/ClanAssets/Equestrian_Frozen.png"
+        },
+        {
+            "id": "Equestrian_VisitedDisabled",
+            "path": "textures/ClanAssets/Equestrian_VisitedDisabled.png"
+        },
+        {
+            "id": "icon_MareaLee",
+            "path": "textures/ClanAssets/icon_MareaLee.png"
+        },
+        {
+            "id": "icon_Tantabus",
+            "path": "textures/ClanAssets/icon_Tantabus.png"
+        },
+        {
+            "id": "MareaLeeCharacterArt",
+            "path": "textures/ClanAssets/MareaLeeCharacterArt.png"
+        },
+        {
+            "id": "TantabusCharacterArt",
+            "path": "textures/ClanAssets/TantabusCharacterArt.png"
+        }
     ]
 }

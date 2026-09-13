@@ -1,0 +1,136 @@
+{
+    "$schema": "https://raw.githubusercontent.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/refs/heads/main/schemas/base.json",
+    "cards": [
+        {
+            "id": "SpawnSqueakyBooBoo",
+            "names": {
+                "english": "Squeaky Boo-Boo"
+            },
+            "card_art": "@SqueakyBooBooCardArt",
+            "cost": 2,
+            "card_type": "monster",
+            "rarity": "uncommon",
+            "class": "@ClassEquestrian",
+            "targets_room": true,
+            "targetless": false,
+            "effects": [
+                "@SpawnSqueakyBooBoo"
+            ],
+            "pools": [
+                "MegaPool"
+            ],
+            "traits": [
+                "@SqueakyBooBooPermafrost"
+            ],
+            "lore_tooltips": [
+                {
+                    "english": "Squeaky Boo-Boo is one of those ponies I never would have met if Preeny Snuggles hadn't insisted on it, and would have been a nameless background pony otherwise. Those two are polar opposites, with Squeaky being the most reclusive and awkward soul I've ever met. That said, she is a caring pony, barely brave enough to follow her friends into Hell, and might even help out a little, if she really has to..."
+                }
+            ]
+        }
+    ],
+    "characters": [
+        {
+            "id": "SqueakyBooBoo",
+            "size": 1,
+            "attack_damage": 0,
+            "health": 35,
+            "names": {
+                "english": "Squeaky Boo-Boo"
+            },
+            "character_art": "@SqueakyBooBooCharacterArt",
+            "subtypes": [
+                "@Sub_Pony"
+            ],
+            "status_effects": [
+                {
+                    "status": "armor",
+                    "count": 10
+                }
+            ],
+            "triggers": [
+                "@SqueakyBooBooRegenTrigger"
+            ]
+        }
+    ],
+    "effects": [
+        {
+            "id": "SpawnSqueakyBooBoo",
+            "name": "CardEffectSpawnMonster",
+            "target_mode": "room",
+            "param_character": "@SqueakyBooBoo"
+        },
+        {
+            "id": "SqueakyBooBooRegen",
+            "name": "CardEffectAddStatusEffect",
+            "target_mode": "room",
+            "target_team": "monsters",
+            "param_status_effects": [
+                {
+                    "status": "regen",
+                    "count": 2
+                }
+            ]
+        }
+    ],
+    "sprites": [
+        {
+            "id": "SqueakyBooBooCardArt",
+            "path": "textures/SqueakyBooBooCardArt.png"
+        },
+        {
+            "id": "SqueakyBooBooCharacterArt",
+            "path": "textures/SqueakyBooBooCharacterArt.png"
+        }
+    ],
+    "game_objects": [
+        {
+            "id": "SqueakyBooBooCardArt",
+            "type": "card_art",
+            "extensions": {
+                "card_art": {
+                    "sprite": "@SqueakyBooBooCardArt"
+                }
+            }
+        },
+        {
+            "id": "SqueakyBooBooCharacterArt",
+            "type": "character_art",
+            "extensions": {
+                "character_art": {
+                    "sprite": "@SqueakyBooBooCharacterArt",
+                    "transform": {
+                        "position": {
+                            "x": 0,
+                            "y": 0.8,
+                            "z": 0
+                        },
+                        "scale": {
+                            "x": 1.2048,
+                            "y": 1.2048,
+                            "z": 1
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "character_triggers": [
+        {
+            "id": "SqueakyBooBooRegenTrigger",
+            "trigger": "post_combat",
+            "descriptions": {
+                "english": "Apply <nobr><b>Regen {[effect0.status0.power]}</b></nobr> to all friendly units."
+            },
+            "effects": [
+                "@SqueakyBooBooRegen"
+            ]
+        }
+    ],
+    "traits": [
+        {
+            "id": "SqueakyBooBooPermafrost",
+            "name": "CardTraitPermafrost"
+        }
+    ]
+}

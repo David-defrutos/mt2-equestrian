@@ -1,0 +1,123 @@
+{
+    "$schema": "https://raw.githubusercontent.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/refs/heads/main/schemas/base.json",
+    "cards": [
+        {
+            "id": "SpawnSnackasmacky",
+            "names": {
+                "english": "Snackasmacky"
+            },
+            "card_art": "@SnackasmackyCardArt",
+            "cost": 1,
+            "card_type": "monster",
+            "rarity": "uncommon",
+            "class": "@ClassEquestrian",
+            "targets_room": true,
+            "targetless": false,
+            "effects": [
+                "@SpawnSnackasmacky"
+            ],
+            "pools": [
+                "MegaPool"
+            ],
+            "lore_tooltips": [
+                {
+                    "english": "I swear, this pony wants to turn me into a blimp. She always makes too much food, and gets really mad whenever any of it goes to waste. I checked, and the bushes around her house are stuffed with discarded pastries from guests who couldn't eat it all and didn't want to displease her."
+                }
+            ]
+        }
+    ],
+    "characters": [
+        {
+            "id": "Snackasmacky",
+            "size": 1,
+            "attack_damage": 5,
+            "health": 15,
+            "names": {
+                "english": "Snackasmacky"
+            },
+            "character_art": "@SnackasmackyCharacterArt",
+            "subtypes": [
+                "@Sub_Pony"
+            ],
+            "triggers": [
+                "@SnackasmackyHealTrigger"
+            ]
+        }
+    ],
+    "effects": [
+        {
+            "id": "SpawnSnackasmacky",
+            "name": "CardEffectSpawnMonster",
+            "target_mode": "room",
+            "param_character": "@Snackasmacky"
+        },
+        {
+            "id": "SnackasmackyBuff",
+            "name": "CardEffectAddTempCardUpgradeToUnits",
+            "target_mode": "room",
+            "target_team": "monsters",
+            "param_upgrade": "@SnackasmackyRejuvenateUpgrade"
+        }
+    ],
+    "sprites": [
+        {
+            "id": "SnackasmackyCardArt",
+            "path": "textures/SnackasmackyCardArt.png"
+        },
+        {
+            "id": "SnackasmackyCharacterArt",
+            "path": "textures/SnackasmackyCharacterArt.png"
+        }
+    ],
+    "game_objects": [
+        {
+            "id": "SnackasmackyCardArt",
+            "type": "card_art",
+            "extensions": {
+                "card_art": {
+                    "sprite": "@SnackasmackyCardArt"
+                }
+            }
+        },
+        {
+            "id": "SnackasmackyCharacterArt",
+            "type": "character_art",
+            "extensions": {
+                "character_art": {
+                    "sprite": "@SnackasmackyCharacterArt",
+                    "transform": {
+                        "position": {
+                            "x": 0,
+                            "y": 0.8,
+                            "z": 0
+                        },
+                        "scale": {
+                            "x": 1.2048,
+                            "y": 1.2048,
+                            "z": 1
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "character_triggers": [
+        {
+            "id": "SnackasmackyHealTrigger",
+            "trigger": "on_heal",
+            "descriptions": {
+                "english": "Apply <nobr>+1[attack] and [health]</nobr> to all friendly units."
+            },
+            "effects": [
+                "@SnackasmackyBuff"
+            ]
+        }
+    ],
+    "upgrades": [
+        {
+            "id": "SnackasmackyRejuvenateUpgrade",
+            "bonus_damage": 1,
+            "bonus_hp": 1
+        }
+    ]
+}

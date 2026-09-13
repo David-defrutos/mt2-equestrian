@@ -4,20 +4,21 @@
         {
             "id": "SpawnMareaLee",
             "names": {
-                "english": "Marea Lee"
+                "english": "Mare a Lee"
             },
             "card_art": "@MareaLeeCardArt",
-            "cost": 1,
+            "cost": 0,
             "card_type": "monster",
             "rarity": "champion",
             "class": "@ClassEquestrian",
             "targets_room": true,
+            "targetless": false,
             "effects": [
                 "@SpawnMareaLee"
             ],
             "lore_tooltips": [
                 {
-                    "english": "She came to Hell for the friends. The pyre was a bonus."
+                    "english": "Sweet, innocent, Mare a Lee. Do you really think that the monsters of Hell will be your allies, or that Heaven will forgive you if you fail? Are you willing to put your very soul itself in peril to lead this suicidal quest into Hell for... for what, exactly? So you don't have to change the answer key to one of your multiple choice questions?"
                 }
             ]
         }
@@ -29,10 +30,11 @@
             "attack_damage": 0,
             "health": 5,
             "names": {
-                "english": "Marea Lee"
+                "english": "Mare a Lee"
             },
             "character_art": "@MareaLeeCharacterArt",
             "subtypes": [
+                "SubtypesData_Champion_83f21cbe-9d9b-4566-a2c3-ca559ab8ff34",
                 "@Sub_Pony",
                 "@Sub_Social"
             ]
@@ -44,107 +46,437 @@
             "name": "CardEffectSpawnMonster",
             "target_mode": "room",
             "param_character": "@MareaLee"
+        },
+        {
+            "id": "MareaLeeAddTrashPanda",
+            "name": "CardEffectAddBattleCard",
+            "target_mode": "room",
+            "param_card_pool": "@TrashPandaPool",
+            "param_int": 3,
+            "param_int_2": 1
+        },
+        {
+            "id": "MareaLeeHeal4",
+            "name": "CardEffectHeal",
+            "target_mode": "room",
+            "target_team": "monsters",
+            "param_int": 4
+        },
+        {
+            "id": "MareaLeeAddYoLo",
+            "name": "CardEffectAddBattleCard",
+            "target_mode": "room",
+            "param_card_pool": "@YoLoPool",
+            "param_int": 3,
+            "param_int_2": 1
+        },
+        {
+            "id": "MareaLeeAddFinchy",
+            "name": "CardEffectAddBattleCard",
+            "target_mode": "room",
+            "param_card_pool": "@FinchyPool",
+            "param_int": 3,
+            "param_int_2": 1
+        },
+        {
+            "id": "MareaLeeAddCrunchieMunchie",
+            "name": "CardEffectAddBattleCard",
+            "target_mode": "room",
+            "param_card_pool": "@CrunchieMunchiePool",
+            "param_int": 3,
+            "param_int_2": 1
+        },
+        {
+            "id": "MareaLeeHeal8",
+            "name": "CardEffectHeal",
+            "target_mode": "room",
+            "target_team": "monsters",
+            "param_int": 8
+        },
+        {
+            "id": "MareaLeeAddUncommonPony",
+            "name": "CardEffectAddBattleCard",
+            "target_mode": "room",
+            "param_card_pool": "@MareaLeeMentorIIIPool",
+            "param_int": 3,
+            "param_int_2": 1,
+            "param_upgrade": "@GradstoneUpgrade"
+        },
+        {
+            "id": "MareaLeeHeal15",
+            "name": "CardEffectHeal",
+            "target_mode": "room",
+            "target_team": "monsters",
+            "param_int": 15
+        },
+        {
+            "id": "MareaLeeEnchantEndless",
+            "name": "CardEffectEnchant",
+            "target_mode": "room",
+            "target_team": "monsters",
+            "param_status_effects": [
+                {
+                    "status": "endless",
+                    "count": 1
+                }
+            ]
+        },
+        {
+            "id": "MareaLeeEnchantQuick",
+            "name": "CardEffectEnchant",
+            "target_mode": "room",
+            "target_team": "monsters",
+            "param_status_effects": [
+                {
+                    "status": "ambush",
+                    "count": 1
+                }
+            ]
+        },
+        {
+            "id": "MareaLeeEnchantTrample",
+            "name": "CardEffectEnchant",
+            "target_mode": "room",
+            "target_team": "monsters",
+            "param_status_effects": [
+                {
+                    "status": "trample",
+                    "count": 1
+                }
+            ]
+        },
+        {
+            "id": "MareaLeeTutorHand1",
+            "name": "CardEffectAddTempCardUpgradeToCardsInHand",
+            "target_mode": "hand",
+            "target_card_type": "monster",
+            "param_upgrade": "@TutorHandUpgrade1"
+        },
+        {
+            "id": "MareaLeeTutorHand2",
+            "name": "CardEffectAddTempCardUpgradeToCardsInHand",
+            "target_mode": "hand",
+            "target_card_type": "monster",
+            "param_upgrade": "@TutorHandUpgrade2"
+        },
+        {
+            "id": "MareaLeeTutorHand3",
+            "name": "CardEffectAddTempCardUpgradeToCardsInHand",
+            "target_mode": "hand",
+            "target_card_type": "monster",
+            "param_upgrade": "@TutorHandUpgrade3"
+        }
+    ],
+    "character_triggers": [
+        {
+            "id": "MareaLeeMentor1Summon",
+            "trigger": "on_spawn",
+            "descriptions": {
+                "english": "Add a Trash Panda to your hand."
+            },
+            "effects": [
+                "@MareaLeeAddTrashPanda"
+            ]
+        },
+        {
+            "id": "MareaLeeMentor1Resolve",
+            "trigger": "post_combat",
+            "descriptions": {
+                "english": "Restore {[effect0.power]} health to friendly units."
+            },
+            "effects": [
+                "@MareaLeeHeal4"
+            ]
+        },
+        {
+            "id": "MareaLeeMentor2Summon",
+            "trigger": "on_spawn",
+            "descriptions": {
+                "english": "Add a three little ponies to your hand."
+            },
+            "effects": [
+                "@MareaLeeAddYoLo",
+                "@MareaLeeAddFinchy",
+                "@MareaLeeAddCrunchieMunchie"
+            ]
+        },
+        {
+            "id": "MareaLeeMentor2Resolve",
+            "trigger": "post_combat",
+            "descriptions": {
+                "english": "Restore {[effect0.power]} health to friendly units."
+            },
+            "effects": [
+                "@MareaLeeHeal8"
+            ]
+        },
+        {
+            "id": "MareaLeeMentor3Add",
+            "trigger": "post_combat",
+            "descriptions": {
+                "english": "Add a random Uncommon pony to your hand with +10[attack][health], <b>Social</b>, and 0[ember]."
+            },
+            "effects": [
+                "@MareaLeeAddUncommonPony"
+            ]
+        },
+        {
+            "id": "MareaLeeMentor3Resolve",
+            "trigger": "post_combat",
+            "descriptions": {
+                "english": "Restore {[effect0.power]} health to friendly units."
+            },
+            "effects": [
+                "@MareaLeeHeal15"
+            ]
+        },
+        {
+            "id": "MareaLeeCoach1Enchant",
+            "trigger": "after_spawn_enchant",
+            "descriptions": {
+                "english": "<b>Endless</b>."
+            },
+            "effects": [
+                "@MareaLeeEnchantEndless"
+            ]
+        },
+        {
+            "id": "MareaLeeCoach2Enchant",
+            "trigger": "after_spawn_enchant",
+            "descriptions": {
+                "english": "<b>Endless</b> and <b>Quick</b>."
+            },
+            "effects": [
+                "@MareaLeeEnchantEndless",
+                "@MareaLeeEnchantQuick"
+            ]
+        },
+        {
+            "id": "MareaLeeCoach3Enchant",
+            "trigger": "after_spawn_enchant",
+            "descriptions": {
+                "english": "<b>Endless</b>, <b>Quick</b> and <b>Trample</b>."
+            },
+            "effects": [
+                "@MareaLeeEnchantEndless",
+                "@MareaLeeEnchantQuick",
+                "@MareaLeeEnchantTrample"
+            ]
+        },
+        {
+            "id": "MareaLeeTutor1EndTurn",
+            "trigger": "end_turn_pre_hand_discard",
+            "descriptions": {
+                "english": "Apply +3[attack], +3[health], and <b>Frozen</b> to units in hand."
+            },
+            "effects": [
+                "@MareaLeeTutorHand1"
+            ]
+        },
+        {
+            "id": "MareaLeeTutor2EndTurn",
+            "trigger": "end_turn_pre_hand_discard",
+            "descriptions": {
+                "english": "Apply +6[attack], +6[health], -1[ember], and <b>Frozen</b> to units in hand."
+            },
+            "effects": [
+                "@MareaLeeTutorHand2"
+            ]
+        },
+        {
+            "id": "MareaLeeTutor3EndTurn",
+            "trigger": "end_turn_pre_hand_discard",
+            "descriptions": {
+                "english": "Apply +10[attack], +10[health], -1[ember], -1[size] and <b>Frozen</b> to units in hand."
+            },
+            "effects": [
+                "@MareaLeeTutorHand3"
+            ]
+        }
+    ],
+    "traits": [
+        {
+            "id": "MareaLeeFreeze",
+            "name": "CardTraitFreeze"
         }
     ],
     "upgrades": [
         {
-            "id": "upg_Teacher1",
+            "id": "upg_Mentor1",
             "titles": {
-                "english": "Teacher I"
+                "english": "Teacher"
             },
             "descriptions": {
-                "english": "PLACEHOLDER: senda Teacher, escalon 1. Pendiente de transcribir del mod MT1."
+                "english": "<b>Summon</b>: Add a Trash Panda to your hand.<br><b>Resolve</b>: Restore 4 health to friendly units."
             },
-            "bonus_damage": 5,
-            "bonus_hp": 10
+            "use_upgrade_highlight_tags": true,
+            "bonus_hp": 20,
+            "trigger_upgrades": [
+                "@MareaLeeMentor1Summon",
+                "@MareaLeeMentor1Resolve"
+            ]
         },
         {
-            "id": "upg_Teacher2",
+            "id": "upg_Mentor2",
             "titles": {
                 "english": "Teacher II"
             },
             "descriptions": {
-                "english": "PLACEHOLDER: senda Teacher, escalon 2. Pendiente de transcribir del mod MT1."
+                "english": "<b>Summon</b>: Add three little fillies to your hand.<br><b>Resolve</b>: Restore 8 health to friendly units."
             },
-            "bonus_damage": 10,
-            "bonus_hp": 20
+            "use_upgrade_highlight_tags": true,
+            "bonus_hp": 45,
+            "trigger_upgrades": [
+                "@MareaLeeMentor2Summon",
+                "@MareaLeeMentor2Resolve"
+            ]
         },
         {
-            "id": "upg_Teacher3",
+            "id": "upg_Mentor3",
             "titles": {
                 "english": "Teacher III"
             },
             "descriptions": {
-                "english": "PLACEHOLDER: senda Teacher, escalon 3. Pendiente de transcribir del mod MT1."
+                "english": "<b>Resolve</b>: Add a random uncommon Pony unit to your hand with +10[attack][health], <b>Social</b>, and 0[ember].<br><b>Resolve</b>: Restore 15 health to friendly units."
             },
-            "bonus_damage": 20,
-            "bonus_hp": 30
+            "use_upgrade_highlight_tags": true,
+            "bonus_hp": 95,
+            "trigger_upgrades": [
+                "@MareaLeeMentor3Add",
+                "@MareaLeeMentor3Resolve"
+            ]
         },
         {
-            "id": "upg_Party1",
+            "id": "upg_Coach1",
             "titles": {
-                "english": "Party I"
+                "english": "Coach"
             },
             "descriptions": {
-                "english": "PLACEHOLDER: senda Party, escalon 1. Pendiente de transcribir del mod MT1."
+                "english": "<b>Enchant</b>: <b>Endless</b>."
             },
-            "bonus_damage": 5,
-            "bonus_hp": 10
+            "use_upgrade_highlight_tags": true,
+            "bonus_damage": 15,
+            "status_effect_upgrades": [
+                {
+                    "status": "armor",
+                    "count": 5
+                }
+            ],
+            "trigger_upgrades": [
+                "@MareaLeeCoach1Enchant"
+            ]
         },
         {
-            "id": "upg_Party2",
+            "id": "upg_Coach2",
             "titles": {
-                "english": "Party II"
+                "english": "Coach II"
             },
             "descriptions": {
-                "english": "PLACEHOLDER: senda Party, escalon 2. Pendiente de transcribir del mod MT1."
+                "english": "<b>Enchant</b>: <b>Endless</b> and <b>Quick</b>."
             },
+            "use_upgrade_highlight_tags": true,
+            "bonus_damage": 30,
+            "status_effect_upgrades": [
+                {
+                    "status": "armor",
+                    "count": 10
+                }
+            ],
+            "trigger_upgrades": [
+                "@MareaLeeCoach2Enchant"
+            ]
+        },
+        {
+            "id": "upg_Coach3",
+            "titles": {
+                "english": "Coach III"
+            },
+            "descriptions": {
+                "english": "<b>Enchant</b>: <b>Endless</b>, <b>Quick</b> and <b>Trample</b>."
+            },
+            "use_upgrade_highlight_tags": true,
+            "bonus_damage": 60,
+            "status_effect_upgrades": [
+                {
+                    "status": "armor",
+                    "count": 20
+                }
+            ],
+            "trigger_upgrades": [
+                "@MareaLeeCoach3Enchant"
+            ]
+        },
+        {
+            "id": "TutorHandUpgrade1",
+            "trait_upgrades": [
+                "@MareaLeeFreeze"
+            ],
+            "bonus_hp": 3,
+            "bonus_damage": 3
+        },
+        {
+            "id": "TutorHandUpgrade2",
+            "trait_upgrades": [
+                "@MareaLeeFreeze"
+            ],
+            "bonus_hp": 6,
+            "bonus_damage": 6,
+            "cost_reduction": 1
+        },
+        {
+            "id": "TutorHandUpgrade3",
+            "trait_upgrades": [
+                "@MareaLeeFreeze"
+            ],
+            "bonus_hp": 10,
             "bonus_damage": 10,
-            "bonus_hp": 20
+            "cost_reduction": 1,
+            "bonus_size": -1
         },
         {
-            "id": "upg_Party3",
+            "id": "upg_Tutor1",
             "titles": {
-                "english": "Party III"
+                "english": "Tutor"
             },
             "descriptions": {
-                "english": "PLACEHOLDER: senda Party, escalon 3. Pendiente de transcribir del mod MT1."
+                "english": "At end of turn, apply +5[attack], +5[health], and <b>Frozen</b> to units in hand."
             },
-            "bonus_damage": 20,
-            "bonus_hp": 30
-        },
-        {
-            "id": "upg_Herd1",
-            "titles": {
-                "english": "Herd I"
-            },
-            "descriptions": {
-                "english": "PLACEHOLDER: senda Herd, escalon 1. Pendiente de transcribir del mod MT1."
-            },
+            "use_upgrade_highlight_tags": true,
+            "bonus_hp": 5,
             "bonus_damage": 5,
-            "bonus_hp": 10
+            "trigger_upgrades": [
+                "@MareaLeeTutor1EndTurn"
+            ]
         },
         {
-            "id": "upg_Herd2",
+            "id": "upg_Tutor2",
             "titles": {
-                "english": "Herd II"
+                "english": "Tutor II"
             },
             "descriptions": {
-                "english": "PLACEHOLDER: senda Herd, escalon 2. Pendiente de transcribir del mod MT1."
+                "english": "At end of turn, apply +10[attack], +10[health], -1[ember] and <b>Frozen</b> to units in hand."
             },
+            "use_upgrade_highlight_tags": true,
+            "bonus_hp": 15,
             "bonus_damage": 10,
-            "bonus_hp": 20
+            "trigger_upgrades": [
+                "@MareaLeeTutor2EndTurn"
+            ]
         },
         {
-            "id": "upg_Herd3",
+            "id": "upg_Tutor3",
             "titles": {
-                "english": "Herd III"
+                "english": "Tutor III"
             },
             "descriptions": {
-                "english": "PLACEHOLDER: senda Herd, escalon 3. Pendiente de transcribir del mod MT1."
+                "english": "At end of turn, apply +20[attack], +20[health], -1[ember], -1[size] and <b>Frozen</b> to units in hand."
             },
+            "use_upgrade_highlight_tags": true,
+            "bonus_hp": 35,
             "bonus_damage": 20,
-            "bonus_hp": 30
+            "trigger_upgrades": [
+                "@MareaLeeTutor3EndTurn"
+            ]
         }
     ],
     "sprites": [
@@ -160,27 +492,6 @@
             "extensions": {
                 "card_art": {
                     "sprite": "@MareaLeeCardArt"
-                }
-            }
-        },
-        {
-            "id": "MareaLeeCharacterArt",
-            "type": "character_art",
-            "extensions": {
-                "character_art": {
-                    "sprite": "@MareaLeeCharacterArt",
-                    "transform": {
-                        "position": {
-                            "x": 0,
-                            "y": 0.8,
-                            "z": 0
-                        },
-                        "scale": {
-                            "x": 0.66,
-                            "y": 0.66,
-                            "z": 1
-                        }
-                    }
                 }
             }
         }

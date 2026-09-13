@@ -7,7 +7,7 @@
                 "english": "Tantabus"
             },
             "card_art": "@TantabusCardArt",
-            "cost": 1,
+            "cost": 0,
             "card_type": "monster",
             "rarity": "champion",
             "class": "@ClassEquestrian",
@@ -19,7 +19,8 @@
                 {
                     "english": "A nightmare that outlived the dreamer."
                 }
-            ]
+            ],
+            "targetless": false
         }
     ],
     "characters": [
@@ -33,6 +34,7 @@
             },
             "character_art": "@TantabusCharacterArt",
             "subtypes": [
+                "SubtypesData_Champion_83f21cbe-9d9b-4566-a2c3-ca559ab8ff34",
                 "@Sub_Pony"
             ]
         }

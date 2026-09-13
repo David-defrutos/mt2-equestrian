@@ -35,6 +35,14 @@ namespace mt2_equestrian.Plugin
 
                         // Unidades
                         "json/units/unit_TrashPanda.json",
+                        "json/units/unit_Carrot.json",
+                        "json/units/unit_YoLo.json",
+                        "json/units/unit_Finchy.json",
+                        "json/units/unit_CrunchieMunchie.json",
+                        "json/units/unit_MistyStep.json",
+                        "json/units/unit_Snackasmacky.json",
+                        "json/units/unit_SqueakyBooBoo.json",
+                        "json/units/unit_StaticJoy.json",
 
                         // Hechizos
                         "json/spells/card_AppleCider.json"

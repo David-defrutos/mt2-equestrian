@@ -1,0 +1,127 @@
+{
+    "$schema": "https://raw.githubusercontent.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/refs/heads/main/schemas/base.json",
+    "cards": [
+        {
+            "id": "SpawnMistyStep",
+            "names": {
+                "english": "Misty Step"
+            },
+            "card_art": "@MistyStepCardArt",
+            "cost": 1,
+            "card_type": "monster",
+            "rarity": "uncommon",
+            "class": "@ClassEquestrian",
+            "targets_room": true,
+            "targetless": false,
+            "effects": [
+                "@SpawnMistyStep"
+            ],
+            "pools": [
+                "MegaPool"
+            ],
+            "lore_tooltips": [
+                {
+                    "english": "Perhaps the most responsible pony of the bunch, Misty Step takes the well being of her friends quite seriously. That doesn't stop her from doing dumb stuff, though, and often takes on more than she can chew."
+                }
+            ]
+        }
+    ],
+    "characters": [
+        {
+            "id": "MistyStep",
+            "size": 1,
+            "attack_damage": 8,
+            "health": 3,
+            "names": {
+                "english": "Misty Step"
+            },
+            "character_art": "@MistyStepCharacterArt",
+            "subtypes": [
+                "@Sub_Pony"
+            ],
+            "status_effects": [
+                {
+                    "status": "armor",
+                    "count": 5
+                }
+            ],
+            "triggers": [
+                "@MistyStepRageTrigger"
+            ]
+        }
+    ],
+    "effects": [
+        {
+            "id": "SpawnMistyStep",
+            "name": "CardEffectSpawnMonster",
+            "target_mode": "room",
+            "param_character": "@MistyStep"
+        },
+        {
+            "id": "MistyStepRage",
+            "name": "CardEffectAddStatusEffect",
+            "target_mode": "room",
+            "target_team": "monsters",
+            "param_status_effects": [
+                {
+                    "status": "buff",
+                    "count": 2
+                }
+            ]
+        }
+    ],
+    "sprites": [
+        {
+            "id": "MistyStepCardArt",
+            "path": "textures/MistyStepCardArt.png"
+        },
+        {
+            "id": "MistyStepCharacterArt",
+            "path": "textures/MistyStepCharacterArt.png"
+        }
+    ],
+    "game_objects": [
+        {
+            "id": "MistyStepCardArt",
+            "type": "card_art",
+            "extensions": {
+                "card_art": {
+                    "sprite": "@MistyStepCardArt"
+                }
+            }
+        },
+        {
+            "id": "MistyStepCharacterArt",
+            "type": "character_art",
+            "extensions": {
+                "character_art": {
+                    "sprite": "@MistyStepCharacterArt",
+                    "transform": {
+                        "position": {
+                            "x": 0,
+                            "y": 0.8,
+                            "z": 0
+                        },
+                        "scale": {
+                            "x": 1.2048,
+                            "y": 1.2048,
+                            "z": 1
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "character_triggers": [
+        {
+            "id": "MistyStepRageTrigger",
+            "trigger": "on_attacking",
+            "descriptions": {
+                "english": "Apply <nobr><b>Rage {[effect0.status0.power]}</b></nobr> to all friendly units."
+            },
+            "effects": [
+                "@MistyStepRage"
+            ]
+        }
+    ]
+}
