@@ -140,10 +140,7 @@
         {
             "id": "HeartsDesireUnitCost",
             "name": "RoomStateUnitCostModifier",
-            "param_int": -2,
-            "descriptions": {
-                "english": "<br>-2[ember] for all cards played on this floor."
-            }
+            "param_int": -2
         }
     ]
 }
