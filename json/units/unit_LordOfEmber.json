@@ -24,6 +24,9 @@
                 {
                     "english": "By all that is still holy and just in this world, what the ever-loving heck is that thing!? Seriously, just look at it! How is that thing even alive? Whatever it is, it certainly loves the big, shiny, glowing shard of the pyre. The ponies say to leave it be and I'm inclined to agree with them. Let sleeping abominations of nature lie. Always good advice."
                 }
+            ],
+            "traits": [
+                "@LordOfEmberDeploy"
             ]
         }
     ],
@@ -40,14 +43,14 @@
             "subtypes": [
                 "@Sub_Dragon"
             ],
-            "status_effects": [
+            "triggers": [
+                "@LordOfEmberOnKill"
+            ],
+            "starting_status_effects": [
                 {
                     "status": "sweep",
                     "count": 1
                 }
-            ],
-            "triggers": [
-                "@LordOfEmberOnKill"
             ]
         }
     ],
@@ -116,6 +119,12 @@
             "effects": [
                 "@LordOfEmberEnergy"
             ]
+        }
+    ],
+    "traits": [
+        {
+            "id": "LordOfEmberDeploy",
+            "name": "CardTraitDrawInDeploymentPhase"
         }
     ]
 }

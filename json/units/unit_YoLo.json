@@ -43,14 +43,14 @@
             "subtypes": [
                 "@Sub_Pony"
             ],
-            "status_effects": [
+            "triggers": [
+                "@YoLoSpawnTrigger"
+            ],
+            "starting_status_effects": [
                 {
                     "status": "armor",
                     "count": 5
                 }
-            ],
-            "triggers": [
-                "@YoLoSpawnTrigger"
             ]
         }
     ],

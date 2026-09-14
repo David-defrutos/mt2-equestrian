@@ -44,14 +44,16 @@
                     "status": "heal immunity",
                     "count": 1
                 }
-            ]
+            ],
+            "target_ignore_bosses": true
         },
         {
             "id": "ChangelingCopy",
             "name": "CardEffectCopyUnits",
             "target_mode": "last_targeted_characters",
             "target_team": "monsters",
-            "param_int": 1
+            "param_int": 1,
+            "target_ignore_bosses": true
         }
     ],
     "sprites": [

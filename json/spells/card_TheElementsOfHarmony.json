@@ -68,8 +68,12 @@
             "id": "HarmonyUpgrade",
             "bonus_damage": 5,
             "bonus_hp": 5,
-            "room_modifier_upgrades": [
-                "@SocialCapacity"
+            "trigger_upgrades": [
+                "@SocialDeath",
+                "@SocialSpawn"
+            ],
+            "filters": [
+                "@MonsterOnlyFilter"
             ]
         }
     ]

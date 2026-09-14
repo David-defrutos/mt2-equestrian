@@ -73,7 +73,10 @@
         {
             "id": "ReservesUpgrade",
             "bonus_damage": 10,
-            "bonus_hp": 10
+            "bonus_hp": 10,
+            "filters": [
+                "@MonsterOnlyFilter"
+            ]
         }
     ]
 }

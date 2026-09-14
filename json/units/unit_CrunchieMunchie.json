@@ -39,14 +39,14 @@
             "subtypes": [
                 "@Sub_Pony"
             ],
-            "status_effects": [
+            "triggers": [
+                "@CrunchieMunchieCarrotTrigger"
+            ],
+            "starting_status_effects": [
                 {
                     "status": "armor",
                     "count": 5
                 }
-            ],
-            "triggers": [
-                "@CrunchieMunchieCarrotTrigger"
             ]
         }
     ],

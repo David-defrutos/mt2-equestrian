@@ -23,6 +23,9 @@
                 {
                     "english": "Perhaps the most responsible pony of the bunch, Misty Step takes the well being of her friends quite seriously. That doesn't stop her from doing dumb stuff, though, and often takes on more than she can chew."
                 }
+            ],
+            "traits": [
+                "@MistyStepDeploy"
             ]
         }
     ],
@@ -39,14 +42,14 @@
             "subtypes": [
                 "@Sub_Pony"
             ],
-            "status_effects": [
+            "triggers": [
+                "@MistyStepRageTrigger"
+            ],
+            "starting_status_effects": [
                 {
                     "status": "armor",
                     "count": 5
                 }
-            ],
-            "triggers": [
-                "@MistyStepRageTrigger"
             ]
         }
     ],
@@ -122,6 +125,12 @@
             "effects": [
                 "@MistyStepRage"
             ]
+        }
+    ],
+    "traits": [
+        {
+            "id": "MistyStepDeploy",
+            "name": "CardTraitDrawInDeploymentPhase"
         }
     ]
 }

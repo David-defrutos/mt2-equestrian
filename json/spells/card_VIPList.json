@@ -73,8 +73,12 @@
             "id": "VIPListUpgrade",
             "bonus_damage": 10,
             "bonus_hp": 10,
-            "room_modifier_upgrades": [
-                "@SocialCapacity"
+            "trigger_upgrades": [
+                "@SocialDeath",
+                "@SocialSpawn"
+            ],
+            "filters": [
+                "@MonsterOnlyFilter"
             ]
         }
     ]

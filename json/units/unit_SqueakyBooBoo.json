@@ -20,6 +20,7 @@
                 "UnitsAllBanner"
             ],
             "traits": [
+                "@SqueakyBooBooDeploy",
                 "@SqueakyBooBooPermafrost"
             ],
             "lore_tooltips": [
@@ -42,14 +43,14 @@
             "subtypes": [
                 "@Sub_Pony"
             ],
-            "status_effects": [
+            "triggers": [
+                "@SqueakyBooBooRegenTrigger"
+            ],
+            "starting_status_effects": [
                 {
                     "status": "armor",
                     "count": 10
                 }
-            ],
-            "triggers": [
-                "@SqueakyBooBooRegenTrigger"
             ]
         }
     ],
@@ -131,6 +132,10 @@
         {
             "id": "SqueakyBooBooPermafrost",
             "name": "CardTraitPermafrost"
+        },
+        {
+            "id": "SqueakyBooBooDeploy",
+            "name": "CardTraitDrawInDeploymentPhase"
         }
     ]
 }

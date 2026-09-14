@@ -45,11 +45,12 @@
             "bonus_damage": 10,
             "bonus_hp": 20,
             "cost_reduction": 99,
-            "room_modifier_upgrades": [
-                "@SocialCapacity"
-            ],
             "use_upgrade_highlight_tags": true,
-            "icon": "@GradstoneIcon"
+            "icon": "@GradstoneIcon",
+            "trigger_upgrades": [
+                "@SocialDeath",
+                "@SocialSpawn"
+            ]
         }
     ],
     "sprites": [

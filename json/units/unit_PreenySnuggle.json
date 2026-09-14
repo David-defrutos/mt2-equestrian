@@ -20,9 +20,10 @@
                 "UnitsAllBanner"
             ],
             "traits": [
+                "@PreenyLevelMonster",
                 "@PreenyScalingAttack",
                 "@PreenyScalingHealth",
-                "@PreenyLevelMonster"
+                "@PreenySnuggleDeploy"
             ],
             "cost_type": "x",
             "unlock_level": 5,
@@ -47,8 +48,9 @@
                 "@Sub_Pony",
                 "@Sub_Social"
             ],
-            "room_modifiers": [
-                "@SocialCapacity"
+            "triggers": [
+                "@SocialDeath",
+                "@SocialSpawn"
             ]
         }
     ],
@@ -122,6 +124,10 @@
         {
             "id": "PreenyLevelMonster",
             "name": "CardTraitLevelMonsterState"
+        },
+        {
+            "id": "PreenySnuggleDeploy",
+            "name": "CardTraitDrawInDeploymentPhase"
         }
     ]
 }

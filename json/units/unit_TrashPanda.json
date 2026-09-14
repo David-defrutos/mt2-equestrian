@@ -3,17 +3,25 @@
     "cards": [
         {
             "id": "SpawnTrashPanda",
-            "names": { "english": "Trash Panda" },
+            "names": {
+                "english": "Trash Panda"
+            },
             "card_art": "@TrashPandaCardArt",
             "cost": 0,
             "card_type": "monster",
             "rarity": "common",
             "class": "@ClassEquestrian",
             "targets_room": true,
-            "pools": [ "MegaPool" ],
-            "effects": [ "@SpawnTrashPanda" ],
+            "pools": [
+                "MegaPool"
+            ],
+            "effects": [
+                "@SpawnTrashPanda"
+            ],
             "lore_tooltips": [
-                { "english": "Not a pony. Nobody has had the heart to tell him." }
+                {
+                    "english": "Not a pony. Nobody has had the heart to tell him."
+                }
             ]
         }
     ],
@@ -23,10 +31,19 @@
             "size": 1,
             "attack_damage": 5,
             "health": 3,
-            "names": { "english": "Trash Panda" },
+            "names": {
+                "english": "Trash Panda"
+            },
             "character_art": "@TrashPandaCharacterArt",
-            "subtypes": [ "@Sub_Pet" ],
-            "status_effects": [ { "status": "sweep", "count": 1 } ]
+            "subtypes": [
+                "@Sub_Pet"
+            ],
+            "starting_status_effects": [
+                {
+                    "status": "sweep",
+                    "count": 1
+                }
+            ]
         }
     ],
     "effects": [
@@ -38,14 +55,24 @@
         }
     ],
     "sprites": [
-        { "id": "TrashPandaCardArt",      "path": "textures/TrashPandaCardArt.png" },
-        { "id": "TrashPandaCharacterArt", "path": "textures/TrashPandaCharacterArt.png" }
+        {
+            "id": "TrashPandaCardArt",
+            "path": "textures/TrashPandaCardArt.png"
+        },
+        {
+            "id": "TrashPandaCharacterArt",
+            "path": "textures/TrashPandaCharacterArt.png"
+        }
     ],
     "game_objects": [
         {
             "id": "TrashPandaCardArt",
             "type": "card_art",
-            "extensions": { "card_art": { "sprite": "@TrashPandaCardArt" } }
+            "extensions": {
+                "card_art": {
+                    "sprite": "@TrashPandaCardArt"
+                }
+            }
         },
         {
             "id": "TrashPandaCharacterArt",
@@ -54,8 +81,16 @@
                 "character_art": {
                     "sprite": "@TrashPandaCharacterArt",
                     "transform": {
-                        "position": { "x": 0, "y": 0.8, "z": 0 },
-                        "scale": { "x": 1.2, "y": 1.2, "z": 1 }
+                        "position": {
+                            "x": 0,
+                            "y": 0.8,
+                            "z": 0
+                        },
+                        "scale": {
+                            "x": 1.2,
+                            "y": 1.2,
+                            "z": 1
+                        }
                     }
                 }
             }

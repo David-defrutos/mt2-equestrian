@@ -23,6 +23,9 @@
                 {
                     "english": "I swear, this pony wants to turn me into a blimp. She always makes too much food, and gets really mad whenever any of it goes to waste. I checked, and the bushes around her house are stuffed with discarded pastries from guests who couldn't eat it all and didn't want to displease her."
                 }
+            ],
+            "traits": [
+                "@SnackasmackyDeploy"
             ]
         }
     ],
@@ -118,6 +121,12 @@
             "id": "SnackasmackyRejuvenateUpgrade",
             "bonus_damage": 1,
             "bonus_hp": 1
+        }
+    ],
+    "traits": [
+        {
+            "id": "SnackasmackyDeploy",
+            "name": "CardTraitDrawInDeploymentPhase"
         }
     ]
 }

@@ -95,22 +95,62 @@
             "bonus_hp": 10,
             "bonus_damage": 10,
             "cost_reduction": 99,
-            "room_modifier_upgrades": [
-                "@SocialCapacity"
+            "trigger_upgrades": [
+                "@SocialDeath",
+                "@SocialSpawn"
             ]
         }
     ],
-    "room_modifiers": [
+    "effects": [
         {
-            "id": "SocialCapacity",
-            "name": "RoomStateCapacityModifier",
-            "param_int": 1,
-            "titles": {
-                "english": "Social"
-            },
+            "id": "SocialAddCapacity",
+            "name": "CardEffectAdjustRoomCapacity",
+            "target_mode": "room",
+            "target_team": "monsters",
+            "param_int": 1
+        },
+        {
+            "id": "SocialRemoveCapacity",
+            "name": "CardEffectAdjustRoomCapacity",
+            "target_mode": "room",
+            "target_team": "monsters",
+            "param_int": -1
+        }
+    ],
+    "character_triggers": [
+        {
+            "id": "SocialSpawn",
+            "trigger": "on_spawn",
             "descriptions": {
-                "english": "+1[size] to this floor while this unit is here."
-            }
+                "english": "<b>Social</b>: +1[size] to this floor."
+            },
+            "effects": [
+                "@SocialAddCapacity"
+            ]
+        },
+        {
+            "id": "SocialDeath",
+            "trigger": "on_death",
+            "descriptions": {
+                "english": "<b>Social</b>: -1[size] to this floor."
+            },
+            "hide_visual_and_ignore_silence": true,
+            "effects": [
+                "@SocialRemoveCapacity"
+            ]
+        }
+    ],
+    "upgrade_masks": [
+        {
+            "id": "MonsterOnlyFilter",
+            "card_type": "monster"
+        },
+        {
+            "id": "PonyOnlyFilter",
+            "card_type": "monster",
+            "required_subtypes": [
+                "@Sub_Pony"
+            ]
         }
     ]
 }

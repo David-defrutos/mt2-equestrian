@@ -40,15 +40,15 @@
             "subtypes": [
                 "@Sub_Herb"
             ],
-            "status_effects": [
+            "triggers": [
+                "@PoisonJokeSummon",
+                "@PoisonJokeEaten"
+            ],
+            "starting_status_effects": [
                 {
                     "status": "immobile",
                     "count": 1
                 }
-            ],
-            "triggers": [
-                "@PoisonJokeSummon",
-                "@PoisonJokeEaten"
             ]
         }
     ],

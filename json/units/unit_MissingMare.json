@@ -37,17 +37,16 @@
                 "@Sub_Pony",
                 "@Sub_Social"
             ],
-            "status_effects": [
+            "triggers": [
+                "@MissingMareIncant",
+                "@SocialDeath",
+                "@SocialSpawn"
+            ],
+            "starting_status_effects": [
                 {
                     "status": "stealth",
                     "count": 3
                 }
-            ],
-            "triggers": [
-                "@MissingMareIncant"
-            ],
-            "room_modifiers": [
-                "@SocialCapacity"
             ]
         }
     ],

@@ -40,18 +40,18 @@
             "subtypes": [
                 "@Sub_Herb"
             ],
-            "status_effects": [
-                {
-                    "status": "immobile",
-                    "count": 1
-                }
-            ],
             "triggers": [
                 "@HeartsDesireEaten"
             ],
             "room_modifiers": [
                 "@HeartsDesireSpellCost",
                 "@HeartsDesireUnitCost"
+            ],
+            "starting_status_effects": [
+                {
+                    "status": "immobile",
+                    "count": 1
+                }
             ]
         }
     ],

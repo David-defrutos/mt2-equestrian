@@ -46,11 +46,12 @@
             },
             "bonus_damage": 5,
             "bonus_hp": 5,
-            "room_modifier_upgrades": [
-                "@SocialCapacity"
-            ],
             "use_upgrade_highlight_tags": true,
-            "icon": "@FriendstoneIcon"
+            "icon": "@FriendstoneIcon",
+            "trigger_upgrades": [
+                "@SocialDeath",
+                "@SocialSpawn"
+            ]
         }
     ],
     "sprites": [

@@ -24,6 +24,9 @@
                 {
                     "english": "Full of facts and useless trivia, she's always the one to maresplain things in the most condescending way possible. I'm surprised her friends can put up with her, but her ingenuity is a great asset if you can get past her personality. That's the Mare You Know, I guess."
                 }
+            ],
+            "traits": [
+                "@MareYouKnowDeploy"
             ]
         }
     ],
@@ -40,14 +43,14 @@
             "subtypes": [
                 "@Sub_Pony"
             ],
-            "status_effects": [
+            "triggers": [
+                "@MareYouKnowResolve"
+            ],
+            "starting_status_effects": [
                 {
                     "status": "armor",
                     "count": 5
                 }
-            ],
-            "triggers": [
-                "@MareYouKnowResolve"
             ]
         }
     ],
@@ -129,6 +132,12 @@
             "id": "MareYouKnowDiscount",
             "cost_reduction": 1,
             "x_cost_reduction": 1
+        }
+    ],
+    "traits": [
+        {
+            "id": "MareYouKnowDeploy",
+            "name": "CardTraitDrawInDeploymentPhase"
         }
     ]
 }

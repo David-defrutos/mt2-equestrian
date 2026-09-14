@@ -34,7 +34,8 @@
             "id": "BuckOffKill",
             "name": "CardEffectKill",
             "target_mode": "front_in_room",
-            "target_team": "heroes"
+            "target_team": "heroes",
+            "target_ignore_bosses": true
         }
     ],
     "sprites": [
