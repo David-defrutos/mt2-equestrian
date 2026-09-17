@@ -23,9 +23,6 @@
                 {
                     "english": "In my desperation to save the last remaining shard of the pyre, I secreted the Boneshaker to a lost circle of Hell known as Tartarus. It wasn't abandoned like I'd expected, as the ponies have been using it to imprison their most dangerous villains and magical beasts. It's there that I met the Guardian, a massive three-headed bulldog who stands watch over the gateway to their world. It was with his help that I made my way to Equestria proper, so that I could make my plea for aid directly. What a good boy."
                 }
-            ],
-            "traits": [
-                "@GuardianOfTheGatesDeploy"
             ]
         }
     ],
@@ -40,6 +37,7 @@
             },
             "character_art": "@GuardianOfTheGatesCharacterArt",
             "subtypes": [
+                "SubtypesData_BannerUnit",
                 "@Sub_Pet"
             ],
             "starting_status_effects": [
@@ -98,12 +96,6 @@
                     }
                 }
             }
-        }
-    ],
-    "traits": [
-        {
-            "id": "GuardianOfTheGatesDeploy",
-            "name": "CardTraitDrawInDeploymentPhase"
         }
     ]
 }

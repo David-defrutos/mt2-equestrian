@@ -22,8 +22,7 @@
             "traits": [
                 "@PreenyLevelMonster",
                 "@PreenyScalingAttack",
-                "@PreenyScalingHealth",
-                "@PreenySnuggleDeploy"
+                "@PreenyScalingHealth"
             ],
             "cost_type": "x",
             "unlock_level": 5,
@@ -45,6 +44,7 @@
             },
             "character_art": "@PreenySnuggleCharacterArt",
             "subtypes": [
+                "SubtypesData_BannerUnit",
                 "@Sub_Pony",
                 "@Sub_Social"
             ],
@@ -124,10 +124,6 @@
         {
             "id": "PreenyLevelMonster",
             "name": "CardTraitLevelMonsterState"
-        },
-        {
-            "id": "PreenySnuggleDeploy",
-            "name": "CardTraitDrawInDeploymentPhase"
         }
     ]
 }

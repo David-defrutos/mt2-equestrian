@@ -13,6 +13,9 @@
             "relic_effects": [
                 "@SeventhElementTriggers"
             ],
+            "additional_tooltips": [
+                "@SocialTooltip"
+            ],
             "icon": "@TheSeventhElementIcon",
             "icon_small": "@TheSeventhElementIconSmall",
             "extensions": [

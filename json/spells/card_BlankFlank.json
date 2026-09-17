@@ -20,6 +20,7 @@
             ],
             "effects": [
                 "@BlankFlankArmor",
+                "@BlankFlankPositive",
                 "@BlankFlankAll"
             ],
             "lore_tooltips": [
@@ -41,6 +42,13 @@
                     "count": 9999
                 }
             ]
+        },
+        {
+            "id": "BlankFlankPositive",
+            "name": "CardEffectRemoveAllStatusEffects",
+            "target_mode": "last_targeted_characters",
+            "target_team": "both",
+            "param_int": 0
         },
         {
             "id": "BlankFlankAll",

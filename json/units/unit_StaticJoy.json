@@ -23,9 +23,6 @@
                 {
                     "english": "I never expected a cute little pony to make my life a living nightmare, but here I am. Static Joy's got a devious streak that just won't quit and a seemingly endless supply of practical jokes. Where does one get jalapeno-flavored ear wax and why does such a thing even exist? Even so, her pranks are mostly harmless and I'd prefer her company over the over-righteous, pompous, self-important, ego-bloated winged any day."
                 }
-            ],
-            "traits": [
-                "@StaticJoyDeploy"
             ]
         }
     ],
@@ -40,6 +37,7 @@
             },
             "character_art": "@StaticJoyCharacterArt",
             "subtypes": [
+                "SubtypesData_BannerUnit",
                 "@Sub_Pony"
             ],
             "triggers": [
@@ -129,12 +127,6 @@
             "effects": [
                 "@StaticJoyArmor"
             ]
-        }
-    ],
-    "traits": [
-        {
-            "id": "StaticJoyDeploy",
-            "name": "CardTraitDrawInDeploymentPhase"
         }
     ]
 }

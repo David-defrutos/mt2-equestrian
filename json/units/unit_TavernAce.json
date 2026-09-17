@@ -27,9 +27,6 @@
                 {
                     "english": "Hold my cider. No. Wait. I'll hold it.' I know she wasn't trying to give advice, but honestly? That sounds like a great philosophy for life in general."
                 }
-            ],
-            "traits": [
-                "@TavernAceDeploy"
             ]
         }
     ],
@@ -44,6 +41,7 @@
             },
             "character_art": "@TavernAceCharacterArt",
             "subtypes": [
+                "SubtypesData_BannerUnit",
                 "@Sub_Pony"
             ]
         }
@@ -112,12 +110,6 @@
                     "trigger_effect": "CardTriggerEffectBuffCharacterDamage"
                 }
             ]
-        }
-    ],
-    "traits": [
-        {
-            "id": "TavernAceDeploy",
-            "name": "CardTraitDrawInDeploymentPhase"
         }
     ]
 }
