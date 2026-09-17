@@ -13,7 +13,7 @@
             "class": "@ClassEquestrian",
             "card_art": "@PartyInvitationArt",
             "cost": 0,
-            "targets_room": true,
+            "targets_room": false,
             "targetless": true,
             "pools": [
                 "MegaPool"
@@ -23,8 +23,7 @@
                 "@PartyInvitationDraw"
             ],
             "traits": [
-                "@PartyInvConsume",
-                "@PartyInvTargets"
+                "@PartyInvConsume"
             ],
             "lore_tooltips": [
                 {
@@ -37,7 +36,6 @@
         {
             "id": "PartyInvitationUpgrade",
             "name": "CardEffectAddTempCardUpgradeToNextDrawnCard",
-            "target_mode": "self",
             "param_upgrade": "@PartyInvitationUp"
         },
         {
@@ -69,10 +67,6 @@
         {
             "id": "PartyInvConsume",
             "name": "CardTraitExhaustState"
-        },
-        {
-            "id": "PartyInvTargets",
-            "name": "CardTraitShowCardTargets"
         }
     ],
     "upgrades": [
@@ -83,6 +77,9 @@
             "trigger_upgrades": [
                 "@SocialDeath",
                 "@SocialSpawn"
+            ],
+            "filters": [
+                "@MonsterOnlyFilter"
             ]
         }
     ]

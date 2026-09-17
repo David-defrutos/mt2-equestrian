@@ -1,0 +1,70 @@
+{
+    "$schema": "https://raw.githubusercontent.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/refs/heads/main/schemas/base.json",
+    "relics": [
+        {
+            "id": "RoyalScroll",
+            "type": "collectable",
+            "names": {
+                "english": "Royal Scroll"
+            },
+            "descriptions": {
+                "english": "0[ember] for the first spell card played each turn."
+            },
+            "relic_effects": [
+                "@RoyalScrollFirstSpell"
+            ],
+            "icon": "@RoyalScrollIcon",
+            "icon_small": "@RoyalScrollIconSmall",
+            "extensions": [
+                {
+                    "collectable": {
+                        "class": "@ClassEquestrian",
+                        "pools": [
+                            "MegaRelicPool"
+                        ],
+                        "rarity": "common"
+                    }
+                }
+            ],
+            "lore_tooltips": [
+                {
+                    "english": "Pony royalty use special missives to deliver messages. Sealed with wax and sent by magic, they can be delivered instantly across great distances. I'd like, for once, for one to be good news, but the Equestrian state has little desire to get involved in the war between Heaven and Hell. I may have to go with that ragtag band of misfits after all..."
+                }
+            ]
+        }
+    ],
+    "relic_effects": [
+        {
+            "id": "RoyalScrollFirstSpell",
+            "name": "@RelicEffectFirstSpellFreeEachTurn",
+            "source_team": "monsters",
+            "param_card_type": "spell",
+            "param_upgrade": "@RoyalScrollFreeUpgrade"
+        }
+    ],
+    "upgrades": [
+        {
+            "id": "RoyalScrollFreeUpgrade",
+            "cost_reduction": 99,
+            "filters": [
+                "@RoyalScrollOnlySpells"
+            ]
+        }
+    ],
+    "upgrade_masks": [
+        {
+            "id": "RoyalScrollOnlySpells",
+            "card_type": "spell"
+        }
+    ],
+    "sprites": [
+        {
+            "id": "RoyalScrollIcon",
+            "path": "textures/RelicAssets/RoyalScrollIcon.png"
+        },
+        {
+            "id": "RoyalScrollIconSmall",
+            "path": "textures/RelicAssets/RoyalScrollIconSmall.png"
+        }
+    ]
+}

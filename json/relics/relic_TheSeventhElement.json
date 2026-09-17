@@ -8,10 +8,10 @@
                 "english": "The Seventh Element"
             },
             "descriptions": {
-                "english": "When played, units gain +1[attack] per permanent unit in your deck."
+                "english": "Triggered abilities on <b>Social</b> units activate an additional time."
             },
             "relic_effects": [
-                "@SeventhElementAttack"
+                "@SeventhElementTriggers"
             ],
             "icon": "@TheSeventhElementIcon",
             "icon_small": "@TheSeventhElementIconSmall",
@@ -35,12 +35,12 @@
     ],
     "relic_effects": [
         {
-            "id": "SeventhElementAttack",
-            "name": "RelicEffectModifyCharacterAttackDamage",
+            "id": "SeventhElementTriggers",
+            "name": "RelicEffectModifyTriggerCount",
             "source_team": "monsters",
             "param_int": 1,
             "param_bool": true,
-            "param_trigger": "on_spawn"
+            "param_subtype": "@Sub_Social"
         }
     ],
     "sprites": [
