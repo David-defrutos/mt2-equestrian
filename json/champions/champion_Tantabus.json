@@ -35,8 +35,7 @@
             },
             "character_art": "@TantabusCharacterArt",
             "subtypes": [
-                "SubtypesData_Champion_83f21cbe-9d9b-4566-a2c3-ca559ab8ff34",
-                "@Sub_Pony"
+                "SubtypesData_Champion_83f21cbe-9d9b-4566-a2c3-ca559ab8ff34"
             ]
         }
     ],
@@ -49,7 +48,7 @@
         },
         {
             "id": "TantabusFreezeNightTerrors",
-            "name": "CardEffectFreezeCard",
+            "name": "CardEffectFreezeAllCards",
             "target_mode": "hand",
             "target_card_type": "spell",
             "param_card_filter": "@NightTerrorsFilter"
@@ -329,7 +328,7 @@
                 "english": "Psychosis"
             },
             "descriptions": {
-                "english": "<b>Incant</b>: +1 Magic power to spells in hand.<br><b>End of Turn: <b>Freeze</b> all Night Terrors."
+                "english": "<b>Incant</b>: +1 Magic power to spells in hand.<br><b>End of Turn:</b> <b>Freeze</b> all Night Terrors."
             },
             "use_upgrade_highlight_tags": true,
             "bonus_damage": 10,
@@ -358,7 +357,7 @@
                 "english": "Psychosis II"
             },
             "descriptions": {
-                "english": "<b>Incant</b>: +2 Magic power to spells in hand.<br><b>End of Turn: <b>Freeze</b> all Night Terrors."
+                "english": "<b>Incant</b>: +2 Magic power to spells in hand.<br><b>End of Turn:</b> <b>Freeze</b> all Night Terrors."
             },
             "use_upgrade_highlight_tags": true,
             "bonus_damage": 40,
@@ -387,7 +386,7 @@
                 "english": "Psychosis III"
             },
             "descriptions": {
-                "english": "<b>Incant</b>: +3 Magic power to spells in hand.<br><b>End of Turn: <b>Freeze</b> all Night Terrors."
+                "english": "<b>Incant</b>: +3 Magic power to spells in hand.<br><b>End of Turn:</b> <b>Freeze</b> all Night Terrors."
             },
             "use_upgrade_highlight_tags": true,
             "bonus_damage": 100,

@@ -36,9 +36,20 @@
     "relic_effects": [
         {
             "id": "GoldenRodCopy",
-            "name": "RelicEffectCopyCardOnCardPlay",
+            "name": "@RelicEffectCopyConsumedSpellToDiscard",
             "param_int": 1,
-            "param_card_type": "spell"
+            "param_card_type": "spell",
+            "traits": ["@Consume"],
+            "conditions": ["@GoldenRodOncePerTurn"]
+        }
+    ],
+    "relic_effect_conditions": [
+        {
+            "id": "GoldenRodOncePerTurn",
+            "param_track_trigger_count": true,
+            "param_entry_duration": "this_turn",
+            "param_int": 1,
+            "allow_multiple_triggers_per_duration": false
         }
     ],
     "sprites": [

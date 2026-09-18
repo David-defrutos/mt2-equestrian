@@ -13,6 +13,7 @@
             "class": "@ClassEquestrian",
             "card_art": "@SpontaneousSongAndDanceArt",
             "cost": 0,
+            "cost_type": "x",
             "targets_room": true,
             "targetless": true,
             "pools": [
