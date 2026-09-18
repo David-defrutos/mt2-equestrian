@@ -67,6 +67,10 @@
         {
             "id": "ReservesConsume",
             "name": "CardTraitExhaustState"
+        },
+        {
+            "id": "ReservesFrozen",
+            "name": "CardTraitFreeze"
         }
     ],
     "upgrades": [
@@ -76,6 +80,9 @@
             "bonus_hp": 10,
             "filters": [
                 "@MonsterOnlyFilter"
+            ],
+            "trait_upgrades": [
+                "@ReservesFrozen"
             ]
         }
     ]

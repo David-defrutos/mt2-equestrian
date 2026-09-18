@@ -452,7 +452,7 @@
                 "english": "Tutor"
             },
             "descriptions": {
-                "english": "At end of turn, apply +5[attack], +5[health], and <b>Frozen</b> to units in hand."
+                "english": "At end of turn, apply +3[attack], +3[health], and <b>Frozen</b> to units in hand."
             },
             "use_upgrade_highlight_tags": true,
             "bonus_hp": 5,
@@ -467,7 +467,7 @@
                 "english": "Tutor II"
             },
             "descriptions": {
-                "english": "At end of turn, apply +10[attack], +10[health], -1[ember] and <b>Frozen</b> to units in hand."
+                "english": "At end of turn, apply +6[attack], +6[health], -1[ember], and <b>Frozen</b> to units in hand."
             },
             "use_upgrade_highlight_tags": true,
             "bonus_hp": 15,
@@ -482,7 +482,7 @@
                 "english": "Tutor III"
             },
             "descriptions": {
-                "english": "At end of turn, apply +20[attack], +20[health], -1[ember], -1[size] and <b>Frozen</b> to units in hand."
+                "english": "At end of turn, apply +10[attack], +10[health], -1[ember], -1[size] and <b>Frozen</b> to units in hand."
             },
             "use_upgrade_highlight_tags": true,
             "bonus_hp": 35,

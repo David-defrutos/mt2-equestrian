@@ -39,11 +39,14 @@
     "relic_effects": [
         {
             "id": "SeventhElementTriggers",
-            "name": "RelicEffectModifyTriggerCount",
+            "name": "@RelicEffectSocialTriggerCount",
             "source_team": "monsters",
             "param_int": 1,
             "param_bool": true,
-            "param_subtype": "@Sub_Social"
+            "param_subtype": "@Sub_Social",
+            "triggers": [
+                "@SocialSpawn"
+            ]
         }
     ],
     "sprites": [

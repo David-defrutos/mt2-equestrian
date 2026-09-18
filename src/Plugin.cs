@@ -14,6 +14,7 @@ namespace mt2_equestrian.Plugin
         public void Awake()
         {
             Logger = base.Logger;
+            new HarmonyLib.Harmony(MyPluginInfo.PLUGIN_GUID).PatchAll();
 
             var builder = Railhead.GetBuilder();
             builder.Configure(

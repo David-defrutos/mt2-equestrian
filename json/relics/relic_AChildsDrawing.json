@@ -36,7 +36,7 @@
     "relic_effects": [
         {
             "id": "ChildsDrawingEmber",
-            "name": "RelicEffectEnergyAndCardDrawOnUnitSpawned",
+            "name": "@RelicEffectFirstChampionReward",
             "source_team": "monsters",
             "param_int": 4,
             "param_int_2": 3,

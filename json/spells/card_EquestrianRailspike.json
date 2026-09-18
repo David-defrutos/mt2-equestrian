@@ -31,7 +31,8 @@
                 {
                     "english": "In order to bring the Boneshaker to Equestrian lands, I had to forge a new path off the established rails. For this, I made extensive use of Heph's automatic spikedrivers and colonies. The ponies have tinkered with them and further improved the process to make it very efficient.<br><br>It's a shame the covenant was broken, because Equestria would have been a valuable addition to the pact. To them, the thought of denizens of heaven and hell working together in harmony is like a utopian dream come true. Even now, some of them still hold onto hope that the covenant can be restored."
                 }
-            ]
+            ],
+            "cost_type": "x"
         }
     ],
     "effects": [
@@ -81,7 +82,8 @@
             "name": "CardTraitScalingAddEnergy",
             "param_tracked_value": "played_cost",
             "param_entry_duration": "this_battle",
-            "param_int": 2
+            "param_int": 2,
+            "param_bool": true
         },
         {
             "id": "RailspikeConsume",

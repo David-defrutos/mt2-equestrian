@@ -107,7 +107,8 @@
                 {
                     "persistence": "single_run",
                     "param_int": 12,
-                    "trigger_effect": "CardTriggerEffectBuffCharacterDamage"
+                    "trigger_effect": "CardTriggerEffectBuffCharacterDamage",
+                    "buff_effect": "CardEffectBuffDamage"
                 }
             ]
         }

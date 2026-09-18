@@ -30,7 +30,8 @@
                 {
                     "english": "Ponies change their seasons manually. Going from winter to spring, they make a huge festival of it that they call 'Winter Wrap-Up.' Fields are cleared of snow, ice broken up and removed from lakes, hibernating animals woken from their slumber, and even the weather is changed as the pegasai break apart the snowy clouds and usher in sunny skies. Similar attempts to defrost Hell have failed, though. Defeating the Seraph and rekindling the pyre is our only recourse."
                 }
-            ]
+            ],
+            "cost_type": "x"
         }
     ],
     "effects": [

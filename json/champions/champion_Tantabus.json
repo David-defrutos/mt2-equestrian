@@ -76,7 +76,7 @@
         },
         {
             "id": "TantabusKillPony",
-            "name": "CardEffectKill",
+            "name": "@CardEffectKillWithTriggerSource",
             "target_mode": "room",
             "target_team": "monsters",
             "target_subtype": "@Sub_Pony"
@@ -92,6 +92,30 @@
                     "count": 999
                 }
             ]
+        },
+        {
+            "id": "TantabusNightmareGrow1",
+            "name": "CardEffectAddCardUpgradeToUnits",
+            "target_mode": "self",
+            "target_team": "monsters",
+            "param_upgrade": "@TantabusNightmareGrowth1",
+            "param_int_3": 2
+        },
+        {
+            "id": "TantabusNightmareGrow2",
+            "name": "CardEffectAddCardUpgradeToUnits",
+            "target_mode": "self",
+            "target_team": "monsters",
+            "param_upgrade": "@TantabusNightmareGrowth2",
+            "param_int_3": 2
+        },
+        {
+            "id": "TantabusNightmareGrow3",
+            "name": "CardEffectAddCardUpgradeToUnits",
+            "target_mode": "self",
+            "target_team": "monsters",
+            "param_upgrade": "@TantabusNightmareGrowth3",
+            "param_int_3": 2
         }
     ],
     "character_triggers": [
@@ -213,6 +237,36 @@
             },
             "effects": [
                 "@TantabusClearSap"
+            ]
+        },
+        {
+            "id": "TantabusNightmare1Slay",
+            "trigger": "on_kill",
+            "descriptions": {
+                "english": "Gain +3[attack] permanently."
+            },
+            "effects": [
+                "@TantabusNightmareGrow1"
+            ]
+        },
+        {
+            "id": "TantabusNightmare2Slay",
+            "trigger": "on_kill",
+            "descriptions": {
+                "english": "Gain +4[attack] permanently."
+            },
+            "effects": [
+                "@TantabusNightmareGrow2"
+            ]
+        },
+        {
+            "id": "TantabusNightmare3Slay",
+            "trigger": "on_kill",
+            "descriptions": {
+                "english": "Gain +5[attack] permanently."
+            },
+            "effects": [
+                "@TantabusNightmareGrow3"
             ]
         }
     ],
@@ -412,10 +466,8 @@
             "use_upgrade_highlight_tags": true,
             "bonus_hp": 5,
             "trigger_upgrades": [
-                "@TantabusNightmare1Resolve"
-            ],
-            "card_trigger_upgrades": [
-                "@TantabusNightmare1OnKill"
+                "@TantabusNightmare1Resolve",
+                "@TantabusNightmare1Slay"
             ]
         },
         {
@@ -429,10 +481,8 @@
             "use_upgrade_highlight_tags": true,
             "bonus_hp": 10,
             "trigger_upgrades": [
-                "@TantabusNightmare2Resolve"
-            ],
-            "card_trigger_upgrades": [
-                "@TantabusNightmare2OnKill"
+                "@TantabusNightmare2Resolve",
+                "@TantabusNightmare2Slay"
             ],
             "status_effect_upgrades": [
                 {
@@ -455,10 +505,8 @@
             "use_upgrade_highlight_tags": true,
             "bonus_hp": 15,
             "trigger_upgrades": [
-                "@TantabusNightmare3Resolve"
-            ],
-            "card_trigger_upgrades": [
-                "@TantabusNightmare3OnKill"
+                "@TantabusNightmare3Resolve",
+                "@TantabusNightmare3Slay"
             ],
             "status_effect_upgrades": [
                 {
@@ -523,6 +571,18 @@
             "trigger_upgrades": [
                 "@TantabusLucid3Turn"
             ]
+        },
+        {
+            "id": "TantabusNightmareGrowth1",
+            "bonus_damage": 3
+        },
+        {
+            "id": "TantabusNightmareGrowth2",
+            "bonus_damage": 4
+        },
+        {
+            "id": "TantabusNightmareGrowth3",
+            "bonus_damage": 5
         }
     ],
     "sprites": [

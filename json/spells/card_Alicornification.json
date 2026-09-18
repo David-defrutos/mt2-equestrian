@@ -36,7 +36,7 @@
     "effects": [
         {
             "id": "AlicornHeal",
-            "name": "CardEffectHeal",
+            "name": "@CardEffectAlicornification",
             "target_mode": "drop_target_character",
             "target_team": "monsters",
             "param_int": 999
@@ -75,8 +75,6 @@
     "upgrades": [
         {
             "id": "AlicornUpgrade",
-            "bonus_damage": 25,
-            "bonus_hp": 25,
             "status_effect_upgrades": [
                 {
                     "status": "ambush",

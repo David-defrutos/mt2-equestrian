@@ -19,6 +19,7 @@
                 "MegaPool"
             ],
             "effects": [
+                "@ChangelingEligibility",
                 "@ChangelingHeartless",
                 "@ChangelingCopy"
             ],
@@ -53,6 +54,15 @@
             "target_mode": "last_targeted_characters",
             "target_team": "monsters",
             "param_int": 1,
+            "target_ignore_bosses": true
+        },
+        {
+            "id": "ChangelingEligibility",
+            "name": "@CardEffectNonHeartless",
+            "target_mode": "drop_target_character",
+            "target_team": "monsters",
+            "should_test": true,
+            "should_cancel_subsequent_effects_if_test_fails": true,
             "target_ignore_bosses": true
         }
     ],
