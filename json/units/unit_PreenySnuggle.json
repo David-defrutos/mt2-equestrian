@@ -7,12 +7,9 @@
                 "english": "Preeny Snuggles"
             },
             "card_art": "@PreenySnuggleCardArt",
-            "cost": 0,
             "card_type": "monster",
             "rarity": "uncommon",
             "class": "@ClassEquestrian",
-            "targets_room": true,
-            "targetless": false,
             "effects": [
                 "@SpawnPreenySnuggle"
             ],
@@ -58,14 +55,12 @@
         {
             "id": "SpawnPreenySnuggle",
             "name": "CardEffectSpawnMonster",
-            "target_mode": "room",
             "param_character": "@PreenySnuggle"
         },
         {
             "id": "PreenySnuggleApplyScaling",
             "name": "CardEffectAddTempCardUpgradeToUnits",
             "target_mode": "self",
-            "target_team": "monsters",
             "param_upgrade": "@PreenySnuggleScalingUpgrade"
         }
     ],
@@ -136,7 +131,7 @@
             "id": "PreenySnuggleScalingSpawn",
             "trigger": "on_spawn",
             "descriptions": {
-                "english": "When played, gain +8[attack] and +8[health] per [x]."
+                "english": "+[effect0.power][x][attack] and +[effect0.power][x][health]."
             },
             "effects": [
                 "@PreenySnuggleApplyScaling"
@@ -145,9 +140,7 @@
     ],
     "upgrades": [
         {
-            "id": "PreenySnuggleScalingUpgrade",
-            "bonus_damage": 0,
-            "bonus_hp": 0
+            "id": "PreenySnuggleScalingUpgrade"
         }
     ]
 }
