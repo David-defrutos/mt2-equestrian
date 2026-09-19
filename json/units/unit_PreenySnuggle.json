@@ -20,7 +20,6 @@
                 "UnitsAllBanner"
             ],
             "traits": [
-                "@PreenyLevelMonster",
                 "@PreenyScalingAttack",
                 "@PreenyScalingHealth"
             ],
@@ -119,7 +118,6 @@
             "param_tracked_value": "played_cost",
             "param_entry_duration": "this_turn",
             "param_int": 8,
-            "param_int_3": 1,
             "param_team": "monsters"
         },
         {
@@ -128,12 +126,7 @@
             "param_tracked_value": "played_cost",
             "param_entry_duration": "this_turn",
             "param_int": 8,
-            "param_int_3": 1,
             "param_team": "monsters"
-        },
-        {
-            "id": "PreenyLevelMonster",
-            "name": "CardTraitLevelMonsterState"
         }
     ],
     "character_triggers": [
