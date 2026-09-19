@@ -116,23 +116,25 @@
             "id": "PreenyScalingAttack",
             "name": "CardTraitScalingUpgradeUnitAttack",
             "param_tracked_value": "played_cost",
-            "param_entry_duration": "this_turn",
             "param_int": 8,
-            "param_team": "monsters"
+            "param_int_3": 1,
+            "trait_is_removable": false,
+            "stack_mode": "param_int"
         },
         {
             "id": "PreenyScalingHealth",
             "name": "CardTraitScalingUpgradeUnitHealth",
             "param_tracked_value": "played_cost",
-            "param_entry_duration": "this_turn",
             "param_int": 8,
-            "param_team": "monsters"
+            "param_int_3": 1,
+            "trait_is_removable": false,
+            "stack_mode": "param_int"
         }
     ],
     "character_triggers": [
         {
             "id": "PreenySnuggleScalingSpawn",
-            "trigger": "on_unscaled_spawn",
+            "trigger": "on_spawn",
             "descriptions": {
                 "english": "When played, gain +8[attack] and +8[health] per [x]."
             },
