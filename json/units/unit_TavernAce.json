@@ -48,6 +48,12 @@
     ],
     "effects": [
         {
+            "id": "TavernAcePermanentAttack",
+            "name": "@CardEffectTavernAceUnplayed",
+            "target_mode": "self",
+            "param_int": 12
+        },
+        {
             "id": "SpawnTavernAce",
             "name": "CardEffectSpawnMonster",
             "target_mode": "room",
@@ -103,14 +109,7 @@
             "descriptions": {
                 "english": "Gain +12[attack] permanently."
             },
-            "trigger_effects": [
-                {
-                    "persistence": "single_run",
-                    "param_int": 12,
-                    "trigger_effect": "CardTriggerEffectBuffCharacterDamage",
-                    "buff_effect": "CardEffectBuffDamage"
-                }
-            ]
+            "effects": ["@TavernAcePermanentAttack"]
         }
     ]
 }

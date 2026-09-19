@@ -116,6 +116,14 @@
             "target_team": "monsters",
             "param_upgrade": "@TantabusNightmareGrowth3",
             "param_int_3": 2
+        },
+        {
+            "id": "TantabusPsychosisGainConduit",
+            "name": "CardEffectAddCardUpgradeToUnits",
+            "target_mode": "self",
+            "target_team": "monsters",
+            "param_upgrade": "@TantabusPsychosisConduitUpgrade",
+            "param_int_3": 2
         }
     ],
     "character_triggers": [
@@ -268,6 +276,16 @@
             "effects": [
                 "@TantabusNightmareGrow3"
             ]
+        },
+        {
+            "id": "TantabusPsychosisCelebrate",
+            "trigger": "on_encounter_complete",
+            "descriptions": {
+                "english": "Gain [conduit] 1 permanently."
+            },
+            "effects": [
+                "@TantabusPsychosisGainConduit"
+            ]
         }
     ],
     "card_triggers": [
@@ -382,7 +400,7 @@
                 "english": "Psychosis"
             },
             "descriptions": {
-                "english": "<b>Incant</b>: +1 Magic power to spells in hand.<br><b>End of Turn:</b> <b>Freeze</b> all Night Terrors."
+                "english": "<b>Incant</b>: +1 Magic power to spells in hand.<br><b>End of Turn:</b> <b>Freeze</b> all Night Terrors.<br><b>Celebrate</b>: Gain [conduit] 1 permanently."
             },
             "use_upgrade_highlight_tags": true,
             "bonus_damage": 10,
@@ -394,7 +412,8 @@
             ],
             "trigger_upgrades": [
                 "@TantabusPsychosis1Incant",
-                "@TantabusPsychosis1EndTurn"
+                "@TantabusPsychosis1EndTurn",
+                "@TantabusPsychosisCelebrate"
             ]
         },
         {
@@ -411,7 +430,7 @@
                 "english": "Psychosis II"
             },
             "descriptions": {
-                "english": "<b>Incant</b>: +2 Magic power to spells in hand.<br><b>End of Turn:</b> <b>Freeze</b> all Night Terrors."
+                "english": "<b>Incant</b>: +2 Magic power to spells in hand.<br><b>End of Turn:</b> <b>Freeze</b> all Night Terrors.<br><b>Celebrate</b>: Gain [conduit] 1 permanently."
             },
             "use_upgrade_highlight_tags": true,
             "bonus_damage": 40,
@@ -423,7 +442,8 @@
             ],
             "trigger_upgrades": [
                 "@TantabusPsychosis2Incant",
-                "@TantabusPsychosis2EndTurn"
+                "@TantabusPsychosis2EndTurn",
+                "@TantabusPsychosisCelebrate"
             ]
         },
         {
@@ -440,7 +460,7 @@
                 "english": "Psychosis III"
             },
             "descriptions": {
-                "english": "<b>Incant</b>: +3 Magic power to spells in hand.<br><b>End of Turn:</b> <b>Freeze</b> all Night Terrors."
+                "english": "<b>Incant</b>: +3 Magic power to spells in hand.<br><b>End of Turn:</b> <b>Freeze</b> all Night Terrors.<br><b>Celebrate</b>: Gain [conduit] 1 permanently."
             },
             "use_upgrade_highlight_tags": true,
             "bonus_damage": 100,
@@ -452,7 +472,8 @@
             ],
             "trigger_upgrades": [
                 "@TantabusPsychosis3Incant",
-                "@TantabusPsychosis3EndTurn"
+                "@TantabusPsychosis3EndTurn",
+                "@TantabusPsychosisCelebrate"
             ]
         },
         {
@@ -583,6 +604,15 @@
         {
             "id": "TantabusNightmareGrowth3",
             "bonus_damage": 5
+        },
+        {
+            "id": "TantabusPsychosisConduitUpgrade",
+            "status_effect_upgrades": [
+                {
+                    "status": "conduit",
+                    "count": 1
+                }
+            ]
         }
     ],
     "sprites": [

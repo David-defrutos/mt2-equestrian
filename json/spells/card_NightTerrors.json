@@ -14,14 +14,14 @@
                     "english": "My nights in Equestria have been troubled and it goes far beyond the anxieties and horrors of war. It's as if a malevolent spirit is digging deep into my psyche to find my worst fears and inflict them upon me."
                 }
             ],
-            "rarity": "starter",
+            "rarity": "common",
             "class": "@ClassEquestrian",
             "card_art": "@NightTerrorsArt",
             "cost": 2,
             "targets_room": true,
             "targetless": false,
             "pools": [
-                "MegaPool"
+                "StarterCardsOnly"
             ],
             "effects": [
                 "@NightTerrorsDamage",

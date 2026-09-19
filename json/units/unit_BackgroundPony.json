@@ -9,7 +9,7 @@
             "card_art": "@BackgroundPonyCardArt",
             "cost": 0,
             "card_type": "monster",
-            "rarity": "starter",
+            "rarity": "common",
             "class": "@ClassEquestrian",
             "targets_room": true,
             "targetless": false,
@@ -23,6 +23,9 @@
                 {
                     "english": "For each pony I got to know, there were ten more lurking in the background. They've all been such lively and unique individuals that I wish I'd had the time to meet more of them."
                 }
+            ],
+            "pools": [
+                "StarterCardsOnly"
             ]
         }
     ],

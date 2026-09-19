@@ -9,10 +9,13 @@
             "card_art": "@MissingMareCardArt",
             "cost": 1,
             "card_type": "monster",
-            "rarity": "starter",
+            "rarity": "rare",
             "class": "@ClassEquestrian",
             "targets_room": true,
             "targetless": false,
+            "pools": [
+                "MegaPool"
+            ],
             "effects": [
                 "@SpawnMissingMare"
             ],

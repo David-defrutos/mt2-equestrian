@@ -50,7 +50,8 @@
             ],
             "triggers": [
                 "@SocialDeath",
-                "@SocialSpawn"
+                "@SocialSpawn",
+                "@PreenySnuggleScalingSpawn"
             ]
         }
     ],
@@ -60,6 +61,13 @@
             "name": "CardEffectSpawnMonster",
             "target_mode": "room",
             "param_character": "@PreenySnuggle"
+        },
+        {
+            "id": "PreenySnuggleApplyScaling",
+            "name": "CardEffectAddTempCardUpgradeToUnits",
+            "target_mode": "self",
+            "target_team": "monsters",
+            "param_upgrade": "@PreenySnuggleScalingUpgrade"
         }
     ],
     "sprites": [
@@ -111,6 +119,7 @@
             "param_tracked_value": "played_cost",
             "param_entry_duration": "this_turn",
             "param_int": 8,
+            "param_int_3": 1,
             "param_team": "monsters"
         },
         {
@@ -119,11 +128,31 @@
             "param_tracked_value": "played_cost",
             "param_entry_duration": "this_turn",
             "param_int": 8,
+            "param_int_3": 1,
             "param_team": "monsters"
         },
         {
             "id": "PreenyLevelMonster",
             "name": "CardTraitLevelMonsterState"
+        }
+    ],
+    "character_triggers": [
+        {
+            "id": "PreenySnuggleScalingSpawn",
+            "trigger": "on_unscaled_spawn",
+            "descriptions": {
+                "english": "When played, gain +8[attack] and +8[health] per [x]."
+            },
+            "effects": [
+                "@PreenySnuggleApplyScaling"
+            ]
+        }
+    ],
+    "upgrades": [
+        {
+            "id": "PreenySnuggleScalingUpgrade",
+            "bonus_damage": 0,
+            "bonus_hp": 0
         }
     ]
 }

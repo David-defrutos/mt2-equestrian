@@ -44,6 +44,7 @@
         {
             "id": "PackedAudiencePony2",
             "name": "CardEffectSpawnMonster",
+            "param_str": "Equestrian.PackedAudience.HideRepeatedText",
             "target_mode": "room",
             "target_team": "monsters",
             "param_character": "@BackgroundPony"
@@ -51,6 +52,7 @@
         {
             "id": "PackedAudiencePony3",
             "name": "CardEffectSpawnMonster",
+            "param_str": "Equestrian.PackedAudience.HideRepeatedText",
             "target_mode": "room",
             "target_team": "monsters",
             "param_character": "@BackgroundPony"
