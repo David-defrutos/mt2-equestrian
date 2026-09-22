@@ -109,21 +109,27 @@
     "traits": [
         {
             "id": "PreenyScalingAttack",
-            "name": "CardTraitScalingUpgradeUnitAttack",
+            "name": {
+                "id": "@CardTraitScalingUpgradeUnitAttackSafely",
+                "mod_reference": "Conductor"
+            },
             "param_tracked_value": "played_cost",
             "param_int": 8,
-            "param_int_3": 1,
             "trait_is_removable": false,
-            "stack_mode": "param_int"
+            "stack_mode": "param_int",
+            "param_upgrade": "@PreenySnuggleScalingUpgrade"
         },
         {
             "id": "PreenyScalingHealth",
-            "name": "CardTraitScalingUpgradeUnitHealth",
+            "name": {
+                "id": "@CardTraitScalingUpgradeUnitHealthSafely",
+                "mod_reference": "Conductor"
+            },
             "param_tracked_value": "played_cost",
             "param_int": 8,
-            "param_int_3": 1,
             "trait_is_removable": false,
-            "stack_mode": "param_int"
+            "stack_mode": "param_int",
+            "param_upgrade": "@PreenySnuggleScalingUpgrade"
         }
     ],
     "character_triggers": [
