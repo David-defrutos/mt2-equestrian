@@ -120,7 +120,7 @@
         {
             "id": "TantabusPsychosisGainConduit",
             "name": "CardEffectAddCardUpgradeToUnits",
-            "target_mode": "self",
+            "target_mode": "room",
             "target_team": "monsters",
             "param_upgrade": "@TantabusPsychosisConduitUpgrade",
             "param_int_3": 2
@@ -281,7 +281,7 @@
             "id": "TantabusPsychosisCelebrate",
             "trigger": "on_encounter_complete",
             "descriptions": {
-                "english": "Gain [conduit] 1 permanently."
+                "english": "Apply [conduit] 1 permanently to friendly units."
             },
             "effects": [
                 "@TantabusPsychosisGainConduit"
@@ -400,7 +400,7 @@
                 "english": "Psychosis"
             },
             "descriptions": {
-                "english": "<b>Incant</b>: +1 Magic power to spells in hand.<br><b>End of Turn:</b> <b>Freeze</b> all Night Terrors.<br><b>Celebrate</b>: Gain [conduit] 1 permanently."
+                "english": "<b>Incant</b>: +1 Magic power to spells in hand.<br><b>End of Turn:</b> <b>Freeze</b> all Night Terrors.<br><b>Celebrate</b>: Apply [conduit] 1 permanently to friendly units."
             },
             "use_upgrade_highlight_tags": true,
             "bonus_damage": 10,
@@ -430,7 +430,7 @@
                 "english": "Psychosis II"
             },
             "descriptions": {
-                "english": "<b>Incant</b>: +2 Magic power to spells in hand.<br><b>End of Turn:</b> <b>Freeze</b> all Night Terrors.<br><b>Celebrate</b>: Gain [conduit] 1 permanently."
+                "english": "<b>Incant</b>: +2 Magic power to spells in hand.<br><b>End of Turn:</b> <b>Freeze</b> all Night Terrors.<br><b>Celebrate</b>: Apply [conduit] 1 permanently to friendly units."
             },
             "use_upgrade_highlight_tags": true,
             "bonus_damage": 40,
@@ -460,7 +460,7 @@
                 "english": "Psychosis III"
             },
             "descriptions": {
-                "english": "<b>Incant</b>: +3 Magic power to spells in hand.<br><b>End of Turn:</b> <b>Freeze</b> all Night Terrors.<br><b>Celebrate</b>: Gain [conduit] 1 permanently."
+                "english": "<b>Incant</b>: +3 Magic power to spells in hand.<br><b>End of Turn:</b> <b>Freeze</b> all Night Terrors.<br><b>Celebrate</b>: Apply [conduit] 1 permanently to friendly units."
             },
             "use_upgrade_highlight_tags": true,
             "bonus_damage": 100,
